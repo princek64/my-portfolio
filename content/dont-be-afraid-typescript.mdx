@@ -1,0 +1,81 @@
+---
+title: "Don't be AFRAID of Typescript!"
+publishedAt: "2024-11-11"
+summary: "Don't be AFRAID of Typescript!"
+tags: "Prettier, Web development"
+---
+
+**Introduction:**
+Welcome to the world of TypeScript, where static typing and advanced features make JavaScript development more robust and manageable. In this beginner-friendly blog, I'll walk you through TypeScript using real-world examples to illustrate its concepts and benefits. Let's dive in together!
+
+- **Static Typing with Basic Types:**
+One of TypeScript's standout features is its support for static typing. Let's start with some basic examples to illustrate this concept:
+
+``` javascript
+// Example 1: Static Typing with Basic Types
+let name: string = "John";
+let age: number = 30;
+let isStudent: boolean = true;
+
+console.log(`Name: ${name}, Age: ${age}, Student: ${isStudent}`);  
+//Output: Name: John, Age: 30, Student: true
+```
+
+In this example, we declare variables with explicit types (string, number, boolean). This allows the TypeScript compiler to catch type-related errors early in the development process, ensuring code reliability.
+
+- **Interfaces and Type Annotations:**
+Interfaces in TypeScript provide a way to define the shape of objects. Let's see how interfaces can be used with type annotations:
+
+``` javascript
+// Example 2: Interfaces and Type Annotations
+interface Person {
+  name: string;
+  age: number;
+}
+
+function greet(person: Person): void {
+  console.log(`Hello, ${person.name}!`);
+}
+
+let user: Person = { name: "Alice", age: 25 };
+greet(user);
+//Output: Hello, Alice!
+```
+
+Here, we define an interface Person with name and age properties. The greet function takes an object that conforms to this interface as an argument, ensuring type safety.
+
+- **Classes and Inheritance:**
+TypeScript supports object-oriented programming concepts like classes and inheritance. Let's create a simple class hierarchy:
+
+```javascript
+// Example 3: Classes and Inheritance
+class Animal {
+  constructor(public name: string) {}
+  move(distance: number = 0): void {
+    console.log(`${this.name} moved ${distance} meters.`);
+  }
+}
+
+class Dog extends Animal {
+  bark(): void {
+    console.log("Woof! Woof!");
+  }
+}
+
+const dog = new Dog("Buddy");
+dog.bark();
+dog.move(10);
+// Output: Woof! Woof!
+// Output: Buddy moved 10 meters.
+```
+
+In this example, we define a base class Animal with a move method, and a derived class Dog that extends Animal and adds a bark method. This demonstrates TypeScript's support for classical inheritance.
+
+**Conclusion:**
+TypeScript serves as a game-changer in modern web development, providing developers with powerful tools to create safer and more maintainable code. By embracing TypeScript's features such as static typing, interfaces, and classes, you can significantly improve productivity and code quality in your projects.
+
+While we've covered some fundamental aspects of TypeScript in this blog, there's much more to explore.
+
+Happy coding!
+
+
