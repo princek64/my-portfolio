@@ -1,0 +1,141 @@
+---
+title: "Setting Up ESLint and Prettier in an Ionic Angular Project"
+publishedAt: "2024-10-11"
+summary: "Setting Up ESLint and Prettier."
+tags: "Prettier, Web development"
+---
+
+Maintaining clean and consistent code can be challenging, especially as your project grows. Thankfully, tools like ESLint and Prettier can help. In this guide, I'll walk you through setting up these tools in your Ionic Angular project.
+
+**Step 1: Install ESLint and Prettier**
+
+Maintaining clean and consistent code can be challenging, especially as your project grows. Thankfully, tools like ESLint and Prettier can help. In this guide, I'll walk you through setting up these tools in your Ionic Angular project.
+
+**Step 1: Install ESLint and Prettier**
+First, we need to install ESLint and Prettier along with their necessary plugins.
+
+**Install ESLint:**
+``` bash
+npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
+```
+
+
+**Install Prettier:**
+``` bash
+npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+```
+
+**Step 2: Configure ESLint**
+Create a .eslintrc.json file in the root of your project and add the following configuration:
+
+``` json
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/explicit-function-return-type": "off"
+  }
+}
+```
+
+**Step 3: Configure Prettier**
+Create a .prettierrc file in the root of your project:
+
+``` json
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 80,
+  "tabWidth": 2,
+  "semi": true
+}
+```
+This configuration makes Prettier format your code with single quotes, trailing commas, a maximum line width of 80 characters, a tab width of 2 spaces, and semicolons at the end of statements.
+
+
+**Step 4: Ignore Files**
+To prevent ESLint and Prettier from running on certain files or directories, create the following ignore files.
+
+Create a **.eslintignore** file:
+```
+node_modules
+dist
+www
+```
+
+Create a **.prettierignore** file:
+```
+node_modules
+dist
+www
+```
+
+**Step 5: Add Scripts to package.json**
+To make it easy to run ESLint and Prettier, add the following scripts to your package.json:
+``` json
+"scripts": {
+  "lint": "eslint . --ext .ts,.html",
+  "lint:fix": "eslint . --ext .ts,.html --fix",
+  "format": "prettier --write \"src/**/*.{ts,html,scss}\""
+}
+```
+
+**Step 6: Optional VS Code Integration**
+If you are using Visual Studio Code, you can install the ESLint and Prettier extensions for a better development experience.
+
+1. Install ESLint Extension: Go to the Extensions view (Ctrl+Shift+X), search for "ESLint" by Dirk Baeumer, and install it.
+
+2. Install Prettier Extension: Go to the Extensions view, search for "Prettier - Code formatter" by Esben Petersen, and install it.
+You can also configure VS Code to auto-fix lint and format on save by adding the following to your settings.json:
+
+``` json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+```
+
+**Step 7: Running Linting and Formatting**
+You can now use the scripts defined in your package.json to lint and format your code:
+
+- Lint the code:
+Run the following command to lint your code:
+``` bash
+npm run lint
+```
+
+- Fix linting errors: 
+To automatically fix linting errors, run:
+``` bash
+npm run lint:fix
+```
+
+- Format the code:
+To format your code with Prettier, run:
+``` bash
+npm run format
+```
+
+**Conclusion**
+By following these steps, we can set up ESLint and Prettier in our Ionic Angular project. These tools will help keep the code clean and consistent, making it easier to maintain. 
+Happy coding!.

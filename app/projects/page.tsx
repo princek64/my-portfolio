@@ -15,14 +15,14 @@ export default function Projects() {
         {projects.map((project, index) => (
           <a
             key={index}
-            href={project.url}
-            target="_blank"
+            href={project.url || 'javascript:void(0)'}
+            target={project.url ? "_blank" : undefined}
             rel="noopener noreferrer"
             className="block group hover:opacity-80 transition-opacity duration-200"
           >
             <div className="flex flex-col">
               <div className="w-full flex justify-between items-baseline">
-                <span className="text-black dark:text-white font-medium tracking-tight">
+                <span className="text-black dark:text-white font-semibold tracking-tight">
                   {project.title}
                 </span>
                 <span className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
