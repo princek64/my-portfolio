@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { socialLinks } from "./config";
+import { FiLink } from "react-icons/fi";
 
 export default function Page() {
   return (
@@ -34,6 +35,7 @@ export default function Page() {
           I’m also deeply committed to lifelong learning and sharing my knowledge with others to help build better, more inclusive tech communities.
           Take a look at my work, and let’s connect to discuss how we can build something amazing together!
         </p>
+        <p className="flex items-center gap-2"><FiLink /><a href="https://drive.google.com/file/d/1my94ugCJbmZCfu16QRr9sGRndaeQ2ybJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume Link</a></p>
       </div>
     </section>
   );
