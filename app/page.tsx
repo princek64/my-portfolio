@@ -34,7 +34,7 @@ export default function Page() {
           I’m passionate about learning, sharing knowledge, and supporting inclusive tech communities through open-source contributions.
           Take a look at my work, and let’s connect to discuss how we can build something amazing together!
         </p>
-        <p className="flex items-center gap-2"><FiLink /><a href="https://drive.google.com/file/d/1my94ugCJbmZCfu16QRr9sGRndaeQ2ybJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume Link</a></p>
+        <p className="flex items-center gap-2"><FiLink /><a href="https://docs.google.com/document/d/1zVr5vU1dkqRabsqREk4xeS86bGxcRPuf9drZXnPp3n0/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Resume Link</a></p>
       </div>
     </section>
   );
