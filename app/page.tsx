@@ -23,16 +23,13 @@ export default function Page() {
 
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I’m a Full-Stack Developer with a strong focus on frontend development, passionate about building seamless web and mobile experiences that combine functionality with user-centered design.
+          I'm a Full-Stack Developer with a strong focus on frontend development, passionate about building seamless web and mobile experiences that combine functionality with user-centered design. I specialize in scalable applications using modern technologies like Next.js, React, and Vue, with additional experience in backend and mobile development.
         </p>
         <p>
-          I specialize in building scalable applications that solve real problems, using modern technologies like Next.js, React, Vue, and Nuxt.
-          While frontend development is my forte, I also bring experience in backend and mobile development with Ionic.
+          Alongside development, I'm a Digital Media Design student, diving deep into design, user experience, and how people interact with digital products. This background shapes how I approach code and not just making things work, but making them feel intuitive and accessible for real users.
         </p>
         <p>
-          I’m always eager to learn new skills and stay up-to-date with the latest tech trends. Outside of coding, you can find me enjoying a good cup of coffee ☕, exploring new places 🌍, hitting the slopes 🏂 or getting my hands into some pottery 🏺.
-          I’m passionate about learning, sharing knowledge, and supporting inclusive tech communities through open-source contributions.
-          Take a look at my work, and let’s connect to discuss how we can build something amazing together!
+          I'm always eager to learn new skills and stay up-to-date with the latest tech trends. Outside of coding, you'll find me enjoying a good cup of coffee ☕, exploring new places 🌍, hitting the slopes 🏂, or getting my hands into pottery 🏺. I'm passionate about learning, sharing knowledge, and supporting inclusive tech communities through open-source contributions. Take a look at my work, and let's connect to discuss how we can build something amazing together!
         </p>
         <p className="flex items-center gap-2"><FiLink /><a href="https://docs.google.com/document/d/1zVr5vU1dkqRabsqREk4xeS86bGxcRPuf9drZXnPp3n0/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Resume Link</a></p>
       </div>

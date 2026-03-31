@@ -1,0 +1,211 @@
+---
+title: "Accessibility & Web Fundamentals Before Frameworks"
+publishedAt: "2026-03-31"
+summary: "Master the fundamentals of the web — HTML, CSS, and accessibility — before diving into frameworks."
+tags: "webdev, accessibility, html, css, javascript"
+author: "Prince"
+---
+
+There’s a pattern I keep seeing in the developer world today: many people begin their journey by jumping straight into JavaScript frameworks.
+
+I’ll be honest — I made this mistake myself.
+
+When I first started coding, I jumped straight into JavaScript frameworks without really understanding the fundamentals of the web. I loved building fast, interactive apps and experimenting with all the latest tools and libraries. But underneath all of that, I was ignoring the basics — especially accessibility.
+
+I used `<div>` for buttons.
+I used `<span>` for headings.  
+I styled everything to *look* right, but nothing had real structure or meaning.  
+
+It took time (and a few painful code reviews) for me to realise something important:
+
+**Frameworks change. The web does not.
+And accessibility isn’t optional.**
+
+Once I understood that, it completely changed the way I build things.
+And it’s never too late to fix this — whether you’re new or experienced.
+
+---
+
+## HTML Is the Structure of the Web
+
+HTML gives meaning to your content. It tells the browser — and assistive technologies — what something *is*, not just how it looks.
+
+A few examples we all overlook at some point:
+
+- A button should **always** be a `<button>`
+- Headings belong inside `<h1>` to `<h6>`
+- Lists should use `<ul>` or `<ol>`
+- Navigation belongs in a `<nav>`
+- Content sections belong in `<section>` or `<article>`
+
+When everything is a `<div>`, nothing has structure. And without structure, accessibility breaks.
+
+---
+
+## Why Semantic HTML Matters
+
+### **1. Accessibility**
+
+Millions of users rely on assistive technologies like screen readers, voice control, and keyboard navigation. Semantic HTML gives you accessibility features for free:
+
+- `<button>` is automatically keyboard-focusable  
+- `<label>` naturally connects to inputs  
+- `<nav>` tells assistive tools that it's a navigation region  
+- Headings create a logical outline of your page  
+
+Most accessibility issues disappear when you simply use the correct elements.
+
+---
+
+### **2. WCAG — The Foundations of Accessibility**
+
+WCAG (Web Content Accessibility Guidelines) defines how to make the web accessible, following four principles (P.O.U.R.):
+
+- **Perceivable** — users should be able to see or hear content  
+- **Operable** — users must be able to navigate using keyboard, mouse, or assistive devices  
+- **Understandable** — the interface must be clear and predictable  
+- **Robust** — your content should work across browsers and assistive tech  
+
+Semantic HTML naturally supports all four.
+
+---
+
+### **3. SEO and Discoverability**
+
+Search engines read your HTML structure the way assistive tech does:
+
+- Headings create hierarchy  
+- Articles define pieces of content  
+- Sections organise meaning  
+
+Semantic HTML improves SEO without additional work.
+
+---
+
+### **4. Maintainability**
+
+Good HTML is self-documenting.
+
+A `<nav>` is obviously navigation.
+A `<button>` is clearly interactive.
+An `<article>` tells you it contains standalone content.
+
+This makes debugging, onboarding, and scaling much easier.
+
+---
+
+## Understanding ARIA (Accessible Rich Internet Applications)
+
+ARIA exists to fill the gaps when native HTML can’t express meaning or state on its own.
+
+Common ARIA attributes include:
+
+```html
+aria-label="Close menu"
+aria-expanded="false"
+role="button"
+aria-live="polite"
+```
+
+But remember the golden rule:
+
+**Use native HTML first.**  
+ARIA should *enhance*, not *replace*, native elements.  
+If something can be a real `<button>`, don’t turn a `<div>` into an interactive element with `role="button"`.  
+Native elements come with built-in accessibility—use that power before reaching for ARIA.
+
+---
+
+## A Quick Example  
+### ❌ Incorrect
+```html
+<div onclick="handleClick()">
+  Submit
+</div>
+```
+
+**Problems:**
+- No keyboard support  
+- No focus behaviour  
+- Not announced as a button  
+- Requires extra ARIA to fix basic functionality
+
+### ✅ Correct
+```html
+<button onclick="handleClick()">
+  Submit
+</button>
+```
+
+## Benefits of Using Native HTML  
+- Keyboard accessible  
+- Proper focus  
+- Screen-reader friendly  
+- No ARIA needed  
+
+---
+
+## How to Think Like a Web Developer   
+ 
+
+### 1. Ask the Right Questions  
+
+Good development starts before you write any code.
+When planning a UI, pause and ask:
+
+- What is the correct HTML element for this?
+- Does this need a visible label or an accessible name?
+- Should this be a link or a button?
+- Will assistive technologies understand what this element does?
+- Is this component truly interactive?  
+
+These questions guide you toward more semantic, accessible, and maintainable markup.
+
+---
+
+### 2. Build in Layers  
+
+Great interfaces are built from the ground up. Follow this order:
+
+Follow this order:
+1. Semantic HTML — establish structure and meaning  
+2. CSS — define layout, appearance, and responsive behaviour  
+3. JavaScript — add interactivity and enhancements  
+4. Framework integration — bring it into your tool of choice  
+
+This layered approach keeps your code clean, scalable, and resilient — no matter what framework or tool you work with.
+
+---
+
+### 3. Test Like a Real User  
+
+Accessibility isn’t just about code — it’s about how people actually interact with your product.
+A simple habit of testing your interface like a real user can uncover issues you’d never notice otherwise.
+
+Here’s a quick checklist:
+- Navigate your entire page using only the keyboard
+- Turn on a screen reader (NVDA, VoiceOver) and listen to the flow
+- Disable CSS and see if the structure still holds up
+- Zoom the page to 200% and check if it remains usable
+- Verify that your heading levels follow a logical order
+
+If your page is still understandable and functional without styling, your semantics are on the right track.
+
+---
+
+## Final Thoughts — You Are a Web Developer First
+
+Frameworks, libraries, and tools will keep evolving. React, Vue, Svelte — today’s popular choices may be replaced tomorrow. New ones will always appear.
+
+But HTML, CSS, and JavaScript are the foundation of the web — the skills that will never become obsolete.
+
+Mastering accessibility and web fundamentals is the most future-proof investment you can make as a developer. It ensures your work is usable, maintainable, and inclusive — no matter what tools come next.
+  
+It’s never too late to start.
+
+**Write semantic code.**
+**Build accessible experiences.**
+**Understand how the browser works.**
+
+This is what makes you a real web developer.  
+Happy Coding!

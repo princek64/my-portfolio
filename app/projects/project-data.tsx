@@ -7,8 +7,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "CCPower – Fleet Management System",
+    year: 2026,
+    description: "CCPower is a fleet management and time entry platform designed to streamline operational workflows. I worked on the Fleet Management module, building a mobile-responsive application using Quasar (Vue framework), Directus, and Pinia for state management. My work included developing digitized vehicle and trailer pre- trip inspections, a repair order management system with automated PDF report generation, and an equipment cost - tracking system and life - to - date financial insights.I focused on creating interactive interfaces, managing application state, and ensuring smooth integration between the frontend and backend systems.",
+    url: null,
+  },
+  {
     title: "Orbit Four",
-    year: 2024,
+    year: 2025,
     description:
       "OrbitFour is a custom-built domain registrar platform crafted from scratch. My focus was on creating a custom user and admin portal, where I leveraged my expertise in Vue, Nuxt, and Tailwind to build a mobile-friendly, robust user interface. I also collaborated with the backend team using NodeJS to ensure smooth integration.",
     url: "https://www.orbitfour.com/",
