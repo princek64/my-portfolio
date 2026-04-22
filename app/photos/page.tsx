@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Photos() {
   return (
-    <section>
+    <section className="animate-page-enter">
       <h1 className="mb-8 text-2xl font-medium tracking-tight">Photos</h1>
 
       <ImageGrid

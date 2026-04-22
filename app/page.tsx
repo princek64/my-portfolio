@@ -4,7 +4,7 @@ import { FiLink } from "react-icons/fi";
 
 export default function Page() {
   return (
-    <section>
+    <section className="animate-page-enter">
       <a href={socialLinks.linkedin} target="_blank">
         <Image
           src="/profile.png"
@@ -17,7 +17,13 @@ export default function Page() {
         />
       </a>
 
-      <h1 className="mb-8 text-xl font-medium tracking-tight">
+      {/* Status indicator */}
+      <div className="flex items-center gap-2 mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+        <span className="pulse-dot" aria-hidden="true" />
+        <span>Open to new roles</span>
+      </div>
+
+      <h1 className="mb-8 text-xl font-medium tracking-tight gradient-text">
         Designer who codes, or developer who designs, depending on the day.
       </h1>
 
@@ -28,6 +34,7 @@ export default function Page() {
         <p>
           Looking for roles where design and engineering overlap. Good coffee is non-negotiable.
         </p>
+        <hr className="section-divider" />
         <p className="flex items-center gap-2"><FiLink /><a href="https://docs.google.com/document/d/1zVr5vU1dkqRabsqREk4xeS86bGxcRPuf9drZXnPp3n0/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Resume Link</a></p>
       </div>
     </section>
