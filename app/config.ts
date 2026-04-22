@@ -1,8 +1,9 @@
 export const metaData = {
   baseUrl: "https://www.linkedin.com/in/princekukreja/",
-  title: "Prince Kukreja",
+  title: "Prince",
+  titleShort: "rince",
   name: "princekukreja",
-  ogImage: "/graph.png",
+  ogImage: "/graph.svg",
   description: "Full-Stack Developer",
 };
 

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="62" height="88" viewBox="0 0 62 88" role="img">
+  <title>pixelprince.dev mark</title>
+  <rect x="0" y="0" width="9" height="72" rx="4" fill="#111827"/>
+  <path d="M 9 4 L 9 40 Q 9 4 44 4 Q 62 4 62 22 Q 62 40 44 40 L 9 40" fill="#111827"/>
+  <path d="M 16 12 Q 16 34 40 34 Q 54 34 54 22 Q 54 12 40 12 Z" fill="white"/>
+  <polygon points="42,4 62,4 42,20" fill="white"/>
+  <polygon points="38,12 50,12 38,22" fill="#111827"/>
+  <circle cx="28" cy="26" r="2" fill="#6366f1"/>
+  <circle cx="38" cy="26" r="2" fill="#6366f1"/>
+  <path d="M 0 80 Q 30 66 62 80" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 48 0 Q 44 -8 48 -16" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 56 0 Q 52 -9 56 -18" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

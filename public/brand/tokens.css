@@ -1,0 +1,37 @@
+/* pixelprince.dev — Design Tokens */
+:root {
+  /* Colour */
+  --pp-ink:           #111827;
+  --pp-indigo:        #6366f1;
+  --pp-indigo-light:  #818cf8;
+  --pp-mist:          #9ca3af;
+  --pp-smoke:         #f3f4f6;
+  --pp-white:         #ffffff;
+  --pp-page:          #fafafa;
+
+  /* Typography */
+  --pp-font-sans: 'DM Sans', sans-serif;
+  --pp-font-mono: 'DM Mono', monospace;
+
+  --pp-weight-thin:    200;
+  --pp-weight-light:   300;
+  --pp-weight-regular: 400;
+  --pp-weight-medium:  500;
+
+  /* Type scale */
+  --pp-text-display:  48px;
+  --pp-text-heading:  28px;
+  --pp-text-body:     15px;
+  --pp-text-mono:     13px;
+  --pp-text-label:    11px;
+
+  /* Spacing (8-point grid) */
+  --pp-space-1:  4px;
+  --pp-space-2:  8px;
+  --pp-space-3:  12px;
+  --pp-space-4:  16px;
+  --pp-space-6:  24px;
+  --pp-space-8:  32px;
+  --pp-space-12: 48px;
+  --pp-space-16: 64px;
+}
