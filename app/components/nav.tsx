@@ -35,11 +35,10 @@ export function Navbar() {
               <Link
                 key={path}
                 href={path}
-                className={`nav-link transition-colors duration-200 flex align-middle relative text-sm font-medium ${
-                  isActive
+                className={`nav-link transition-colors duration-200 flex align-middle relative text-sm font-medium ${isActive
                     ? "active text-neutral-900 dark:text-neutral-100"
                     : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100"
-                }`}
+                  }`}
               >
                 {name}
               </Link>

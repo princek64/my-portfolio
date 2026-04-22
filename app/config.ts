@@ -14,5 +14,5 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/princekukreja/",
   devTo: "https://dev.to/princekukreja",
   dribbble: "https://dribbble.com/princek",
-  email: "mailto:princekukreja64@gmail.com",
+  email: "mailto:contact@pixelprince.com",
 };
