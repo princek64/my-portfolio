@@ -17,27 +17,27 @@ export default function Photos() {
         images={[
           {
             src: "/photos/photo4.jpg",
-            alt: "Pottery",
+            alt: "Pottery Workshop",
           },
           {
-            src: "/photos/photo6.jpg",
-            alt: "Meow Intern",
+            src: "/photos/photo11.jpg",
+            alt: "React Advanced Conference, London",
+          },
+          {
+            src: "/photos/photo5.jpg",
+            alt: "Working from Mountains",
           },
           {
             src: "/photos/photo10.jpg",
             alt: "Holi - Feswtival of Colors",
           },
           {
+            src: "/photos/photo6.jpg",
+            alt: "Meow Intern",
+          },
+          {
             src: "/photos/photo21.jpg",
-            alt: "Snowboarding",
-          },
-          {
-            src: "/photos/photo11.jpg",
-            alt: "Burger and Coding",
-          },
-          {
-            src: "/photos/photo5.jpg",
-            alt: "Working from Mountains",
+            alt: "Snowboarding in Gulmarg",
           },
         ]}
       />
