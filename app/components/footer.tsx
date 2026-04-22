@@ -10,7 +10,6 @@ import {
   FaDev,
   FaDribbble,
 } from "react-icons/fa6";
-import { SiPeerlist } from "react-icons/si";
 import { TbMailFilled } from "react-icons/tb";
 import { metaData, socialLinks } from "app/config";
 
@@ -33,7 +32,6 @@ function SocialLinks() {
       <SocialLink href={socialLinks.linkedin} icon={FaLinkedinIn} />
       <SocialLink href={socialLinks.devTo} icon={FaDev} />
       <SocialLink href={socialLinks.dribbble} icon={FaDribbble} />
-      <SocialLink href={socialLinks.peerList} icon={SiPeerlist} />
       <SocialLink href={socialLinks.email} icon={TbMailFilled} />
       {/* <a href="/rss.xml" target="_self">
         <FaRss />

@@ -14,6 +14,5 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/princekukreja/",
   devTo: "https://dev.to/princekukreja",
   dribbble: "https://dribbble.com/princek",
-  peerList: "https://peerlist.io/princekukreja",
   email: "mailto:princekukreja64@gmail.com",
 };
