@@ -7,7 +7,7 @@ import { metaData } from "../config";
 import { PixelPrinceMark } from "./PixelPrinceMark";
 
 const navItems = {
-  // "/about": { name: "About" },
+  "/about": { name: "About" },
   "/projects": { name: "Projects" },
   "/design": { name: "Design" },
   "/blog": { name: "Blog" },
