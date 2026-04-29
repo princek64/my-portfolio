@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa6";
 import { TbMailFilled } from "react-icons/tb";
 import { metaData, socialLinks } from "app/config";
+import { usePathname } from "next/navigation";
 
 const YEAR = new Date().getFullYear();
 
@@ -55,6 +56,13 @@ function SocialLinks() {
 }
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isAbout = pathname === "/about";
+
+  const getInTouchSubtext = isAbout
+    ? "i'm based in London and open to full-time roles. if you're building something where design and engineering need to speak the same language, let's talk."
+    : "open to full-time roles, freelance projects, and interesting conversations. the best way to reach me is by email.";
+
   return (
     <footer className="w-full mt-16 md:mt-24 border-t border-neutral-100 dark:border-neutral-800 pt-8 pb-12">
       <div className="mb-10">
@@ -62,8 +70,7 @@ export default function Footer() {
           Get in touch
         </h2>
         <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-5">
-          Open to freelance projects, full-time roles, and interesting conversations.
-          The best way to reach me is by email.
+          {getInTouchSubtext}
         </p>
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <a

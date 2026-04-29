@@ -10,78 +10,77 @@ export const projects: Project[] = [
   {
     title: "CCPower – Fleet Management System",
     year: 2026,
-    description: "CCPower is a fleet management and time entry platform designed to streamline operational workflows. I worked on the Fleet Management module, building a mobile-responsive application using Quasar (Vue framework), Directus, and Pinia for state management. My work included developing digitized vehicle and trailer pre- trip inspections, a repair order management system with automated PDF report generation, and an equipment cost - tracking system and life - to - date financial insights.I focused on creating interactive interfaces, managing application state, and ensuring smooth integration between the frontend and backend systems.",
+    description: "A comprehensive fleet management platform built with Quasar and Directus. I developed modules for digitised inspections, repair orders, and financial tracking.",
     url: "https://www.ccpwr.com/",
   },
   {
     title: "Orbit Four",
     year: 2025,
     description:
-      "OrbitFour is a custom-built domain registrar platform crafted from scratch. My focus was on creating a custom user and admin portal, where I leveraged my expertise in Vue, Nuxt, and Tailwind to build a mobile-friendly, robust user interface. I also collaborated with the backend team using NodeJS to ensure smooth integration.",
+      "A custom-built domain registrar platform. I developed the robust user and admin portals using Vue, Nuxt, and Tailwind.",
     url: "https://www.orbitfour.com/",
   },
   {
     title: "Miller Johnson",
     year: 2024,
     description:
-      "Miller Johnson is an internal customized tool built using NextJS and React Material components, designed to streamline workflows and enhance efficiency for the law firm.",
+      "An internal workflow management tool built using Next.js and Material UI, designed to enhance operational efficiency.",
     url: "https://millerjohnson.com/",
   },
   {
     title: "Andy J. Egan Co. – PurchasePointe",
     year: 2024,
     description:
-      "I contributed to automating Andy J. Egan's internal PO process by developing the Receiving Module, one of the PO templates in the PurchasePointe solution. Using Angular and Angular Material, I helped streamline the workflow with features like receipt uploads, photos, and material lists, making the process faster and more efficient.",
+      "I developed the Receiving Module using Angular to automate the internal purchase order process and streamline material tracking.",
     url: "https://www.andyegan.com/",
   },
   {
     title: "JC Electric, Inc.",
     year: 2023,
     description:
-      "I was part of the JC Electric project, where we built a custom solution to automate their internal processes. Using Quasar (a Vue framework) and Directus, I contributed to developing an intuitive system that streamlined operations, improving efficiency and reducing manual work for the construction company.",
+      "A custom internal automation solution built with Quasar and Directus to improve efficiency and reduce manual workloads.",
     url: "https://www.jcelectric.online/",
   },
   {
     title: "Andy J. Egan Company",
     year: 2023,
     description:
-      "I contributed to the development of EganHub, a custom solution to automate workforce and job assignments for Andy J. Egan Company. My focus was on the EganHub and ToolPointe modules, where I developed a robust and intuitive user interface using Angular. This solution streamlined workflows, tracked employee skills, and simplified time entry, training, and credentialing, enhancing efficiency and user experience for over 300 workers.",
+      "A workforce automation platform built with Angular. I developed modules that streamlined time entry and credentialing for over 300 workers.",
     url: "https://www.andyegan.com/",
   },
-
   {
     title: "HealthOpx",
     year: 2022,
     description:
-      "I worked on this platform as a frontend developer, creating user-friendly interfaces with React to foster value-based connections between community organizations, hospitals, and insurers.",
+      "A frontend platform built with React to facilitate value-based connections between community organizations, hospitals, and insurers.",
     url: "https://healthopx.com/",
   },
   {
     title: "GT Independence",
     year: 2021,
     description:
-      "For GT Independence, I leveraged my expertise in Vue 3 and Tailwind CSS to build a custom financial services dashboard. My contributions focused on creating a streamlined data management system and enhancing user interactions, ensuring a seamless, responsive experience for users.",
+      "A custom financial services dashboard built with Vue 3 and Tailwind CSS to streamline data management.",
     url: "https://gtindependence.com/",
   },
   {
     title: "Element 22",
     year: 2021,
     description:
-      "As a frontend developer for Element 22, I contributed to building a customized loan application platform with a responsive UI. My work focused on creating an intuitive, user-friendly experience for business loan applicants in Michigan, ensuring seamless navigation and functionality across devices.",
+      "A customized business loan application platform featuring an intuitive, responsive UI.",
     url: "https://exchange.element22cg.com/",
   },
   {
     title: "The Kalamazoo Promise",
     year: 2020,
     description:
-      "I contributed to the development of a custom portal for Kalamazoo Promise, aimed at streamlining the scholarship application process. My focus was on building a user-friendly mobile interface, collaborating closely with the design and backend teams to ensure a smooth, intuitive experience. The new portal improved outreach, automated application submissions, and allowed students, staff, and partner schools to easily track scholarship status and manage student records.",
+      "A mobile-friendly scholarship portal that automates applications and allows students to track their submission status.",
     url: "https://portal.kalamazoopromise.com/",
   },
   {
     title: "COVIDINDIA.ORG",
     year: 2020,
     description:
-      "Covidindia.org, a data-driven platform designed to track and present real-time COVID-19 updates for India, using JavaScript and various libraries. I led the team to ensure the timely delivery of the platform, which features dynamic data visualizations with HighChart.js to showcase statewise, districtwise cases, treatments, vaccines, and more.",
+      "A data-driven platform providing real-time COVID-19 updates for India, featuring dynamic data visualizations built with Highcharts.",
     url: "https://covidindia.org/",
   },
 ];

@@ -3,9 +3,26 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CustomMDX } from "app/components/mdx";
 import { getProjectCaseStudies } from "app/lib/case-studies";
+import { projects } from "../project-data";
+
+// Helper to get fallback project
+function getFallbackProject(slug: string) {
+  return projects.find((p) => {
+    const pSlug = p.slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    return pSlug === slug;
+  });
+}
 
 export async function generateStaticParams() {
-  return getProjectCaseStudies().map((s) => ({ slug: s.slug }));
+  const mdxSlugs = getProjectCaseStudies().map((s) => ({ slug: s.slug }));
+  const dataSlugs = projects.map((p) => ({
+    slug: p.slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+  }));
+  
+  // Combine and deduplicate
+  const allSlugs = [...mdxSlugs, ...dataSlugs];
+  const uniqueSlugs = Array.from(new Set(allSlugs.map((s) => s.slug))).map((slug) => ({ slug }));
+  return uniqueSlugs;
 }
 
 export async function generateMetadata({
@@ -14,11 +31,20 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata | undefined> {
   const study = getProjectCaseStudies().find((s) => s.slug === params.slug);
-  if (!study) return;
-  return {
-    title: study.metadata.title,
-    description: study.metadata.description,
-  };
+  if (study) {
+    return {
+      title: study.metadata.title,
+      description: study.metadata.description,
+    };
+  }
+
+  const fallback = getFallbackProject(params.slug);
+  if (fallback) {
+    return {
+      title: fallback.title,
+      description: fallback.description,
+    };
+  }
 }
 
 export default function ProjectDetail({
@@ -26,10 +52,25 @@ export default function ProjectDetail({
 }: {
   params: { slug: string };
 }) {
-  const study = getProjectCaseStudies().find((s) => s.slug === params.slug);
-  if (!study) notFound();
+  let study = getProjectCaseStudies().find((s) => s.slug === params.slug);
+  
+  // Fallback to project-data description if no MDX case study is found
+  if (!study) {
+    const fallback = getFallbackProject(params.slug);
+    if (!fallback) notFound();
+    
+    study = {
+      slug: params.slug,
+      metadata: {
+        title: fallback.title,
+        description: fallback.description,
+        year: fallback.year.toString(),
+      },
+      content: fallback.description, // Use raw description as MDX content for now
+    };
+  }
 
-  const { metadata, content } = study!;
+  const { metadata, content } = study;
   const techTags = metadata.tech?.split(",").map((t) => t.trim()) ?? [];
 
   return (

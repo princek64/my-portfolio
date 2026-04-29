@@ -20,7 +20,7 @@ export default function Page() {
       {/* Status indicator */}
       <div className="flex items-center gap-2 mb-4 text-sm text-neutral-500 dark:text-neutral-400">
         <span className="pulse-dot" aria-hidden="true" />
-        <span>Open to new roles</span>
+        <span>open to new roles in London</span>
       </div>
 
       <h1 className="mb-6 text-xl font-medium tracking-tight gradient-text">
@@ -30,8 +30,9 @@ export default function Page() {
 
       <div className="prose prose-neutral dark:prose-invert mb-8 text-[15px] leading-relaxed">
         <p>
-          i'm a frontend engineer and digital designer based in 📍 London. <br />
-          i care about how things look and how they work, in equal measure.
+          design engineer based in📍London. six years building interfaces,
+          now finishing an MA in Digital Media Design at Birkbeck to sharpen
+          the craft.
         </p>
 
         <p className="mt-6 mb-2 font-medium text-neutral-800 dark:text-neutral-200">
@@ -39,14 +40,18 @@ export default function Page() {
         </p>
         <ul className="list-none pl-0 space-y-2 m-0 border-l border-neutral-200 dark:border-neutral-800 ml-2">
           <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            finishing an MA in Digital Media Design at Birkbeck 📚
+            reading about design, shipping code, repeat
           </li>
           <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            looking for roles where design and engineering overlap 🤝
+            looking for roles where design and engineering genuinely overlap
           </li>
           <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            drinking highly caffeinated, non-negotiable good coffee ☕
+            keeping up with how AI is changing the way we build products
           </li>
+          <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
+            volunteering at tech conferences when i can
+          </li>
+
         </ul>
       </div>
 
