@@ -11,6 +11,15 @@ export interface Design {
 
 export const designs: Design[] = [
   {
+    title: "Ichie",
+    year: 2026,
+    tools: "Product Design · Design Systems · React",
+    description:
+      "A personal event memory and network logging app based on the Japanese philosophy of ichigo ichie. Designed and built a comprehensive design system, translating it into a functional React application with a focus on intentional networking.",
+    url: "https://ichie-web.vercel.app/",
+    slug: "ichie",
+  },
+  {
     title: "London Coffee Roasters",
     year: 2026,
     tools: "Visual Design · Figma",

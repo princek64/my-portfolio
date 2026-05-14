@@ -1,0 +1,36 @@
+---
+title: "Miller Johnson"
+year: "2024"
+description: "An internal workflow management tool built using Next.js and Material UI, designed to enhance operational efficiency."
+tech: "Next.js, React, TailwindCSS, Material UI, Microsoft SQL Server"
+role: "Full Stack Developer"
+---
+
+### **1. What the product is**
+
+It is an **internal case and invoice management portal** built for the **eDiscovery team** at a law firm. It acts as a financial operations tool that solves the problem of tracking active legal matters, managing third-party vendor charges, and streamlining the monthly approval workflow for eDiscovery invoices. It targets the firm's internal staff—specifically eDiscovery personnel, paralegals, and billing attorneys.
+
+### **2. Main features and functionality**
+
+The primary capabilities include:
+
+- **Case Tracking:** The ability to add and monitor cases (`NewCaseDialog`), tracking details like job numbers, client matters, attorneys, paralegals, and overall case status.
+- **Monthly Invoice Ingestion & Approvals:** Workflows to input monthly invoices from external vendors, including itemized services and costs.
+- **Dedicated Approval Workflows:** Specific views (`/end-month-changes/[invoiceId]` and `/new-invoice-approval/[invoiceId]`) where attorneys or managers can review itemized charges, add comments, update the overall case status, and mark invoices as approved.
+- **Vendor Charge Management:** A dedicated view (`/vendor-case-charges/[vendorId]`) to review all charges related to a specific vendor across multiple cases.
+- **Automated Email Reminders:** A background service that periodically pulls pending invoices and automatically emails the assigned billing attorneys with a direct link to the approval portal.
+
+### **3. Tech stack and architecture**
+
+The project is built on a modern JavaScript ecosystem with a slightly hybrid architecture:
+
+- **Frontend UI:** Next.js (v14.2.5 using the modern `App Router`), React 18, TailwindCSS for layout styling, and Material UI (`@mui/material`, `@mui/x-date-pickers`) for structured components like Dialogs, Selects, and Data Tables.
+- **Backend API:** Handled via Next.js API Routes (using the traditional `Pages Router` under `src/pages/api`).
+- **Database:** A Microsoft SQL Server database (identified by the `tedious` driver dependency and the `eDiscovery` database configuration) accessed via the **Sequelize ORM**.
+- **Background Cron Server:** Instead of relying on Next.js for scheduled tasks, there is a dedicated standalone Node.js/Express server (`server/server.mjs`) utilizing `node-cron` to execute the scheduled email dispatches without blocking the main web application.
+
+### **4. Notable UI patterns, data models, or integrations**
+
+- **SharePoint Iframe Integration:** A highly notable architectural decision is that the application is designed to be hosted within the firm's SharePoint Intranet. There is a `SharepointProxyService.js` script that sets up an iframe and uses `window.postMessage` to communicate with the parent SharePoint window. This allows the Next.js app to dynamically fetch the `_spPageContextInfo.webAbsoluteUrl/_api/web/currentuser` to seamlessly authenticate the logged-in SharePoint user without requiring a separate login.
+- **Data Models:** The Sequelize models (`src/models/`) are heavily relational and reflect a law firm's domain, featuring entities like `Case`, `Invoice`, `InvoiceService` (line items), `Staff`, `Vendor`, and `CaseStatus`.
+- **Dynamic Email Templating:** The `EmailNotificationService.mjs` has a custom HTML templating system that dynamically builds data tables (`createCaseStatusTableHtml`) summarizing vendor name, client matters, and invoice statuses, injecting them directly into the notification emails.

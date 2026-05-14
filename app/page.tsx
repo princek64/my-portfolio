@@ -1,10 +1,30 @@
 import Image from "next/image";
+import Link from "next/link";
 import { socialLinks } from "./config";
-import { FiLink } from "react-icons/fi";
+import { projects } from "./projects/project-data";
+import { designs } from "./design/design-data";
+import { AbstractArt } from "./components/AbstractArt";
+
+const skills = [
+  "design systems",
+  "frontend interfaces",
+  "ui/ux",
+  "accessibility",
+];
 
 export default function Page() {
+  // Combine projects and designs for featured selection
+  // Ichie is specifically requested to be featured from the design section
+  const featuredItems = [
+    ...projects,
+    ...designs.filter(d => d.slug === "ichie")
+  ];
+  
+  const featured = [...featuredItems].sort((a, b) => b.year - a.year).slice(0, 3);
+
   return (
     <section className="animate-page-enter">
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
       <a href={socialLinks.linkedin} target="_blank">
         <Image
           src="/profile.png"
@@ -27,42 +47,75 @@ export default function Page() {
         hi, i'm prince.
       </h1>
 
-
       <div className="prose prose-neutral dark:prose-invert mb-8 text-[15px] leading-relaxed">
         <p>
           design engineer based in📍London. six years building interfaces,
           now finishing an MA in Digital Media Design at Birkbeck to sharpen
           the craft.
         </p>
-
-        <p className="mt-6 mb-2 font-medium text-neutral-800 dark:text-neutral-200">
-          currently:
-        </p>
-        <ul className="list-none pl-0 space-y-2 m-0 border-l border-neutral-200 dark:border-neutral-800 ml-2">
-          <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            reading about design, shipping code, repeat
-          </li>
-          <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            looking for roles where design and engineering genuinely overlap
-          </li>
-          <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            keeping up with how AI is changing the way we build products
-          </li>
-          <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            volunteering at tech conferences when i can
-          </li>
-
-        </ul>
       </div>
 
-      {/* <div className="prose prose-neutral dark:prose-invert text-[15px]">
-        <p className="flex items-center gap-2">
-          <FiLink className="text-neutral-400" />
-          <a href="https://docs.google.com/document/d/1zVr5vU1dkqRabsqREk4xeS86bGxcRPuf9drZXnPp3n0/edit?tab=t.0" target="_blank" rel="noopener noreferrer" className="decoration-neutral-300 dark:decoration-neutral-700 underline-offset-4">
-            view resume
-          </a>
+      {/* ── Skills strip ─────────────────────────────────────────────── */}
+      <div className="flex flex-wrap gap-2 mb-10">
+        {skills.map((skill) => (
+          <span key={skill} className="skill-pill">
+            {skill}
+          </span>
+        ))}
+      </div>
+
+      {/* ── Featured projects ────────────────────────────────────────── */}
+      <div className="mb-10">
+        <h2 className="text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-4 tracking-tight">
+          featured work
+        </h2>
+        <div className="flex flex-col gap-3">
+          {featured.map((project, index) => {
+            const isDesign = 'tools' in project;
+            const baseRoute = isDesign ? "/design" : "/projects";
+            const slug =
+              project.slug ||
+              project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+            return (
+              <Link
+                key={slug}
+                href={`${baseRoute}/${slug}`}
+                className="featured-card group"
+              >
+                {/* Thumbnail */}
+                <div
+                  aria-hidden="true"
+                  className="w-14 h-14 rounded-lg flex-shrink-0 relative overflow-hidden border border-neutral-200/50 dark:border-neutral-800/50 bg-neutral-50 dark:bg-[#151515] group/image"
+                >
+                  <AbstractArt index={index} />
+                </div>
+                {/* Text */}
+                <div className="flex flex-col justify-center min-w-0">
+                  <span className="text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">
+                    {project.title}
+                  </span>
+                  <span className="text-xs text-neutral-500 dark:text-neutral-400 line-clamp-1 mt-0.5">
+                    {project.description}
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+        <Link
+          href="/projects"
+          className="inline-block text-xs font-medium text-neutral-400 dark:text-neutral-500 mt-4 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors duration-200"
+        >
+          view all projects →
+        </Link>
+      </div>
+
+      {/* ── Community note ───────────────────────────────────────────── */}
+      <div className="mb-4 pl-4 border-l-2 border-neutral-200 dark:border-neutral-800">
+        <p className="text-xs text-neutral-400 dark:text-neutral-500 leading-relaxed">
+          volunteered at Droidcon London, React Advanced, AI Dev Con
         </p>
-      </div> */}
+      </div>
     </section>
   );
 }

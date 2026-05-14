@@ -1,0 +1,54 @@
+---
+title: "Orbit Four"
+year: "2025"
+description: "A custom-built domain registrar platform. I developed the robust user and admin portals using Vue, Nuxt, and Tailwind."
+tech: "Nuxt.js, Vue.js, TailwindCSS, Node.js, Express.js, PostgreSQL, Docker, Stripe"
+role: "Full Stack Developer"
+---
+
+### **1. What the product is**
+
+**OrbitFour** is a **Domain Name Registrar and Management Portal**. It's a platform designed to allow users to search for, purchase, and manage internet domains, as well as handle their associated DNS and contact records. 
+It interfaces with the Extensible Provisioning Protocol (EPP) to register domains directly with registries.
+
+The primary audience seems to be businesses or individuals who need a streamlined interface to buy domains, manage domain renewals/billing, and adjust DNS settings, functioning much like a modern GoDaddy or Namecheap alternative.
+
+### **2. Main features and functionality**
+
+Based on the `v1.js` API routes and the database models (`server/app/models`), the platform's core capabilities include:
+
+- **Domain Purchasing & Cart:** A shopping cart system (`cartItem`, `cartItemDomain`) hooked into TLD (Top Level Domain) pricing models (`tld.js`, `tldpricing.js`), culminating in a checkout flow.
+- **Domain & DNS Management:** Functionality for users to manage their purchased domains and adjust DNS records (`/domains` and `/dns` API routes).
+- **Billing & Subscriptions:** Full payment processing and subscription lifecycle management via Stripe, including webhook listeners for automatic payment updates.
+- **EPP Contact Management:** Creating and managing domain ownership contacts (Registrant, Admin, Tech) formatted specifically for the EPP standard (`eppContacts.js`).
+- **Authentication & Security:** Robust user accounts with Two-Factor Authentication (2FA), Role-Based Access Control (`role.js`, `userpermission.js`), login history tracking, and active session management.
+- **Auditing:** Comprehensive audit logging (`auditlog.js`, `auditevent.js`) tracking administrative and user actions across the platform for compliance and security.
+
+### **3. Tech Stack and Architecture**
+
+The project is structured as a monolithic repository containing both a server and a client application, orchestrated via Docker.
+
+**Frontend (Client):**
+
+- **Framework:** Nuxt.js 2 (Server-Side Rendered Vue.js framework).
+- **Styling:** A hybrid approach using both **TailwindCSS** (utility classes) and **Bootstrap-Vue** (component library), processed with Sass.
+- **State Management:** Vuex (`store` directory).
+- **API Communication:** `@nuxtjs/axios` for interacting with the backend.
+
+**Backend (Server):**
+
+- **Runtime/Framework:** Node.js running **Express.js**.
+- **Database & ORM:** PostgreSQL managed via **Sequelize** ORM (with a rich set of migrations and seeders).
+- **Authentication:** **Passport.js** utilizing JWTs and local strategies, alongside bcrypt for password hashing.
+- **Storage & Email:** AWS SDK (S3 for object storage, SES for emails) alongside SendGrid for transactional messaging.
+
+**Infrastructure:**
+
+- **Containerization:** Docker & `docker-compose` for local development and database provisioning.
+
+### **4. Notable UI patterns, data models, or integrations**
+
+- **Stripe Integration:** Deeply integrated into the data model with specific entities for `stripeCustomer`, `stripeSubscription`, and `transaction`. The backend listens to Stripe Webhooks to keep domain statuses synced with payment statuses.
+- **EPP (Extensible Provisioning Protocol):** The application relies on external `EPP_API_URL` and `EPP_REDIRECT_URL` environment variables, acting as a portal wrapper around a lower-level EPP domain registration engine.
+- **Componentized API Architecture:** Unlike traditional MVC monoliths, the Express backend is structured using a "Components" pattern (`server/app/components`), grouping routes, controllers, and specific logic by domain (e.g., `/users`, `/domains`, `/checkout`, `/dns`), making it highly modular.
+- **OAuth Provider Capabilities:** The database includes an `oauth.js` model and the API has an `/oauth` route, indicating this portal might also act as an Identity Provider (IdP) or API provider allowing third-party apps to act on a user's behalf.
