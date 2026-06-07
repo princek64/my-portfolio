@@ -14,8 +14,8 @@ export default function Design() {
       <h1 className="mb-8 text-2xl font-medium tracking-tight">Design</h1>
       <div className="space-y-2">
         {designs.map((design, index) => {
-          const isExternal = !!design.url;
-          const isInternal = !design.url && !!design.slug;
+          const isInternal = !!design.slug;
+          const isExternal = !isInternal && !!design.url;
 
           const cardContent = (
             <div className="flex flex-col">

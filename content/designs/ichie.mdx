@@ -1,40 +1,49 @@
 ---
-title: "Ichie"
-year: "2026"
-description: "A design system and mobile interface for a personal networking app, centered around intentionality and the philosophy of ichigo ichie."
-tools: "Product Design · Design Systems · React · Figma · Framer Motion"
-status: "Active Development"
+title: Ichie
+year: 2026
+tags: [Product Design, Design Systems, React]
+status: Live
+url: https://ichie-web.vercel.app
 ---
 
-### **Overview**
+# Ichie
 
-**Ichie** is a project that bridges the gap between high-concept philosophy and practical digital utility. The challenge was to design a networking tool that didn't feel like a cold CRM (Customer Relationship Management) system, but rather a warm, personal repository of human connection.
+**Product Design · Design Systems · React · 2026**
 
-### **The Design Challenge**
+Ichie is a personal CRM for remembering the people you meet at events. The name comes from *ichigo ichie*, a Japanese concept that means "one time, one meeting" — the idea that every encounter is unique and won't happen the same way again.
 
-How do you design an interface that encourages "presence" rather than "scrolling"? 
+I built the first version at the Zero to Agent London hackathon in May 2026.
 
-Most networking apps are built for speed and volume. Ichie is built for depth and memory. The design system had to reflect this:
-- **Calmness:** Avoiding bright, "attention-grabbing" colors.
-- **Intentionality:** Every interaction should feel deliberate.
-- **Longevity:** A UI that feels timeless, not trendy.
+---
 
-### **Design System: "Washi"**
+## The Problem
 
-I developed a design system called **Washi**, named after traditional Japanese paper. 
+I kept leaving events with a few names in my notes and no real way to follow up. LinkedIn felt too formal. My notes app was a mess. There was nowhere to log who I met, what we talked about, and when I might want to reach out again.
 
-- **Typography:** Using a mix of serif for storytelling and sans-serif for utility, creating a hierarchy that feels both literary and modern.
-- **Color Palette:** A "Noren" palette — deep indigos, charcoal greys, and warm parchment whites.
-- **Grid & Spacing:** An 8pt grid system with generous "Ma" (negative space) to allow the content to breathe.
+---
 
-### **From Design to Development**
+## What I Built
 
-The transition from Figma to React was a core part of this project. 
+You can log people you've met, attach them to events, and track interactions over time. There's a Luma integration that pulls in attendees automatically, so you're not manually adding people you already saw on the guest list.
 
-1. **Tokens:** Defined a comprehensive set of design tokens (color, spacing, typography) that were shared across Figma and the CSS/Tailwind configuration.
-2. **Component Mapping:** Every Figma component was meticulously mapped to a React component, ensuring that the "hand-crafted" feel of the design was preserved in the code.
-3. **Motion Design:** Framer Motion was used to implement "soft" transitions — fades and subtle scale changes — that mimic the natural flow of thought and memory.
+There's also an AI layer using Groq that suggests who to reconnect with, based on how long it's been and what you have in common.
 
-### **Impact**
+---
 
-Ichie demonstrates that "design engineering" is about more than just writing code; it's about translating a philosophical vision into a tangible, high-performance digital experience.
+## Design Approach
+
+I wanted it to feel like a notebook, not a dashboard. Clean type, lots of whitespace, a restrained colour palette. The design system covers person cards, event entries, timeline views, and the interaction log.
+
+Built in React with Next.js App Router and Supabase on the backend.
+
+---
+
+## Stack
+
+Next.js · Supabase (PostgreSQL, Auth, RLS) · Groq AI · Vercel
+
+---
+
+## What's Next
+
+Still iterating. The main things on the roadmap are a richer person timeline view, better AI follow-up prompts, and a cleaner onboarding flow. I use it myself, which keeps me honest about what actually needs fixing.

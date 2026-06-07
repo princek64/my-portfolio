@@ -36,6 +36,6 @@ export const designs: Design[] = [
       "A 360-degree immersive video experience set inside a specialty cafe with an in-house roastery. A Birkbeck project exploring spatial interaction and immersive media — part learning, part play, built with some interesting tools along the way.",
     status: "In progress · May 2026",
     url: null,
-    slug: "cafe-immersive",
+    slug: "cafe-immersive-experience",
   },
 ];

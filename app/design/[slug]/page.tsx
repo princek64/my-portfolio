@@ -30,7 +30,14 @@ export default function DesignDetail({
   if (!study) notFound();
 
   const { metadata, content } = study!;
-  const toolTags = metadata.tools?.split("·").map((t) => t.trim()) ?? [];
+  
+  let toolTags: string[] = [];
+  if (metadata.tools) {
+    toolTags = metadata.tools.split("·").map((t) => t.trim());
+  } else if (metadata.tags) {
+    const cleanTags = metadata.tags.replace(/[\[\]]/g, "");
+    toolTags = cleanTags.split(",").map((t) => t.trim()).filter(Boolean);
+  }
 
   return (
     <section className="animate-page-enter">
@@ -60,6 +67,20 @@ export default function DesignDetail({
           <p className="text-sm text-neutral-400 dark:text-neutral-500 italic mb-4">
             {metadata.status}
           </p>
+        )}
+
+        {metadata.url && (
+          <div className="mb-4">
+            <a
+              href={metadata.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+            >
+              <span>Visit Live Project</span>
+              <span className="text-xs">↗</span>
+            </a>
+          </div>
         )}
 
         {toolTags.length > 0 && (

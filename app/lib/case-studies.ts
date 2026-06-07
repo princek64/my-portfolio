@@ -15,7 +15,9 @@ export type DesignCaseStudyMeta = {
   year: string;
   description: string;
   tools?: string;
+  tags?: string;
   status?: string;
+  url?: string;
 };
 
 function parseFrontmatter(fileContent: string) {
