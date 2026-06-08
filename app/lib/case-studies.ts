@@ -8,6 +8,7 @@ export type ProjectCaseStudyMeta = {
   tech?: string;
   role?: string;
   status?: string;
+  url?: string;
 };
 
 export type DesignCaseStudyMeta = {

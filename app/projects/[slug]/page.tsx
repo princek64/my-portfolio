@@ -53,10 +53,10 @@ export default function ProjectDetail({
   params: { slug: string };
 }) {
   let study = getProjectCaseStudies().find((s) => s.slug === params.slug);
+  const fallback = getFallbackProject(params.slug);
   
   // Fallback to project-data description if no MDX case study is found
   if (!study) {
-    const fallback = getFallbackProject(params.slug);
     if (!fallback) notFound();
     
     study = {
@@ -65,9 +65,12 @@ export default function ProjectDetail({
         title: fallback.title,
         description: fallback.description,
         year: fallback.year.toString(),
+        url: fallback.url || undefined,
       },
       content: fallback.description, // Use raw description as MDX content for now
     };
+  } else if (fallback && !study.metadata.url) {
+    study.metadata.url = fallback.url || undefined;
   }
 
   const { metadata, content } = study;
@@ -109,6 +112,20 @@ export default function ProjectDetail({
               </span>
             )}
           </p>
+        )}
+
+        {metadata.url && (
+          <div className="mb-4">
+            <a
+              href={metadata.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+            >
+              <span>Visit Live Project</span>
+              <span className="text-xs">↗</span>
+            </a>
+          </div>
         )}
 
         {techTags.length > 0 && (

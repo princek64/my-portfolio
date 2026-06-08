@@ -9,26 +9,7 @@ status: Completed
 
 **Interaction Design · Figma · Miro · ShapesXR · ThingLink · Insta 360 · Meta Quest 3 · 2026**
 
-A project I did for my MA Designing Interaction module at Birkbeck. The idea was to put someone inside a specialty cafe using 360-degree footage, so they could explore the space and learn how a roastery works without being there.
-
----
-
-## The Concept
-
-I shot 360-degree footage inside a specialty cafe with an in-house roastery, then made it interactive. So it's not a virtual simulation — it's real footage you can move through and click around in.
-
-It sits somewhere between a documentary and an experience. You're not watching a video. You're standing in the room.
-
----
-
-## Tools
-
-- **Insta 360** for the footage
-- **ThingLink** to add interactive hotspots to the 360 environment
-- **ShapesXR** for spatial prototyping in VR
-- **Meta Quest 3** for testing in headset
-- **Miro** for journey mapping and content planning
-- **Figma** for any screen-based UI components
+A project for my MA Designing Interaction module at Birkbeck. The idea was to put someone inside a specialty cafe with an in-house roastery, using 360-degree footage, so they could explore and learn how the space works without being there.
 
 ---
 
@@ -36,12 +17,53 @@ It sits somewhere between a documentary and an experience. You're not watching a
 
 How do you guide someone through a space when they can look anywhere?
 
-With a flat UI, you use hierarchy and layout. In 360, none of that applies. I had to think differently about where to place prompts, when to surface information, and how long to let someone sit in a space before nudging them somewhere else.
+With a flat UI, you use hierarchy and layout. In 360, none of that applies. That was the interaction problem I kept coming back to throughout the project.
+
+---
+
+## Research
+
+I started with user interviews to understand how people currently learn about specialty coffee and what draws them to cafe spaces in the first place. A few patterns came up consistently: people are curious about the process behind their coffee but rarely get to see it, and most of them had never tried a VR experience before.
+
+From that I built out user personas to keep the design grounded. The two main ones were someone who's casually curious about coffee culture, and someone more enthusiastic who already visits specialty cafes regularly but wants to go deeper.
+
+---
+
+## Storyboarding
+
+Before touching any tools, I mapped out the experience through storyboards. This helped me figure out the flow: how someone enters the space, what they notice first, where they naturally look, and what would make them want to explore further.
+
+It also surfaced some early problems around information overload. The first version had too many hotspots too soon, which I caught here before building anything.
+
+---
+
+## Prototyping
+
+I went lo-fi first, sketching out the spatial layout and the hotspot structure on paper and in Miro. The goal was to test the logic of the experience before committing to any real footage or tooling.
+
+From there I moved into a hi-fi prototype using ShapesXR for the spatial layer and ThingLink for the interactive hotspots on the actual 360 footage. Figma handled the screen-based UI components that appear when you interact with a hotspot.
+
+---
+
+## Testing
+
+Testing in the Meta Quest 3 was where a lot of assumptions fell apart. Things that looked fine on screen felt wrong in the headset. Text placement, hotspot sizing, how long to linger before prompting the next interaction — all of it needed adjusting once I was actually inside the experience.
+
+I ran a small round of usability testing with the hi-fi prototype and used the feedback to tighten up the flow and reduce friction at the key decision points.
+
+---
+
+## Tools
+
+- **Insta 360** for the footage
+- **ThingLink** for interactive hotspots in the 360 environment
+- **ShapesXR** for spatial prototyping in VR
+- **Meta Quest 3** for in-headset testing
+- **Miro** for storyboarding, journey mapping, and content planning
+- **Figma** for screen-based UI components
 
 ---
 
 ## What I Took Away
 
-Using this many tools in one project is messy. Each one has its own logic, and getting them to play nicely together took more planning than I expected. Spending time in the headset testing the experience made it obvious how different spatial interaction is from screen design. Small things that seem fine on a monitor feel completely wrong when you're wearing a Quest.
-
-The written reflection that came with the project helped me make sense of those decisions, which ended up being just as useful as the experience itself.
+This was the project that made me realise how different spatial interaction design is from screen design. The research process mattered more here than on any other project I've done, because the medium is so unfamiliar to most people. Without the interviews and personas upfront, I'd have designed something that made sense to me but not to the people actually using it.

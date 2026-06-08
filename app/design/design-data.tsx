@@ -25,7 +25,7 @@ export const designs: Design[] = [
     tools: "Visual Design · Figma",
     description:
       "A complete design system for a specialty coffee mobile app, built from scratch. Pastel palette, three-typeface system, 8pt grid, reusable components, and three high-fidelity screens grounded in a Wes Anderson-inspired aesthetic direction.",
-    url: null,
+    url: "https://v0-wes-anderson-coffee.vercel.app/",
     slug: "london-coffee-roasters",
   },
   {
