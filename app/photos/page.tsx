@@ -1,13 +1,17 @@
 import React from "react";
 import type { Metadata } from "next";
 import { ImageGrid } from "app/components/image-grid";
+import { PexelsGrid } from "app/components/pexels-grid";
+import { getPexelsPhotos } from "app/lib/pexels";
 
 export const metadata: Metadata = {
   title: "Photos",
   description: "My Photos",
 };
 
-export default function Photos() {
+export default async function Photos() {
+  const pexelsPhotos = await getPexelsPhotos();
+
   return (
     <section className="animate-page-enter">
       <h1 className="mb-8 text-2xl font-medium tracking-tight">Photos</h1>
@@ -41,6 +45,24 @@ export default function Photos() {
           },
         ]}
       />
+
+      {pexelsPhotos.length > 0 && (
+        <div className="mt-4">
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            more of my shots on{" "}
+            <a
+              href="https://www.pexels.com/@prince-kukreja-166602331/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-neutral-700 dark:hover:text-neutral-300"
+            >
+              Pexels
+            </a>
+          </p>
+
+          <PexelsGrid photos={pexelsPhotos} />
+        </div>
+      )}
     </section>
   );
 }
