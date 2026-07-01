@@ -3,6 +3,8 @@ export interface Design {
   year: number;
   tools: string;
   description: string;
+  /** Single-line summary for compact cards (e.g. homepage featured list). */
+  summary: string;
   status?: string;
   url?: string | null;
   /** Internal slug for design case study page. */
@@ -16,6 +18,7 @@ export const designs: Design[] = [
     tools: "Product Design · Design Systems · React",
     description:
       "A personal event memory and network logging app based on the Japanese philosophy of ichigo ichie. Designed and built a comprehensive design system, translating it into a functional React application with a focus on intentional networking.",
+    summary: "Event memory app — designed the system, built it in React.",
     url: "https://ichie-web.vercel.app/",
     slug: "ichie",
   },
@@ -25,6 +28,7 @@ export const designs: Design[] = [
     tools: "Visual Design · Figma",
     description:
       "A complete design system for a specialty coffee mobile app, built from scratch. Pastel palette, three-typeface system, 8pt grid, reusable components, and three high-fidelity screens grounded in a Wes Anderson-inspired aesthetic direction.",
+    summary: "Coffee app design system — built from scratch in Figma.",
     url: "https://v0-wes-anderson-coffee.vercel.app/",
     slug: "london-coffee-roasters",
   },
@@ -34,6 +38,7 @@ export const designs: Design[] = [
     tools: "Interaction Design · Figma · Miro · Shapes XR · Thinglink · Insta 360 · Meta Quest 3",
     description:
       "A 360-degree immersive video experience set inside a specialty cafe with an in-house roastery. A Birkbeck project exploring spatial interaction and immersive media — part learning, part play, built with some interesting tools along the way.",
+    summary: "360° cafe experience — an immersive spatial design project.",
     status: "In progress · May 2026",
     url: null,
     slug: "cafe-immersive-experience",

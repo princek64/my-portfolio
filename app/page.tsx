@@ -95,7 +95,7 @@ export default function Page() {
                     {project.title}
                   </span>
                   <span className="text-xs text-neutral-500 dark:text-neutral-400 line-clamp-1 mt-0.5">
-                    {project.description}
+                    {project.summary}
                   </span>
                 </div>
               </Link>
@@ -111,10 +111,20 @@ export default function Page() {
       </div>
 
       {/* ── Community note ───────────────────────────────────────────── */}
-      <div className="mb-4 pl-4 border-l-2 border-neutral-200 dark:border-neutral-800">
-        <p className="text-xs text-neutral-400 dark:text-neutral-500 leading-relaxed">
-          volunteered at Droidcon London, React Advanced, AI Dev Con
-        </p>
+      <div className="mb-4">
+        <span className="block text-[11px] uppercase tracking-wide text-neutral-400 dark:text-neutral-500 mb-2">
+          Volunteered at
+        </span>
+        <div className="flex flex-wrap gap-1.5">
+          {["Droidcon London", "React Advanced", "AI Dev Con"].map((event) => (
+            <span
+              key={event}
+              className="text-[11px] font-medium px-2.5 py-1 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400"
+            >
+              {event}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
