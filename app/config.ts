@@ -1,10 +1,10 @@
 export const metaData = {
-  baseUrl: "https://www.linkedin.com/in/princekukreja/",
+  baseUrl: "https://pixelprince.dev",
   title: "Prince",
   titleShort: "rince",
   name: "princekukreja",
   ogImage: "/graph.svg",
-  description: "Full-Stack Developer",
+  description: "Design engineer building interfaces, design systems, and accessible frontends.",
 };
 
 export const socialLinks = {
@@ -14,5 +14,5 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/princekukreja/",
   devTo: "https://dev.to/princekukreja",
   dribbble: "https://dribbble.com/princek",
-  email: "mailto:contact@pixelprince.com",
+  email: "mailto:contact@pixelprince.dev",
 };
