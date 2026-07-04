@@ -13,6 +13,16 @@ export interface Design {
 
 export const designs: Design[] = [
   {
+    title: "Community Christmas Map",
+    year: 2026,
+    tools: "Product Design · Figma · Leaflet",
+    description:
+      "A map app for Marmalade Trust, built with Scottish Tech Army, to help people find community Christmas events near them. Leading a small team of three, handling design, PM, and client conversations. Working through map UI, event cards, and how people filter events on a small screen. Launching October 2026.",
+    summary: "Map app for community Christmas events — leading design.",
+    url: null,
+    slug: "community-christmas-map",
+  },
+  {
     title: "Ichie",
     year: 2026,
     tools: "Product Design · Design Systems · React",
@@ -39,7 +49,6 @@ export const designs: Design[] = [
     description:
       "A 360-degree immersive video experience set inside a specialty cafe with an in-house roastery. A Birkbeck project exploring spatial interaction and immersive media — part learning, part play, built with some interesting tools along the way.",
     summary: "360° cafe experience — an immersive spatial design project.",
-    status: "In progress · May 2026",
     url: null,
     slug: "cafe-immersive-experience",
   },
