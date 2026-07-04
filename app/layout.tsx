@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
 import { ThemeProvider } from "./components/theme-switch";
+import { PostHog } from "./components/posthog";
 import { metaData } from "./config";
 
 const dmSans = DM_Sans({
@@ -101,6 +102,7 @@ export default function RootLayout({
             <Footer />
             <Analytics />
             <SpeedInsights />
+            <PostHog />
           </main>
         </ThemeProvider>
       </body>
