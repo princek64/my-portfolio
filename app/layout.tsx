@@ -9,7 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
 import { ThemeProvider } from "./components/theme-switch";
 import { PostHog } from "./components/posthog";
-import { metaData } from "./config";
+import { metaData, socialLinks } from "./config";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -18,19 +18,23 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const ogImageUrl = `${metaData.ogImage}?title=${encodeURIComponent(
+  metaData.seoTitle
+)}`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(metaData.baseUrl),
   title: {
-    default: metaData.title,
+    default: metaData.seoTitle,
     template: `%s | ${metaData.title}`,
   },
   description: metaData.description,
   openGraph: {
-    images: metaData.ogImage,
-    title: metaData.title,
+    images: ogImageUrl,
+    title: metaData.seoTitle,
     description: metaData.description,
     url: metaData.baseUrl,
-    siteName: metaData.name,
+    siteName: metaData.title,
     locale: "en_US",
     type: "website",
   },
@@ -46,8 +50,10 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: metaData.name,
+    title: metaData.seoTitle,
+    description: metaData.description,
     card: "summary_large_image",
+    images: [ogImageUrl],
   },
   icons: {
     icon: [
@@ -87,6 +93,29 @@ export default function RootLayout({
           type="application/feed+json"
           href="/feed.json"
           title="JSON Feed"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Prince Kukreja",
+              jobTitle: "Design Engineer",
+              url: metaData.baseUrl,
+              image: `${metaData.baseUrl}/profile.png`,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "London",
+                addressCountry: "GB",
+              },
+              sameAs: [
+                socialLinks.linkedin,
+                socialLinks.github,
+                socialLinks.dribbble,
+              ],
+            }),
+          }}
         />
       </head>
       <body className="antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40">
