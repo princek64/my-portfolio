@@ -8,11 +8,9 @@ import { metaData } from "../config";
 import { PixelPrinceMark } from "./PixelPrinceMark";
 
 const navItems = {
+  "/work": { name: "Work" },
   "/about": { name: "About" },
-  "/projects": { name: "Projects" },
-  "/design": { name: "Design" },
-  "/blog": { name: "Blog" },
-  "/photos": { name: "Photos" },
+  "/blog": { name: "Writing" },
 };
 
 export function Navbar() {
@@ -41,9 +39,9 @@ export function Navbar() {
       <div className="flex flex-col md:flex-row md:items-center justify-between">
         {/* Top row: logo + hamburger on mobile, logo on desktop */}
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
-            <PixelPrinceMark variant="auto" size={48} compact />
-            <span className="text-3xl font-bold tracking-tight">
+          <Link href="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)} aria-label="Prince Kukreja, Home">
+            <PixelPrinceMark variant="auto" size={48} compact aria-hidden="true" />
+            <span className="text-3xl font-bold tracking-tight" aria-hidden="true">
               {metaData.titleShort}
             </span>
           </Link>
@@ -71,6 +69,7 @@ export function Navbar() {
               <Link
                 key={path}
                 href={path}
+                aria-current={isActive ? "page" : undefined}
                 className={`nav-link transition-colors duration-200 flex align-middle relative text-sm font-medium ${isActive
                     ? "active text-neutral-900 dark:text-neutral-100"
                     : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100"
@@ -80,6 +79,13 @@ export function Navbar() {
               </Link>
             );
           })}
+          <a
+            href="/cv.pdf"
+            download
+            className="nav-link transition-colors duration-200 flex align-middle relative text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100"
+          >
+            Download CV
+          </a>
           <ThemeSwitch />
         </div>
       </div>
@@ -97,6 +103,7 @@ export function Navbar() {
                 key={path}
                 href={path}
                 onClick={() => setMenuOpen(false)}
+                aria-current={isActive ? "page" : undefined}
                 className={`mobile-menu-link ${isActive ? "active" : ""}`}
               >
                 {name}
@@ -104,6 +111,14 @@ export function Navbar() {
               </Link>
             );
           })}
+          <a
+            href="/cv.pdf"
+            download
+            onClick={() => setMenuOpen(false)}
+            className="mobile-menu-link"
+          >
+            Download CV
+          </a>
           <div className="mt-8 pt-6 border-t border-neutral-200/50 dark:border-neutral-800/50">
             <ThemeSwitch />
           </div>

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export type ProjectCaseStudyMeta = {
+export type WorkCaseStudyMeta = {
   title: string;
   year: string;
   description: string;
@@ -9,16 +9,8 @@ export type ProjectCaseStudyMeta = {
   role?: string;
   status?: string;
   url?: string;
-};
-
-export type DesignCaseStudyMeta = {
-  title: string;
-  year: string;
-  description: string;
   tools?: string;
   tags?: string;
-  status?: string;
-  url?: string;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -59,14 +51,8 @@ function getMDXData(dir: string) {
   });
 }
 
-export function getProjectCaseStudies() {
+export function getWorkCaseStudies() {
   return getMDXData(
-    path.join(process.cwd(), "content", "projects")
-  ) as { metadata: ProjectCaseStudyMeta; slug: string; content: string }[];
-}
-
-export function getDesignCaseStudies() {
-  return getMDXData(
-    path.join(process.cwd(), "content", "designs")
-  ) as { metadata: DesignCaseStudyMeta; slug: string; content: string }[];
+    path.join(process.cwd(), "content", "work")
+  ) as { metadata: WorkCaseStudyMeta; slug: string; content: string }[];
 }

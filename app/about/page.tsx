@@ -15,11 +15,13 @@ export default function About() {
 
       <div className="prose prose-neutral dark:prose-invert mb-8 text-[15px] leading-relaxed">
         <p>
-          i've spent six years building frontend interfaces and somewhere along
-          the way, the design decisions started mattering as much as the code.
+          i've spent six years building frontend interfaces, and over time, i found myself caring just as much about the design decisions behind them as the code.
         </p>
         <p>
-          i'm currently finishing an MA in Digital Media Design at Birkbeck. it's sharpened how i think about systems, typography, accessibility, and the gap between what looks right and what actually works for people.
+          that's what led me to design engineering: working somewhere between the two, where a Figma frame can become a real interface, and where writing the code can expose problems the mockup didn't.
+        </p>
+        <p>
+          i'm currently finishing an MA in Digital Media Design at Birkbeck, where i've been digging deeper into interaction, design systems, accessibility, and what happens when AI starts changing the interface itself.
         </p>
 
         <p className="mt-8 mb-2 font-medium text-neutral-800 dark:text-neutral-200">
@@ -27,13 +29,13 @@ export default function About() {
         </p>
         <ul className="list-none pl-0 space-y-3 m-0 border-l border-neutral-200 dark:border-neutral-800 ml-2">
           <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            <span className="font-medium text-neutral-800 dark:text-neutral-200">the code →</span> JS/TS, React, Vue, Tailwind. focused on the frontend, end to end.
+            <span className="font-medium text-neutral-800 dark:text-neutral-200">the code →</span> JS/TS, React, Vue, Tailwind. comfortable taking a frontend from idea to shipped product.
           </li>
           <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            <span className="font-medium text-neutral-800 dark:text-neutral-200">the design →</span> Figma is where most ideas start for me. i think in design systems: components, tokens, patterns. mockups that communicate intent, not just aesthetics.
+            <span className="font-medium text-neutral-800 dark:text-neutral-200">the design →</span> Figma, design systems, components, tokens, patterns. i care about making designs clear enough to build, not just nice enough to present.
           </li>
           <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            <span className="font-medium text-neutral-800 dark:text-neutral-200">the ethos →</span> accessibility from the start, not bolted on at the end. using AI as a tool, not a replacement for thinking
+            <span className="font-medium text-neutral-800 dark:text-neutral-200">the thinking →</span> accessibility early, systems over one-off screens, and AI as a tool for exploring ideas—not a substitute for having them.
           </li>
         </ul>
 
@@ -42,10 +44,7 @@ export default function About() {
         </p>
         <ul className="list-none pl-0 space-y-2 m-0 border-l border-neutral-200 dark:border-neutral-800 ml-2">
           <li className="pl-4 relative before:content-[''] before:absolute before:w-2 before:h-px before:bg-neutral-300 dark:before:bg-neutral-700 before:left-0 before:top-3">
-            i love showing up for the community that gave me so much. i've volunteered at:
-          </li>
-          <li className="pl-4 mt-2">
-            → Droidcon London
+            i like giving back to the communities i've learned from. i've volunteered at:
           </li>
           <li className="pl-4">
             → React Native London
@@ -54,10 +53,16 @@ export default function About() {
             → React Advanced London
           </li>
           <li className="pl-4">
-            → Devoxx UK
+            → AI Dev Con
           </li>
           <li className="pl-4">
-            → AI Dev Con
+            → AI Coding Summit London
+          </li>
+          <li className="pl-4 mt-2">
+            → Droidcon London
+          </li>
+          <li className="pl-4">
+            → Devoxx UK
           </li>
         </ul>
 

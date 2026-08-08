@@ -2,24 +2,22 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CustomMDX } from "app/components/mdx";
-import { getProjectCaseStudies } from "app/lib/case-studies";
-import { projects } from "../project-data";
+import { getWorkCaseStudies } from "app/lib/case-studies";
+import { workItems } from "../work-data";
 
-// Helper to get fallback project
 function getFallbackProject(slug: string) {
-  return projects.find((p) => {
+  return workItems.find((p) => {
     const pSlug = p.slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
     return pSlug === slug;
   });
 }
 
 export async function generateStaticParams() {
-  const mdxSlugs = getProjectCaseStudies().map((s) => ({ slug: s.slug }));
-  const dataSlugs = projects.map((p) => ({
+  const mdxSlugs = getWorkCaseStudies().map((s) => ({ slug: s.slug }));
+  const dataSlugs = workItems.map((p) => ({
     slug: p.slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
   }));
   
-  // Combine and deduplicate
   const allSlugs = [...mdxSlugs, ...dataSlugs];
   const uniqueSlugs = Array.from(new Set(allSlugs.map((s) => s.slug))).map((slug) => ({ slug }));
   return uniqueSlugs;
@@ -30,7 +28,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata | undefined> {
-  const study = getProjectCaseStudies().find((s) => s.slug === params.slug);
+  const study = getWorkCaseStudies().find((s) => s.slug === params.slug);
   if (study) {
     return {
       title: study.metadata.title,
@@ -47,15 +45,14 @@ export async function generateMetadata({
   }
 }
 
-export default function ProjectDetail({
+export default function WorkDetail({
   params,
 }: {
   params: { slug: string };
 }) {
-  let study = getProjectCaseStudies().find((s) => s.slug === params.slug);
+  let study = getWorkCaseStudies().find((s) => s.slug === params.slug);
   const fallback = getFallbackProject(params.slug);
   
-  // Fallback to project-data description if no MDX case study is found
   if (!study) {
     if (!fallback) notFound();
     
@@ -66,8 +63,10 @@ export default function ProjectDetail({
         description: fallback.description,
         year: fallback.year.toString(),
         url: fallback.url || undefined,
+        role: fallback.role,
+        tech: fallback.capabilities.join(", "),
       },
-      content: fallback.description, // Use raw description as MDX content for now
+      content: fallback.description,
     };
   } else if (fallback && !study.metadata.url) {
     study.metadata.url = fallback.url || undefined;
@@ -75,21 +74,30 @@ export default function ProjectDetail({
 
   const { metadata, content } = study;
   const techTags = metadata.tech?.split(",").map((t) => t.trim()) ?? [];
+  
+  // also merge tools/tags from design case studies if they exist in the metadata
+  let additionalTags: string[] = [];
+  if ((metadata as any).tools) {
+    additionalTags = (metadata as any).tools.split("·").map((t: string) => t.trim());
+  } else if ((metadata as any).tags) {
+    const cleanTags = (metadata as any).tags.replace(/[\[\]]/g, "");
+    additionalTags = cleanTags.split(",").map((t: string) => t.trim()).filter(Boolean);
+  }
+
+  const allTags = Array.from(new Set([...techTags, ...additionalTags])).filter(Boolean);
 
   return (
     <section className="animate-page-enter">
-      {/* Back link */}
       <Link
-        href="/projects"
+        href="/work"
         className="inline-flex items-center gap-1.5 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors mb-10 group"
       >
         <span className="inline-block transition-transform group-hover:-translate-x-0.5 duration-150">
           ←
         </span>
-        Projects
+        Work
       </Link>
 
-      {/* Case study header */}
       <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-6 mb-10">
         <div className="flex items-start justify-between gap-4 mb-2">
           <h1 className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 leading-snug">
@@ -119,18 +127,19 @@ export default function ProjectDetail({
             <a
               href={metadata.url}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="inline-flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
             >
-              <span>Visit Live Project</span>
-              <span className="text-xs">↗</span>
+              <span>{fallback?.linkLabel || "Visit Live Project"}</span>
+              <span className="text-xs" aria-hidden="true">↗</span>
+              <span className="sr-only">(opens in a new tab)</span>
             </a>
           </div>
         )}
 
-        {techTags.length > 0 && (
+        {allTags.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
-            {techTags.map((tag) => (
+            {allTags.map((tag) => (
               <span
                 key={tag}
                 className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300"
@@ -142,21 +151,19 @@ export default function ProjectDetail({
         )}
       </div>
 
-      {/* MDX body */}
       <article className="prose prose-quoteless prose-neutral dark:prose-invert">
         <CustomMDX source={content} />
       </article>
 
-      {/* Footer back link */}
       <hr className="section-divider mt-12" />
       <Link
-        href="/projects"
+        href="/work"
         className="inline-flex items-center gap-1.5 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors mt-6 group"
       >
         <span className="inline-block transition-transform group-hover:-translate-x-0.5 duration-150">
           ←
         </span>
-        Back to Projects
+        Back to Work
       </Link>
     </section>
   );

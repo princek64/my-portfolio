@@ -33,7 +33,7 @@ export default async function Photos() {
           },
           {
             src: "/photos/photo10.jpg",
-            alt: "Holi - Feswtival of Colors",
+            alt: "Holi - Festival of Colors",
           },
           {
             src: "/photos/photo6.jpg",

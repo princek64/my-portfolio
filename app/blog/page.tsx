@@ -11,7 +11,7 @@ export default function BlogPosts() {
 
   return (
     <section className="animate-page-enter">
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">My Blogs</h1>
+      <h1 className="mb-8 text-2xl font-medium tracking-tight">Writing</h1>
       <div>
         {allBlogs
           .sort((a, b) => {

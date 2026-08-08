@@ -10,6 +10,30 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/projects',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/projects/:slug',
+        destination: '/work/:slug',
+        permanent: true,
+      },
+      {
+        source: '/design',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/design/:slug',
+        destination: '/work/:slug',
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

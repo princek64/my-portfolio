@@ -23,7 +23,13 @@ function CustomLink(props) {
   if (href.startsWith("#")) {
     return <a {...props} />;
   }
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  const { children, ...rest } = props;
+  return (
+    <a target="_blank" rel="noopener" {...rest}>
+      {children}
+      <span className="sr-only">(opens in a new tab)</span>
+    </a>
+  );
 }
 
 function RoundedImage(props) {

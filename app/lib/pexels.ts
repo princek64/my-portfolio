@@ -53,7 +53,7 @@ export async function getPexelsPhotos(): Promise<PexelsPhoto[]> {
     .map((photo: any) => ({
       id: photo.id,
       url: photo.src?.large || photo.src?.original,
-      alt: photo.alt || "Photo by Prince Kukreja",
+      alt: photo.alt || "",
       width: photo.width,
       height: photo.height,
       pexelsUrl: photo.url,

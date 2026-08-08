@@ -365,7 +365,8 @@ table {
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.3s;
 }
 
 .dark .mobile-menu-overlay {
@@ -375,6 +376,7 @@ table {
 .mobile-menu-overlay.open {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .mobile-menu-content {
