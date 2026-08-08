@@ -51,53 +51,65 @@ export default function Page() {
   return (
     <section className="animate-page-enter">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <a href={socialLinks.linkedin} target="_blank" rel="noopener">
-        <Image
-          src="/profile.png"
-          alt="Profile photo"
-          className="rounded-full bg-gray-100 block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-5 hover:opacity-90 transition-opacity duration-200"
-          unoptimized
-          width={160}
-          height={160}
-          priority
-        />
-        <span className="sr-only">(opens in a new tab)</span>
-      </a>
-
-      {/* Status indicator */}
-      <div className="flex items-center gap-2 mb-4 text-sm text-neutral-500 dark:text-neutral-400">
-        <span className="pulse-dot" aria-hidden="true" />
-        <span>open to design engineering and frontend product roles in London</span>
-      </div>
-
-      <h1 className="mb-6 text-xl font-medium tracking-tight gradient-text">
-        I design it.
-        I build it.
-      </h1>
-
-      <div className="prose prose-neutral dark:prose-invert mb-8 text-[15px] leading-relaxed">
-        <p>
-          <strong>design engineer based in 📍 London.</strong> I design and
-          build digital products, working across UX, design systems, and
-          production frontend with React and Vue. Currently designing the UX
-          at{" "}
-          <a href="https://getsociable.app/" target="_blank" rel="noopener">
-            GetSociable
-            <span className="sr-only">(opens in a new tab)</span>
-          </a>
-          , while completing an MA in Digital Media Design at Birkbeck, where
-          I research how conversational and generative interfaces change the
-          way people interact with products.
-        </p>
-      </div>
-
-      <div className="flex gap-4 mb-12">
+      <div className="sm:grid sm:grid-cols-[minmax(0,1fr)_160px] sm:items-start sm:gap-8">
         <a
-          href={socialLinks.email}
-          className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-85 transition-opacity duration-200"
+          href={socialLinks.linkedin}
+          target="_blank"
+          rel="noopener"
+          className="mb-10 block sm:col-start-2 sm:row-start-1 sm:mb-0"
         >
-          Get in touch
+          <Image
+            src="/profile.png"
+            alt="Profile photo"
+            className="mx-auto block rounded-full bg-gray-100 transition-opacity duration-200 hover:opacity-90"
+            unoptimized
+            width={160}
+            height={160}
+            priority
+          />
+          <span className="sr-only">(opens in a new tab)</span>
         </a>
+
+        <div className="sm:col-start-1 sm:row-start-1">
+          {/* Status indicator */}
+          <div className="flex items-center gap-2 mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+            <span className="pulse-dot" aria-hidden="true" />
+            <span>open to design engineering and frontend roles in London</span>
+          </div>
+
+          <h1 className="mb-6 text-xl font-medium tracking-tight gradient-text">
+            I design it.
+            I build it.
+          </h1>
+
+          <div className="prose prose-neutral dark:prose-invert mb-8 text-[15px] leading-relaxed">
+            <p>
+              design engineer based in📍London. I design and
+              build digital products, working across UX, design systems, and
+              production frontend with React and Vue.
+            </p>
+            <p>
+              Currently designing the UX
+              at{" "}
+              <a href="https://getsociable.app/" target="_blank" rel="noopener">
+                GetSociable
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+              , while completing an MA in Digital Media Design at Birkbeck, where
+              I research how conversational and generative interfaces change the
+              way people interact with products.
+            </p>
+          </div>
+
+          <div className="flex gap-4 mb-12">
+            <a
+              href={socialLinks.email}
+              className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-85 transition-opacity duration-200"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* ── Flagship projects ────────────────────────────────────────── */}
