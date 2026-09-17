@@ -7,16 +7,106 @@ tags: [UX Research, Design Systems, Figma]
 status: Current
 ---
 
-UX design placement at GetSociable, a consumer mobile app for discovering social events and meeting people. Working embedded with the product and engineering team.
+{/*
+  TODO (Prince): add real assets to public/work/getsociable/ and wire them
+  into the components below. Suggested files, matching the narrative:
+    - cover.webp              hero shot of the live app
+    - audit-onboarding.webp   annotated onboarding screen(s), plain image
+    - audit-discovery.webp    annotated discovery/home feed, plain image
+    - audit-search.webp       annotated search screen, plain image
+    - live-onboarding.webp / proto-onboarding.webp   Comparison pair
+    - discovery-v1.webp / discovery-v2.webp          Comparison pair
+    - live-search.webp / proto-search.webp           Comparison pair
+  Once a file exists, swap the matching TODO comment below for the real
+  component (CaseStudyImage / Comparison / PhoneFrame) — examples are left
+  in place as commented-out code so this is a drop-in swap.
+  Also fill in `cover:` in the frontmatter once cover.webp exists.
+*/}
 
-## UX audit
+Redesigning parts of a live social discovery app — onboarding, discovery and search — while embedded in GetSociable's product and engineering team.
 
-Ran a full UX audit of the live app covering onboarding, home feed, discovery, map, itinerary planning, and social features. Cross-referenced the audit against existing design documentation and findings from two rounds of user testing.
+---
 
-## Design system audit
+## The context
 
-Audited the existing Figma design system for consistency gaps, covering component naming, spacing, colour usage, and interaction states. Produced prioritised findings for stakeholder review.
+GetSociable is a consumer mobile app for finding social events and meeting people nearby. I joined as a UX design placement, working inside an existing product with its own users, its own design system, and its own team — not a from-scratch redesign.
 
-## Current work
+My scope was the UX audit, the design system audit, and turning both into concrete design changes across onboarding, discovery and search.
 
-Currently working on translating audit findings into design improvements and updating the design system to close the gaps identified.
+{/* TODO (Prince): CaseStudyImage — cover.webp, plain, full width */}
+
+---
+
+## I started with the live product
+
+Before proposing anything, I audited the live app: onboarding, home feed, discovery, map, itinerary planning and social features. I cross-referenced what I found against the existing design documentation and two rounds of prior user testing, so the audit wasn't just my opinion of the app.
+
+A few things stood out enough to act on:
+
+- Onboarding asked for more than it needed to before showing any value.
+- Content hierarchy wasn't consistent between similar sections, so the same type of content looked different depending on where you saw it.
+- The distinction between your home city and a city you're just browsing wasn't clear in the interface.
+
+{/* TODO (Prince): CaseStudyImage — audit-onboarding.webp, plain, caption "Live onboarding, annotated" */}
+{/* TODO (Prince): CaseStudyImage — audit-discovery.webp, plain, caption "Home feed, annotated" */}
+
+---
+
+## Onboarding
+
+The live onboarding flow front-loaded a lot of setup — city, gender, date of birth, preferences — before the app showed anything worth staying for, and it required picking multiple interests before you could move on at all.
+
+I restructured it around one question per screen, so each step felt like a quick decision instead of a form. I also separated the idea of "home city" from "browsing city" explicitly, since the audit showed people conflating the two — the app needs to know where you live, but people also want to browse events somewhere they're travelling to.
+
+I looked at Google, Apple and email as sign-in options, and at where native permission prompts (location, notifications) should sit in the flow, since asking for them too early was part of why onboarding felt heavier than it needed to.
+
+{/* TODO (Prince): Comparison — left: live-onboarding.webp ("Live"), right: proto-onboarding.webp ("Proposed") */}
+
+---
+
+## Discovery
+
+My first pass tried to make every discovery section behave the same way, on the theory that consistency reduces cognitive load. Feedback from the product team was that some of those sections exist as carousels on purpose — collapsing them into one layout made scanning harder, not easier, for the content they hold.
+
+I revised the direction rather than defending the first version: keeping carousel treatment where content benefits from it, and reserving the more rigid layout for sections where scanability matters more than showcasing variety.
+
+{/* TODO (Prince): Comparison — left: discovery-v1.webp ("First direction"), right: discovery-v2.webp ("Revised") */}
+
+---
+
+## Search
+
+The audit flagged search as harder to scan than it should be. I explored a couple of layout directions before settling on one, trading off information density against how quickly someone could tell events apart at a glance.
+
+{/* TODO (Prince): Comparison — left: live-search.webp ("Live"), right: proto-search.webp ("Proposed") */}
+
+---
+
+## What changed after testing
+
+Two rounds of testing ran before I joined, and I used their findings as the baseline for the audit rather than starting from a blank page.
+
+<Finding from="UX audit · prior testing rounds">
+People dropped off during onboarding before understanding why the app needed that much information from them up front — which is part of what drove the one-question-per-screen change.
+</Finding>
+
+---
+
+## Designing inside a live product
+
+This wasn't a speculative redesign. Existing product decisions, existing design patterns, and engineering constraints all shaped what was actually feasible to change. Some ideas I'd have pursued on a blank canvas didn't make sense here — either because they conflicted with a pattern used elsewhere in the app, or because the product team had already made a call on it for reasons that held up under scrutiny (the discovery carousels above are the clearest example of that).
+
+---
+
+## Where it is now
+
+- Onboarding redesign — **In development**
+- Discovery layout revisions — **Approved**
+- Search direction — **Exploration**
+- Design system findings — **In development**, being rolled into components as they're touched
+
+---
+
+## Reflection
+
+Working inside a live product is a different discipline from designing something new. Half the job is telling the difference between "this is a bug" and "this is a decision someone already made on purpose" — and the discovery carousels taught me that faster than anything else here. Consistency is a tool, not a goal in itself.

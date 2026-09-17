@@ -11,6 +11,10 @@ export type WorkCaseStudyMeta = {
   url?: string;
   tools?: string;
   tags?: string;
+  cover?: string;
+  company?: string;
+  duration?: string;
+  team?: string;
 };
 
 function parseFrontmatter(fileContent: string) {

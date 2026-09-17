@@ -1,7 +1,9 @@
+import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CustomMDX } from "app/components/mdx";
+import { CaseStudyImage } from "app/components/case-study-image";
 import { getWorkCaseStudies } from "app/lib/case-studies";
 import { workItems } from "../work-data";
 
@@ -98,6 +100,14 @@ export default function WorkDetail({
         Work
       </Link>
 
+      {(metadata as any).cover && (
+        <CaseStudyImage
+          src={(metadata as any).cover}
+          alt={`${metadata.title} cover`}
+          plain
+        />
+      )}
+
       <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-6 mb-10">
         <div className="flex items-start justify-between gap-4 mb-2">
           <h1 className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 leading-snug">
@@ -108,19 +118,39 @@ export default function WorkDetail({
           </span>
         </div>
 
-        {(metadata.role || metadata.status) && (
-          <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
-            {metadata.role}
-            {metadata.role && metadata.status && (
-              <span className="mx-2 text-neutral-300 dark:text-neutral-700">·</span>
-            )}
-            {metadata.status && (
-              <span className="text-neutral-400 dark:text-neutral-500">
-                {metadata.status}
-              </span>
-            )}
-          </p>
-        )}
+        {(() => {
+          const metaParts = [
+            metadata.role,
+            (metadata as any).company,
+            (metadata as any).duration,
+            (metadata as any).team,
+          ].filter(Boolean);
+
+          if (metaParts.length === 0 && !metadata.status) return null;
+
+          return (
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+              {metaParts.map((part, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && (
+                    <span className="mx-2 text-neutral-300 dark:text-neutral-700">·</span>
+                  )}
+                  {part}
+                </React.Fragment>
+              ))}
+              {metadata.status && (
+                <>
+                  {metaParts.length > 0 && (
+                    <span className="mx-2 text-neutral-300 dark:text-neutral-700">·</span>
+                  )}
+                  <span className="text-neutral-400 dark:text-neutral-500">
+                    {metadata.status}
+                  </span>
+                </>
+              )}
+            </p>
+          );
+        })()}
 
         {metadata.url && (
           <div className="mb-4">
