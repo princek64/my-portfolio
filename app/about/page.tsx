@@ -21,7 +21,7 @@ export default function About() {
           that's what led me to design engineering: working somewhere between the two, where a Figma frame can become a real interface, and where writing the code can expose problems the mockup didn't.
         </p>
         <p>
-          i'm currently finishing an MA in Digital Media Design at Birkbeck, where i've been digging deeper into interaction, design systems, accessibility, and what happens when AI starts changing the interface itself.
+          i completed an MA in Digital Media Design at Birkbeck, where i studied interaction, design systems, accessibility, and how AI changes the way people interact with interfaces.
         </p>
 
         <p className="mt-8 mb-2 font-medium text-neutral-800 dark:text-neutral-200">

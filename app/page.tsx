@@ -73,7 +73,6 @@ export default function Page() {
         <div className="sm:col-start-1 sm:row-start-1">
           {/* Status indicator */}
           <div className="flex items-center gap-2 mb-4 text-sm text-neutral-500 dark:text-neutral-400">
-            <span className="pulse-dot" aria-hidden="true" />
             <span>open to design engineering and frontend roles in London</span>
           </div>
 
@@ -89,14 +88,14 @@ export default function Page() {
               production frontend with React and Vue.
             </p>
             <p>
-              Currently designing the UX
+              Currently working as a Design Engineer
               at{" "}
               <a href="https://getsociable.app/" target="_blank" rel="noopener">
                 GetSociable
                 <span className="sr-only">(opens in a new tab)</span>
               </a>
-              , while completing an MA in Digital Media Design at Birkbeck, where
-              I research how conversational and generative interfaces change the
+              . I completed an MA in Digital Media Design at Birkbeck, where
+              I researched how conversational and generative interfaces change the
               way people interact with products.
             </p>
           </div>
@@ -126,7 +125,7 @@ export default function Page() {
               >
                 <div
                   aria-hidden="true"
-                  className="w-14 h-14 rounded-lg flex-shrink-0 relative overflow-hidden border border-neutral-200/50 dark:border-neutral-800/50 bg-neutral-50 dark:bg-[#151515] group/image"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg flex-shrink-0 relative overflow-hidden border border-neutral-200/50 dark:border-neutral-800/50 bg-neutral-50 dark:bg-[#151515] group/image"
                 >
                   <AbstractArt index={project.workIndex} />
                 </div>

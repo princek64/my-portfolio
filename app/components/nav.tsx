@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeSwitch } from "./theme-switch";
-import { metaData } from "../config";
 
 const navItems = {
   "/work": { name: "Work" },
@@ -39,9 +38,26 @@ export function Navbar() {
         {/* Top row: name and mobile menu */}
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)} aria-label="Prince Kukreja, Home">
-            <span className="text-3xl font-bold tracking-tight" aria-hidden="true">
-              {metaData.titleShort}
-            </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 90"
+              role="img"
+              aria-label="Prince"
+              className="h-10 w-auto text-[#111111] dark:text-neutral-100"
+            >
+              <title>Prince</title>
+              <text
+                x="12"
+                y="66"
+                fontFamily="Nunito, Varela Round, Quicksand, system-ui, sans-serif"
+                fontWeight="800"
+                fontSize="64"
+                fill="currentColor"
+                letterSpacing="-1.2"
+              >
+                Prince
+              </text>
+            </svg>
           </Link>
 
           {/* Hamburger button — mobile only */}
