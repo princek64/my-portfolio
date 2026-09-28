@@ -2,7 +2,7 @@ export const metaData = {
   baseUrl: "https://pixelprince.dev",
   title: "Prince",
   seoTitle: "Prince | Design Engineer, London",
-  titleShort: "rince",
+  titleShort: "Prince",
   name: "princekukreja",
   ogImage: "/og",
   description:

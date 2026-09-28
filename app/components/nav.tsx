@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeSwitch } from "./theme-switch";
 import { metaData } from "../config";
-import { PixelPrinceMark } from "./PixelPrinceMark";
 
 const navItems = {
   "/work": { name: "Work" },
@@ -37,10 +36,9 @@ export function Navbar() {
   return (
     <nav className="lg:mb-16 mb-12 py-5">
       <div className="flex flex-col md:flex-row md:items-center justify-between">
-        {/* Top row: logo + hamburger on mobile, logo on desktop */}
+        {/* Top row: name and mobile menu */}
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)} aria-label="Prince Kukreja, Home">
-            <PixelPrinceMark variant="auto" size={48} compact aria-hidden="true" />
             <span className="text-3xl font-bold tracking-tight" aria-hidden="true">
               {metaData.titleShort}
             </span>
