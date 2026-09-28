@@ -6,8 +6,8 @@ import { AbstractArt } from "./components/AbstractArt";
 const flagships = [
   {
     title: "GetSociable",
-    outcome: "UX design placement for a consumer app that helps people discover social events and meet others.",
-    role: "UX Design Placement",
+    outcome: "Design Engineer placement for a consumer app that helps people discover social events and meet others.",
+    role: "Design Engineer Placement",
     year: 2026,
     url: "https://getsociable.app/",
     slug: "getsociable",

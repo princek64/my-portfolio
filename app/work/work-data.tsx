@@ -19,7 +19,7 @@ export const workItems: WorkItem[] = [
     summary: "UX audit for a live consumer mobile app.",
     url: "https://getsociable.app/",
     slug: "getsociable",
-    role: "UX Design Placement",
+    role: "Design Engineer Placement",
     capabilities: ["UX Research", "Design Systems", "Figma"],
     actionLabel: "Read about GetSociable",
     linkLabel: "Visit Live Project",
