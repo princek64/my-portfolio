@@ -49,11 +49,10 @@ export function Navbar() {
               <text
                 x="12"
                 y="66"
-                fontFamily="Nunito, Varela Round, Quicksand, system-ui, sans-serif"
-                fontWeight="800"
+                className="font-sans tracking-tight"
+                fontWeight="700"
                 fontSize="64"
                 fill="currentColor"
-                letterSpacing="-1.2"
               >
                 Prince
               </text>
@@ -84,7 +83,7 @@ export function Navbar() {
                 key={path}
                 href={path}
                 aria-current={isActive ? "page" : undefined}
-                className={`nav-link transition-colors duration-200 flex align-middle relative text-sm font-medium ${isActive
+                className={`nav-link transition-colors duration-200 inline-flex h-8 items-center relative text-sm font-medium ${isActive
                     ? "active text-neutral-900 dark:text-neutral-100"
                     : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100"
                   }`}
@@ -96,7 +95,7 @@ export function Navbar() {
           <a
             href="/cv.pdf"
             download
-            className="nav-link transition-colors duration-200 flex align-middle relative text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100"
+            className="nav-link transition-colors duration-200 inline-flex h-8 items-center relative text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100"
           >
             Download CV
           </a>

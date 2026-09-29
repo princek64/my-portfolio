@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { socialLinks } from "./config";
-import { AbstractArt } from "./components/AbstractArt";
 
 const flagships = [
   {
@@ -13,7 +12,9 @@ const flagships = [
     slug: "getsociable",
     capabilities: ["UX Research", "Design Systems", "Figma"],
     actionLabel: "Read about GetSociable",
-    workIndex: 0,
+    image: "/work/logos/getsociable.png",
+    imageBackground: "bg-black",
+    imageClassName: "object-contain p-1",
   },
   {
     title: "Ichie",
@@ -23,7 +24,9 @@ const flagships = [
     slug: "ichie",
     capabilities: ["Product Design", "Design Systems", "Frontend"],
     actionLabel: "Read the Ichie case study",
-    workIndex: 1,
+    image: "/work/logos/ichie.png",
+    imageBackground: "bg-[#111111]",
+    imageClassName: "object-cover scale-[4]",
   },
   {
     title: "Community Christmas Map",
@@ -33,7 +36,9 @@ const flagships = [
     slug: "community-christmas-map",
     capabilities: ["Product Design", "Frontend"],
     actionLabel: "Read the case study",
-    workIndex: 2,
+    image: "/work/logos/marmalade.png",
+    imageBackground: "bg-[#193c34]",
+    imageClassName: "object-contain p-1",
   },
   {
     title: "Andy J. Egan Company",
@@ -43,7 +48,9 @@ const flagships = [
     slug: "andy-j-egan-company",
     capabilities: ["Frontend"],
     actionLabel: "Explore the workforce platform",
-    workIndex: 10,
+    image: "/work/logos/egan.png",
+    imageBackground: "bg-white",
+    imageClassName: "object-contain p-1.5",
   }
 ];
 
@@ -125,9 +132,15 @@ export default function Page() {
               >
                 <div
                   aria-hidden="true"
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg flex-shrink-0 relative overflow-hidden border border-neutral-200/50 dark:border-neutral-800/50 bg-neutral-50 dark:bg-[#151515] group/image"
+                  className={`w-16 h-16 sm:w-20 sm:h-20 rounded-lg flex-shrink-0 relative overflow-hidden border border-neutral-200/50 dark:border-neutral-800/50 ${project.imageBackground}`}
                 >
-                  <AbstractArt index={project.workIndex} />
+                  <Image
+                    src={project.image}
+                    alt=""
+                    fill
+                    sizes={project.slug === "ichie" ? "320px" : "80px"}
+                    className={project.imageClassName}
+                  />
                 </div>
                 <div className="flex flex-col justify-center min-w-0">
                   <span className="text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">

@@ -68,19 +68,19 @@ export const ThemeSwitch: React.FC = () => {
 
   if (!mounted) {
     return (
-      <FaCircleHalfStroke
-        className="h-[14px] w-[14px] text-[#1c1c1c]"
-        aria-hidden="true"
-      />
+      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center pb-[2px]" aria-hidden="true">
+        <FaCircleHalfStroke className="h-[14px] w-[14px] text-[#1c1c1c] dark:text-[#D4D4D4]" />
+      </span>
     );
   }
 
   return (
     <button
       id="theme-toggle"
-      aria-label={`${currentTheme} mode`}
+      type="button"
+      aria-label={`Switch to ${currentTheme === "light" ? "dark" : "light"} mode`}
       onClick={toggleTheme}
-      className="flex items-center justify-center transition-opacity duration-300 hover:opacity-90"
+      className="inline-flex h-8 w-8 shrink-0 items-center justify-center pb-[2px] transition-opacity duration-300 hover:opacity-90"
     >
       <FaCircleHalfStroke
         className={`h-[14px] w-[14px] ${
