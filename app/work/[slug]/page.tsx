@@ -5,24 +5,19 @@ import Link from "next/link";
 import { CustomMDX } from "app/components/mdx";
 import { CaseStudyImage } from "app/components/case-study-image";
 import { getWorkCaseStudies } from "app/lib/case-studies";
-import { workItems } from "../work-data";
+import { caseStudyItems, getWorkSlug } from "../work-data";
 
-function getFallbackProject(slug: string) {
-  return workItems.find((p) => {
-    const pSlug = p.slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-    return pSlug === slug;
-  });
+function getCaseStudy(slug: string) {
+  const item = caseStudyItems.find((p) => getWorkSlug(p) === slug);
+  const study = item && getWorkCaseStudies().find((s) => s.slug === slug);
+  return item && study ? { item, study } : null;
 }
 
 export async function generateStaticParams() {
-  const mdxSlugs = getWorkCaseStudies().map((s) => ({ slug: s.slug }));
-  const dataSlugs = workItems.map((p) => ({
-    slug: p.slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
-  }));
-  
-  const allSlugs = [...mdxSlugs, ...dataSlugs];
-  const uniqueSlugs = Array.from(new Set(allSlugs.map((s) => s.slug))).map((slug) => ({ slug }));
-  return uniqueSlugs;
+  return caseStudyItems
+    .map((p) => getWorkSlug(p))
+    .filter((slug) => getCaseStudy(slug))
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -30,19 +25,11 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata | undefined> {
-  const study = getWorkCaseStudies().find((s) => s.slug === params.slug);
-  if (study) {
+  const found = getCaseStudy(params.slug);
+  if (found) {
     return {
-      title: study.metadata.title,
-      description: study.metadata.description,
-    };
-  }
-
-  const fallback = getFallbackProject(params.slug);
-  if (fallback) {
-    return {
-      title: fallback.title,
-      description: fallback.description,
+      title: found.study.metadata.title,
+      description: found.study.metadata.description,
     };
   }
 }
@@ -52,25 +39,12 @@ export default function WorkDetail({
 }: {
   params: { slug: string };
 }) {
-  let study = getWorkCaseStudies().find((s) => s.slug === params.slug);
-  const fallback = getFallbackProject(params.slug);
-  
-  if (!study) {
-    if (!fallback) notFound();
-    
-    study = {
-      slug: params.slug,
-      metadata: {
-        title: fallback.title,
-        description: fallback.description,
-        year: fallback.year.toString(),
-        url: fallback.url || undefined,
-        role: fallback.role,
-        tech: fallback.capabilities.join(", "),
-      },
-      content: fallback.description,
-    };
-  } else if (fallback && !study.metadata.url) {
+  const found = getCaseStudy(params.slug);
+
+  if (!found) notFound();
+
+  const { item: fallback, study } = found;
+  if (!study.metadata.url) {
     study.metadata.url = fallback.url || undefined;
   }
 
@@ -160,7 +134,7 @@ export default function WorkDetail({
               rel="noopener"
               className="inline-flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
             >
-              <span>{fallback?.linkLabel || "Visit Live Project"}</span>
+              <span>{fallback.linkLabel || "Live site"}</span>
               <span className="text-xs" aria-hidden="true">↗</span>
               <span className="sr-only">(opens in a new tab)</span>
             </a>

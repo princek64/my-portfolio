@@ -6,44 +6,67 @@ export interface WorkItem {
   url?: string | null;
   slug?: string;
   role?: string;
-  actionLabel?: string;
   linkLabel?: string;
   capabilities: string[];
+  caseStudy?: boolean;
+  logo?: {
+    src: string;
+    background: string;
+    className: string;
+  };
 }
 
 export const workItems: WorkItem[] = [
   {
     title: "GetSociable",
     year: 2026,
-    description: "Ran a full UX audit of a live consumer mobile app covering onboarding, home feed, discovery, map, itinerary planning, and social features. Audited the existing Figma design system for consistency gaps.",
+    description: "Reviewed a live social events app, redesigned onboarding and discovery, and built interactive prototypes for developer handoff.",
     summary: "UX audit for a live consumer mobile app.",
     url: "https://getsociable.app/",
     slug: "getsociable",
-    role: "Design Engineer Placement",
-    capabilities: ["UX Research", "Design Systems", "Figma"],
-    actionLabel: "Read about GetSociable",
-    linkLabel: "Visit Live Project",
+    role: "Design engineer placement",
+    capabilities: ["UX Research", "Design Systems", "AI Prototyping"],
+    linkLabel: "Live app",
+    caseStudy: true,
+    logo: {
+      src: "/work/logos/getsociable.png",
+      background: "bg-black",
+      className: "object-contain p-8",
+    },
   },
   {
     title: "Ichie",
     year: 2026,
-    description: "Helps people remember and follow up with the people they meet at events. A personal CRM for intentional networking.",
+    description: "Designed and built a personal CRM for remembering the people you meet at events and following up afterwards.",
     summary: "Event memory app. Designed the system and built it in React.",
     url: "https://ichie-web.vercel.app/",
     slug: "ichie",
-    capabilities: ["Product Design", "Design Systems", "Frontend"],
-    actionLabel: "Read the Ichie case study",
-    linkLabel: "Visit Live Project"
+    role: "Product design and build",
+    capabilities: ["React", "Next.js", "Supabase"],
+    linkLabel: "Live app",
+    caseStudy: true,
+    logo: {
+      src: "/work/logos/ichie.png",
+      background: "bg-[#111111]",
+      className: "object-contain scale-[4]",
+    },
   },
   {
     title: "Community Christmas Map",
     year: 2026,
-    description: "Helps people find nearby community Christmas events and feel less isolated over the holidays. Created for Marmalade Trust with Scottish Tech Army.",
+    description: "Leading design on a map app for Marmalade Trust that helps people find local Christmas events and feel less isolated. Built with Scottish Tech Army.",
     summary: "Map app for community Christmas events. Leading design.",
     url: null,
     slug: "community-christmas-map",
-    capabilities: ["Product Design", "Frontend"],
-    actionLabel: "Read the case study",
+    role: "Design lead",
+    capabilities: ["Figma", "React", "Leaflet"],
+    linkLabel: "Organisation website",
+    caseStudy: true,
+    logo: {
+      src: "/work/logos/marmalade.png",
+      background: "bg-[#193c34]",
+      className: "object-contain p-6",
+    },
   },
   {
     title: "CCPower – Fleet Management System",
@@ -53,8 +76,7 @@ export const workItems: WorkItem[] = [
     url: "https://www.ccpwr.com/",
     slug: "ccpower",
     capabilities: ["Frontend"],
-    actionLabel: "Read the CCPower case study",
-    linkLabel: "Visit company website",
+    linkLabel: "Company website",
   },
   {
     title: "London Coffee Roasters",
@@ -63,9 +85,10 @@ export const workItems: WorkItem[] = [
     summary: "Coffee app design system. Built from scratch in Figma.",
     url: "https://v0-wes-anderson-coffee.vercel.app/",
     slug: "london-coffee-roasters",
+    role: "MA project, Birkbeck",
     capabilities: ["Visual Design", "Design Systems"],
-    actionLabel: "Read the case study",
-    linkLabel: "Visit Live Project"
+    linkLabel: "Live prototype",
+    caseStudy: true,
   },
   {
     title: "Cafe Immersive Experience",
@@ -74,8 +97,9 @@ export const workItems: WorkItem[] = [
     summary: "360° cafe experience. An immersive spatial design project.",
     url: null,
     slug: "cafe-immersive-experience",
+    role: "MA project, Birkbeck",
     capabilities: ["Interaction Design", "Prototyping"],
-    actionLabel: "Read the case study",
+    caseStudy: true,
   },
   {
     title: "Orbit Four",
@@ -85,8 +109,7 @@ export const workItems: WorkItem[] = [
     url: "https://www.orbitfour.com/",
     slug: "orbit-four",
     capabilities: ["Frontend", "Full Stack"],
-    actionLabel: "Read the Orbit Four case study",
-    linkLabel: "Visit Live Project",
+    linkLabel: "Live site",
   },
   {
     title: "Miller Johnson",
@@ -96,8 +119,7 @@ export const workItems: WorkItem[] = [
     url: "https://millerjohnson.com/",
     slug: "miller-johnson",
     capabilities: ["Frontend"],
-    actionLabel: "Read about Miller Johnson project",
-    linkLabel: "Visit company website",
+    linkLabel: "Company website",
   },
   {
     title: "Andy J. Egan Co. – PurchasePointe",
@@ -107,8 +129,7 @@ export const workItems: WorkItem[] = [
     url: "https://www.andyegan.com/",
     slug: "andy-j-egan-co-purchasepointe",
     capabilities: ["Frontend"],
-    actionLabel: "Explore the receiving module",
-    linkLabel: "Visit company website",
+    linkLabel: "Company website",
   },
   {
     title: "JC Electric, Inc.",
@@ -118,8 +139,7 @@ export const workItems: WorkItem[] = [
     url: "https://www.jcelectric.online/",
     slug: "jc-electric-inc",
     capabilities: ["Frontend"],
-    actionLabel: "Read the JC Electric case study",
-    linkLabel: "Visit company website",
+    linkLabel: "Company website",
   },
   {
     title: "Andy J. Egan Company",
@@ -129,8 +149,7 @@ export const workItems: WorkItem[] = [
     url: "https://www.andyegan.com/",
     slug: "andy-j-egan-company",
     capabilities: ["Frontend"],
-    actionLabel: "Explore the workforce platform",
-    linkLabel: "Visit company website",
+    linkLabel: "Company website",
   },
   {
     title: "HealthOpx",
@@ -140,8 +159,7 @@ export const workItems: WorkItem[] = [
     url: "https://healthopx.com/",
     slug: "healthopx",
     capabilities: ["Frontend"],
-    actionLabel: "Read the HealthOpx case study",
-    linkLabel: "Visit Live Project",
+    linkLabel: "Live site",
   },
   {
     title: "GT Independence",
@@ -151,8 +169,7 @@ export const workItems: WorkItem[] = [
     url: "https://gtindependence.com/",
     slug: "gt-independence",
     capabilities: ["Frontend"],
-    actionLabel: "Read the GT Independence case study",
-    linkLabel: "Visit company website",
+    linkLabel: "Company website",
   },
   {
     title: "Element 22",
@@ -162,8 +179,7 @@ export const workItems: WorkItem[] = [
     url: "https://exchange.element22cg.com/",
     slug: "element-22",
     capabilities: ["Frontend"],
-    actionLabel: "Read about Element 22",
-    linkLabel: "Visit Live Project",
+    linkLabel: "Live site",
   },
   {
     title: "The Kalamazoo Promise",
@@ -173,8 +189,7 @@ export const workItems: WorkItem[] = [
     url: "https://portal.kalamazoopromise.com/",
     slug: "the-kalamazoo-promise",
     capabilities: ["Frontend"],
-    actionLabel: "Explore the scholarship portal",
-    linkLabel: "Visit Live Project",
+    linkLabel: "Live site",
   },
   {
     title: "COVIDINDIA.ORG",
@@ -184,7 +199,13 @@ export const workItems: WorkItem[] = [
     url: "https://covidindia.org/",
     slug: "covidindia-org",
     capabilities: ["Frontend"],
-    actionLabel: "Read about COVIDINDIA.ORG",
-    linkLabel: "Visit Live Project",
+    linkLabel: "Live site",
   },
 ];
+
+export function getWorkSlug(item: WorkItem) {
+  return item.slug || item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
+export const caseStudyItems = workItems.filter((item) => item.caseStudy);
+export const otherItems = workItems.filter((item) => !item.caseStudy);

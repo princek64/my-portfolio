@@ -10,9 +10,8 @@ const flagships = [
     stack: ["Figma", "AI prototyping"],
     year: 2026,
     url: "https://getsociable.app/",
+    linkLabel: "Live app",
     slug: "getsociable",
-    capabilities: ["UX Research", "Design Systems", "Figma"],
-    actionLabel: "Read about GetSociable",
     image: "/work/logos/getsociable.png",
     imageBackground: "bg-black",
     imageClassName: "object-contain p-1",
@@ -20,12 +19,10 @@ const flagships = [
   {
     title: "Ichie",
     outcome: "Designed and built a personal CRM for remembering the people you meet at events and following up afterwards.",
-    role: "Product design",
+    role: "Product design and build",
     stack: ["React", "Next.js", "Supabase"],
     year: 2026,
     slug: "ichie",
-    capabilities: ["Product Design", "Design Systems", "Frontend"],
-    actionLabel: "Read the Ichie case study",
     image: "/work/logos/ichie.png",
     imageBackground: "bg-[#111111]",
     imageClassName: "object-cover scale-[4]",
@@ -37,8 +34,6 @@ const flagships = [
     stack: ["Figma", "React", "Leaflet"],
     year: 2026,
     slug: "community-christmas-map",
-    capabilities: ["Product Design", "Frontend"],
-    actionLabel: "Read the case study",
     image: "/work/logos/marmalade.png",
     imageBackground: "bg-[#193c34]",
     imageClassName: "object-contain p-1",
@@ -49,9 +44,8 @@ const flagships = [
     role: "Frontend developer",
     stack: ["Angular"],
     year: 2023,
-    slug: "andy-j-egan-company",
-    capabilities: ["Frontend"],
-    actionLabel: "Explore the workforce platform",
+    url: "https://www.andyegan.com/",
+    linkLabel: "Company website",
     image: "/work/logos/egan.png",
     imageBackground: "bg-white",
     imageClassName: "object-contain p-1.5",
@@ -126,12 +120,9 @@ export default function Page() {
           featured work
         </h2>
         <div className="flex flex-col gap-3">
-          {flagships.map((project) => (
-            <div key={project.slug} className="featured-card group">
-              <Link
-                href={`/work/${project.slug}`}
-                className="flex gap-[14px] flex-1 min-w-0"
-              >
+          {flagships.map((project) => {
+            const inner = (
+              <>
                 <div
                   aria-hidden="true"
                   className={`w-16 h-16 sm:w-20 sm:h-20 rounded-lg flex-shrink-0 relative overflow-hidden border border-neutral-200/50 dark:border-neutral-800/50 ${project.imageBackground}`}
@@ -140,7 +131,7 @@ export default function Page() {
                     src={project.image}
                     alt=""
                     fill
-                    sizes={project.slug === "ichie" ? "320px" : "80px"}
+                    sizes={project.title === "Ichie" ? "320px" : "80px"}
                     className={project.imageClassName}
                   />
                 </div>
@@ -155,20 +146,45 @@ export default function Page() {
                     {[project.role, ...project.stack].join(" · ")}
                   </span>
                 </div>
-              </Link>
+              </>
+            );
+
+            return (
+            <div key={project.title} className="featured-card group">
+              {project.slug ? (
+                <Link
+                  href={`/work/${project.slug}`}
+                  className="flex gap-[14px] flex-1 min-w-0"
+                >
+                  {inner}
+                </Link>
+              ) : (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="flex gap-[14px] flex-1 min-w-0"
+                >
+                  {inner}
+                  <span className="sr-only">({project.linkLabel}, opens in a new tab)</span>
+                </a>
+              )}
               {project.url && (
                 <a
                   href={project.url}
                   target="_blank"
                   rel="noopener"
-                  aria-label={`Visit ${project.title} live project (opens in a new tab)`}
+                  aria-label={`${project.title} ${project.linkLabel} (opens in a new tab)`}
                   className="self-center text-neutral-400 dark:text-neutral-500 hover:text-[#47a3f3] dark:hover:text-[#4c97f8] transition-colors"
+                  tabIndex={project.slug ? undefined : -1}
+                  aria-hidden={project.slug ? undefined : true}
                 >
                   <span aria-hidden="true">↗</span>
                 </a>
               )}
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <Link
