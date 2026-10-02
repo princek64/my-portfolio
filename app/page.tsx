@@ -88,7 +88,7 @@ export default function Page() {
 
           <div className="prose prose-neutral dark:prose-invert mb-8 text-[15px] leading-relaxed">
             <p>
-              design engineer in 📍London with six years of frontend
+              design engineer in London with six years of frontend
               experience. I design interfaces, build interactive prototypes,
               and ship products with React and Vue.
             </p>
