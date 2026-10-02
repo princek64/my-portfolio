@@ -5,8 +5,9 @@ import { socialLinks } from "./config";
 const flagships = [
   {
     title: "GetSociable",
-    outcome: "Design Engineer placement for a consumer app that helps people discover social events and meet others.",
-    role: "Design Engineer Placement",
+    outcome: "Reviewed a live social events app, redesigned onboarding and discovery, and built interactive prototypes for developer handoff.",
+    role: "Design engineer placement",
+    stack: ["Figma", "AI prototyping"],
     year: 2026,
     url: "https://getsociable.app/",
     slug: "getsociable",
@@ -18,8 +19,9 @@ const flagships = [
   },
   {
     title: "Ichie",
-    outcome: "Built an offline-first event memory app with AI suggestions to help people log and reconnect with their network.",
-    role: "Product Design & Engineering",
+    outcome: "Designed and built a personal CRM for remembering the people you meet at events and following up afterwards.",
+    role: "Product design",
+    stack: ["React", "Next.js", "Supabase"],
     year: 2026,
     slug: "ichie",
     capabilities: ["Product Design", "Design Systems", "Frontend"],
@@ -30,8 +32,9 @@ const flagships = [
   },
   {
     title: "Community Christmas Map",
-    outcome: "Designed a map app for Marmalade Trust to help people find local events and reduce holiday isolation.",
-    role: "Design Lead",
+    outcome: "Leading design on a map app for Marmalade Trust that helps people find local Christmas events and feel less isolated.",
+    role: "Design lead",
+    stack: ["Figma", "React", "Leaflet"],
     year: 2026,
     slug: "community-christmas-map",
     capabilities: ["Product Design", "Frontend"],
@@ -42,8 +45,9 @@ const flagships = [
   },
   {
     title: "Andy J. Egan Company",
-    outcome: "Time tracking and credentialing tools used daily by 300+ field workers.",
-    role: "Frontend Developer",
+    outcome: "Built time tracking and credentialing tools used daily by 300+ field workers.",
+    role: "Frontend developer",
+    stack: ["Angular"],
     year: 2023,
     slug: "andy-j-egan-company",
     capabilities: ["Frontend"],
@@ -90,9 +94,9 @@ export default function Page() {
 
           <div className="prose prose-neutral dark:prose-invert mb-8 text-[15px] leading-relaxed">
             <p>
-              design engineer based in📍London. I design and
-              build digital products, working across UX, design systems, and
-              production frontend with React and Vue.
+              design engineer in 📍London with six years of frontend
+              experience. I design interfaces, build interactive prototypes,
+              and ship products with React and Vue.
             </p>
             <p>
               Currently working as a Design Engineer
@@ -101,9 +105,7 @@ export default function Page() {
                 GetSociable
                 <span className="sr-only">(opens in a new tab)</span>
               </a>
-              . I completed an MA in Digital Media Design at Birkbeck, where
-              I researched how conversational and generative interfaces change the
-              way people interact with products.
+              .
             </p>
           </div>
 
@@ -146,8 +148,11 @@ export default function Page() {
                   <span className="text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">
                     {project.title}
                   </span>
-                  <span className="text-xs text-neutral-500 dark:text-neutral-400 line-clamp-1 mt-0.5">
+                  <span className="text-xs leading-relaxed text-neutral-600 dark:text-neutral-400 line-clamp-2 mt-0.5">
                     {project.outcome}
+                  </span>
+                  <span className="text-[11px] text-neutral-400 dark:text-neutral-500 mt-1">
+                    {[project.role, ...project.stack].join(" · ")}
                   </span>
                 </div>
               </Link>

@@ -27,7 +27,7 @@ export const workItems: WorkItem[] = [
   {
     title: "Ichie",
     year: 2026,
-    description: "Helps people remember and follow up with the people they meet at events. An offline-first personal CRM for intentional networking.",
+    description: "Helps people remember and follow up with the people they meet at events. A personal CRM for intentional networking.",
     summary: "Event memory app. Designed the system and built it in React.",
     url: "https://ichie-web.vercel.app/",
     slug: "ichie",
