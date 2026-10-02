@@ -1,48 +1,59 @@
 ---
 title: Ichie
 year: 2026
-tags: [Product Design, Design Systems, React]
+description: Designed and built a personal CRM for remembering the people you meet at events and following up afterwards.
+role: Product design and build
+tags: [Product Design, Design Systems, React, Next.js, Supabase]
 status: Live
 url: https://ichie-web.vercel.app
 ---
 
+{/*
+  TODO (Prince): add screenshots to public/work/ichie/ and swap each TODO
+  below for a CaseStudyImage, PhoneFrame or Comparison. Suggested files:
+    - cover.webp          the app in use, for `cover:` in the frontmatter
+    - person.webp         a person card with their interaction log
+    - event-luma.webp     an event with attendees pulled in from Luma
+    - suggestions.webp    the reconnect suggestions
+    - components.webp     person card, event entry and timeline components
+*/}
 
-**Product Design · Design Systems · React · 2026**
+Ichie is a personal CRM for remembering the people you meet at events. I designed it and built it, from the first idea to the live app I use myself.
 
-Ichie is a personal CRM for remembering the people you meet at events. The name comes from *ichigo ichie*, a Japanese concept that means "one time, one meeting" — the idea that every encounter is unique and won't happen the same way again.
+The name comes from *ichigo ichie*, a Japanese idea that means "one time, one meeting". Every encounter happens once and won't happen the same way again.
+
+## The problem
+
+I kept leaving events with a few names in my notes and no real way to follow up. LinkedIn felt too formal. My notes app was a mess. I had nowhere to log who I met, what we talked about, and when I might want to get in touch again.
+
+## How it works
+
+You log the people you meet, attach them to the event where you met, and add notes each time you're in touch.
+
+{/* TODO (Prince): PhoneFrame or CaseStudyImage: person.webp, caption "A person and their interaction log" */}
+
+Ichie connects to Luma and pulls in the attendee list, so you don't have to add people by hand when you already saw them on the guest list.
+
+{/* TODO (Prince): CaseStudyImage: event-luma.webp, caption "Attendees imported from Luma" */}
+
+The app also suggests who to reconnect with. The suggestions are based on how long it's been since you were last in touch and what you have in common. They run on Groq.
+
+{/* TODO (Prince): CaseStudyImage: suggestions.webp, caption "Reconnect suggestions" */}
+
+## Designing it
+
+I wanted it to feel like a notebook, not a dashboard. Clean type, lots of white space and a restrained colour palette.
+
+The design system covers person cards, event entries, timeline views and the interaction log.
+
+{/* TODO (Prince): CaseStudyImage: components.webp, plain, caption "The four core components" */}
+
+## Building it
 
 I built the first version at the Zero to Agent London hackathon in May 2026.
 
----
+It's a Next.js app using the App Router. Supabase handles the database, sign-in and row-level security, and it's deployed on Vercel.
 
-## The Problem
+## Where it is now
 
-I kept leaving events with a few names in my notes and no real way to follow up. LinkedIn felt too formal. My notes app was a mess. There was nowhere to log who I met, what we talked about, and when I might want to reach out again.
-
----
-
-## What I Built
-
-You can log people you've met, attach them to events, and track interactions over time. There's a Luma integration that pulls in attendees automatically, so you're not manually adding people you already saw on the guest list.
-
-There's also an AI layer using Groq that suggests who to reconnect with, based on how long it's been and what you have in common.
-
----
-
-## Design Approach
-
-I wanted it to feel like a notebook, not a dashboard. Clean type, lots of whitespace, a restrained colour palette. The design system covers person cards, event entries, timeline views, and the interaction log.
-
-Built in React with Next.js App Router and Supabase on the backend.
-
----
-
-## Stack
-
-Next.js · Supabase (PostgreSQL, Auth, RLS) · Groq AI · Vercel
-
----
-
-## What's Next
-
-Still iterating. The main things on the roadmap are a richer person timeline view, better AI follow-up prompts, and a cleaner onboarding flow. I use it myself, which keeps me honest about what actually needs fixing.
+Live, and I use it after events myself, which keeps me honest about what needs fixing. Next on the list: a richer timeline for each person, better follow-up suggestions, and a simpler onboarding flow.
