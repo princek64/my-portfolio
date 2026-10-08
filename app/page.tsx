@@ -22,6 +22,8 @@ const flagships = [
     role: "Product design and build",
     stack: ["React", "Next.js", "Supabase"],
     year: 2026,
+    url: "https://ichie-web.vercel.app/",
+    linkLabel: "Live app",
     slug: "ichie",
     image: "/work/logos/ichie.png",
     imageBackground: "bg-[#111111]",
@@ -179,7 +181,7 @@ export default function Page() {
                   tabIndex={project.slug ? undefined : -1}
                   aria-hidden={project.slug ? undefined : true}
                 >
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true">{"↗︎"}</span>
                 </a>
               )}
             </div>
