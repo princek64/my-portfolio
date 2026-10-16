@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { socialLinks } from "./config";
+import { IchieMark } from "./components/ichie-mark";
 
 const flagships = [
   {
@@ -31,10 +32,12 @@ const flagships = [
   },
   {
     title: "Community Christmas Map",
-    outcome: "Leading design on a map app for Marmalade Trust that helps people find local Christmas events and feel less isolated.",
+    outcome: "A map app for local Christmas events, created with Marmalade Trust and Scottish Tech Army.",
     role: "Design lead",
     stack: ["Figma", "React", "Leaflet"],
     year: 2026,
+    url: "https://www.marmaladetrust.org/",
+    linkLabel: "Organisation website",
     slug: "community-christmas-map",
     image: "/work/logos/marmalade.png",
     imageBackground: "bg-[#193c34]",
@@ -42,7 +45,7 @@ const flagships = [
   },
   {
     title: "Andy J. Egan Company",
-    outcome: "Built time tracking and credentialing tools used daily by 300+ field workers.",
+    outcome: "Built time entry and credentialing tools for field workers, with a focus on reliable everyday use.",
     role: "Frontend developer",
     stack: ["Angular"],
     year: 2023,
@@ -129,13 +132,17 @@ export default function Page() {
                   aria-hidden="true"
                   className={`w-16 h-16 sm:w-20 sm:h-20 rounded-lg flex-shrink-0 relative overflow-hidden border border-neutral-200/50 dark:border-neutral-800/50 ${project.imageBackground}`}
                 >
-                  <Image
-                    src={project.image}
-                    alt=""
-                    fill
-                    sizes={project.title === "Ichie" ? "320px" : "80px"}
-                    className={project.imageClassName}
-                  />
+                  {project.title === "Ichie" ? (
+                    <IchieMark compact />
+                  ) : (
+                    <Image
+                      src={project.image}
+                      alt=""
+                      fill
+                      sizes="80px"
+                      className={project.imageClassName}
+                    />
+                  )}
                 </div>
                 <div className="flex flex-col justify-center min-w-0">
                   <span className="text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">

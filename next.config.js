@@ -33,7 +33,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/work/:slug(ccpower|orbit-four|miller-johnson|andy-j-egan-co-purchasepointe|jc-electric-inc|andy-j-egan-company|healthopx|gt-independence|element-22|the-kalamazoo-promise|covidindia-org)',
+        source: '/work/:slug(andy-j-egan-co-purchasepointe|jc-electric-inc|andy-j-egan-company|healthopx|gt-independence|element-22|the-kalamazoo-promise|covidindia-org)',
         destination: '/work',
         permanent: false,
       },

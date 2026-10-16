@@ -2,38 +2,44 @@
 title: Community Christmas Map
 year: 2026
 tags: [Product Design, Figma, Leaflet]
-status: In progress · Launching October 2026
 ---
 
 
 **Product Design · Figma · Leaflet · 2026**
 
-A map app for Marmalade Trust, built with Scottish Tech Army, to help people find community Christmas events near them. Marmalade Trust works on loneliness, and Christmas is the sharpest point of it. Plenty of community events exist, but finding them is harder than it should be.
+A map app for Marmalade Trust, developed with Scottish Tech Army, to help people find nearby community Christmas events. Marmalade Trust works to reduce loneliness, which can be especially difficult at Christmas. Events already happen across local communities, but their details are often spread across council pages, church newsletters, and Facebook groups.
 
 ---
 
 ## The Problem
 
-Community Christmas events are scattered across council pages, church newsletters, and local Facebook groups. If you're isolated and don't already know where to look, they might as well not exist. The map pulls them into one place, so the question becomes "what's near me?" instead of "where do I even start?"
+Community Christmas events are scattered across council pages, church newsletters, and local Facebook groups. If someone is isolated and doesn't know where to look, those events can be hard to find. The map brings listings together so people can see what's happening nearby.
 
 ---
 
 ## My Role
 
-I run design and PM for a team of three: me, a designer, and a developer. I also talk directly with Marmalade Trust as the client. It's a volunteer project through Scottish Tech Army, which means keeping the scope honest. Small team, limited hours, and a hard deadline of October 2026 so it's live well before Christmas.
+I lead product design and project coordination across a three-person volunteer team, and work directly with Marmalade Trust. The project runs through Scottish Tech Army, so the design needs to fit the time and capacity available to the team.
 
 ---
 
-## What I'm Working Through
+## Design considerations
 
-The app is built with React and Leaflet, and most of the design problems live where the map meets a small screen.
+The app uses React and Leaflet. The main design questions come from fitting map browsing and useful event details onto a phone screen.
 
-- **Map UI:** how much the map should do versus stay out of the way. A map is a great way to answer "what's near me?" and a bad way to read details.
-- **Event cards:** what someone needs to know before they commit to showing up. When, where, who it's for, whether they need to book.
-- **Filtering on a small screen:** most people will use this on a phone. Filters, the map, and a list of events all competing for the same viewport is the core layout problem.
+- **Map and details:** the map helps people see what's nearby, while event details need enough space to scan.
+- **Event information:** date, location, audience, and booking requirements help people decide whether an event suits them.
+- **Mobile layout:** filters, the map, and the event list share limited screen space, so the hierarchy needs to stay clear.
 
----
+## Screens from the app
 
-## Where It's At
+The responsive event map and listing, with a closer look at the event details people can use to decide whether to attend.
 
-In progress, aiming for an October 2026 launch. I'll update this page as the design settles and the app goes live.
+<CaseStudyImage src="/work/community-christmas-map/web-map.png" alt="Community Christmas desktop website showing event filters, a UK map and location pins" caption="Web map: browse Christmas events across the UK" width={3408} height={1876} />
+
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+  <CaseStudyImage src="/work/community-christmas-map/mobile-list.png" alt="Community Christmas mobile event list showing event cards with venue, time, access and cost" caption="Mobile list: scan event details" width={819} height={1658} plain />
+  <CaseStudyImage src="/work/community-christmas-map/mobile-map.png" alt="Community Christmas mobile map centred on London with event pins and a postcode radius search" caption="Mobile map: search around a postcode" width={819} height={1658} plain />
+</div>
+
+<CaseStudyImage src="/work/community-christmas-map/web-event-details.png" alt="Desktop event details for Glasgow Christmas Gathering, with host, access, cost, booking, contact and map information" caption="Web event details: venue, accessibility, cost and contact information" width={3408} height={1876} />
