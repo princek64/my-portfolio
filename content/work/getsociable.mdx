@@ -2,29 +2,13 @@
 title: GetSociable
 year: 2026
 description: Auditing a social events app, designing onboarding and discovery changes, and building an AI-assisted prototyping playground for iteration and developer handoff.
-role: Design Engineer Placement
+role: Design Engineer
 tags: [UX Research, Design Systems, AI Prototyping, Figma]
 ---
 
-{/*
-  TODO (Prince): add real assets to public/work/getsociable/ and wire them
-  into the components below. Suggested files, matching the narrative:
-    - cover.webp              hero shot of the live app
-    - audit-onboarding.webp   annotated onboarding screen(s), plain image
-    - audit-discovery.webp    annotated discovery/home feed, plain image
-    - audit-search.webp       annotated search screen, plain image
-    - live-onboarding.webp / proto-onboarding.webp   Comparison pair
-    - discovery-v1.webp / discovery-v2.webp          Comparison pair
-    - live-search.webp / proto-search.webp           Comparison pair
-  Once a file exists, swap the matching TODO comment below for the real
-  component (CaseStudyImage / Comparison / PhoneFrame); examples are left
-  in place as commented-out code so this is a drop-in swap.
-  Also fill in `cover:` in the frontmatter once cover.webp exists.
-*/}
+GetSociable helps people discover social events and meet others nearby. As a Design Engineer I reviewed the existing app, redesigned parts of onboarding, discovery and search, and built an AI-assisted prototyping playground to explore and compare design directions.
 
-GetSociable helps people find social events and meet others nearby. My Design Engineer placement covered the work from reviewing the existing app to designing changes, building interactive prototypes and documenting decisions for developer handoff.
-
-I worked with the product and engineering team on onboarding, discovery and search, using an AI-assisted playground to try multiple versions of the designs.
+I worked closely with the founder and engineering team, using earlier user research and team feedback to refine the designs and document decisions for developer handoff.
 
 ## Scope and research
 
@@ -38,9 +22,13 @@ The review identified three areas to address:
 
 The design system audit also identified consistency gaps in the existing Figma components.
 
-{/* TODO (Prince): CaseStudyImage: cover.webp, plain, full width */}
-{/* TODO (Prince): CaseStudyImage: audit-onboarding.webp, plain, caption "Live onboarding, annotated" */}
-{/* TODO (Prince): CaseStudyImage: audit-discovery.webp, plain, caption "Home feed, annotated" */}
+## Screens from the app
+
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+  <PhoneFrame src="/work/getsociable/home.png" alt="GetSociable home feed with event listings and category tabs" caption="Home feed" />
+  <PhoneFrame src="/work/getsociable/group-plans.png" alt="GetSociable Group Plan screen for organising plans with friends" caption="Group Plans" />
+  <PhoneFrame src="/work/getsociable/search-categories.png" alt="Search screen showing popular event categories" caption="Search categories" />
+</div>
 
 ## Design changes
 
@@ -54,21 +42,15 @@ I restructured the flow around one question per screen to give each decision a c
 
 For location, I made the distinction between home city and browsing city explicit. Someone planning a trip should be able to look for events at their destination without mistaking that choice for a change to where they live.
 
-{/* TODO (Prince): Comparison: left: live-onboarding.webp ("Live"), right: proto-onboarding.webp ("Proposed") */}
-
 ### Discovery: revise the layout after team feedback
 
 My first proposal used the same layout across discovery sections to address inconsistencies in the feed. The product team pointed out that some sections used carousels deliberately and that the proposed layout made their content harder to scan.
 
 I revised the designs to retain those carousels and used a more structured layout in sections where comparing items was the priority. The feedback helped me distinguish which differences needed fixing and which supported the content.
 
-{/* TODO (Prince): Comparison: left: discovery-v1.webp ("First direction"), right: discovery-v2.webp ("Revised") */}
-
 ### Search: balance detail and comparison
 
 I compared search layouts around one question: how much information does someone need to distinguish one event from another? The tradeoff was between showing more detail for each event and keeping the results easy to scan together.
-
-{/* TODO (Prince): Comparison: left: live-search.webp ("Live"), right: proto-search.webp ("Proposed") */}
 
 ## Building a prototyping playground
 

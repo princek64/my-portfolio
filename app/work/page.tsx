@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { caseStudyItems, getWorkSlug, otherItems } from "./work-data";
 import { AbstractArt } from "../components/AbstractArt";
+import { IchieMark } from "../components/ichie-mark";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -47,7 +48,9 @@ export default function Work() {
                 tabIndex={-1}
                 className={`relative block w-full overflow-hidden rounded-2xl border border-neutral-200/50 dark:border-neutral-800/50 group/image mb-4 ${isLead ? "h-48 sm:h-56" : "h-44"} ${project.logo ? project.logo.background : "bg-neutral-50 dark:bg-[#151515]"}`}
               >
-                {project.logo ? (
+                {project.slug === "ichie" ? (
+                  <IchieMark />
+                ) : project.logo ? (
                   <Image
                     src={project.logo.src}
                     alt=""

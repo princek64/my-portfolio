@@ -8,45 +8,35 @@ status: Live
 url: https://ichie-web.vercel.app
 ---
 
-{/*
-  TODO (Prince): add screenshots to public/work/ichie/ and swap each TODO
-  below for a CaseStudyImage, PhoneFrame or Comparison. Suggested files:
-    - cover.webp          the app in use, for `cover:` in the frontmatter
-    - person.webp         a person card with their interaction log
-    - event-luma.webp     an event with attendees pulled in from Luma
-    - suggestions.webp    the reconnect suggestions
-    - components.webp     person card, event entry and timeline components
-*/}
-
 Ichie is a personal CRM for remembering the people you meet at events. I designed it and built it, from the first idea to the live app I use myself.
 
-The name comes from *ichigo ichie*, a Japanese idea that means "one time, one meeting". Every encounter happens once and won't happen the same way again.
+The name comes from *ichigo ichie 一期一会*, a Japanese idea that means "one time, one meeting". Every encounter happens once and won't happen the same way again.
 
 ## The problem
 
-I kept leaving events with a few names in my notes and no real way to follow up. LinkedIn felt too formal. My notes app was a mess. I had nowhere to log who I met, what we talked about, and when I might want to get in touch again.
+I kept leaving events with a few names in my notes and no real way to follow up. My notes app was a mess. I had nowhere to log who I met, what we talked about, and when I might want to get in touch again.
 
 ## How it works
 
 You log the people you meet, attach them to the event where you met, and add notes each time you're in touch.
 
-{/* TODO (Prince): PhoneFrame or CaseStudyImage: person.webp, caption "A person and their interaction log" */}
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+<PhoneFrame src="/work/ichie/moments.png" alt="Ichie's moments feed showing a logged event" caption="Moments feed" />
+
+<PhoneFrame src="/work/ichie/people-redacted.png" alt="People you've met screen with profile photos and names blurred" caption="People you've met" />
+
+<PhoneFrame src="/work/ichie/event-detail.png" alt="Ichie event detail page showing date, venue, and people met" caption="Event detail and people-met" />
+</div>
 
 Ichie connects to Luma and pulls in the attendee list, so you don't have to add people by hand when you already saw them on the guest list.
 
-{/* TODO (Prince): CaseStudyImage: event-luma.webp, caption "Attendees imported from Luma" */}
-
 The app also suggests who to reconnect with. The suggestions are based on how long it's been since you were last in touch and what you have in common. They run on Groq.
-
-{/* TODO (Prince): CaseStudyImage: suggestions.webp, caption "Reconnect suggestions" */}
 
 ## Designing it
 
 I wanted it to feel like a notebook, not a dashboard. Clean type, lots of white space and a restrained colour palette.
 
 The design system covers person cards, event entries, timeline views and the interaction log.
-
-{/* TODO (Prince): CaseStudyImage: components.webp, plain, caption "The four core components" */}
 
 ## Building it
 
