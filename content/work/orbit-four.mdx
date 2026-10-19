@@ -1,18 +1,60 @@
 ---
-title: "Orbit Four"
-year: "2025"
-description: "A custom-built domain registrar platform. I developed the robust user and admin portals using Vue, Nuxt, and Tailwind."
-tech: "Nuxt.js, Vue.js, TailwindCSS, Node.js, Express.js, PostgreSQL, Docker, Stripe"
-role: "Full Stack Developer"
+title: OrbitFour
+year: 2022–2025
+description: A domain registrar where customers search, register, transfer and manage domain names, with Stripe billing and a connection to the domain registries.
+role: Full stack developer
+tags: [Vue.js, Nuxt, Tailwind CSS, Node.js, PostgreSQL, Stripe]
+url: https://www.orbitfour.com/
 ---
 
-**Orbit Four** is a **Domain Name Registrar and Management platform** that allows users to search for, register, and manage internet domains. It also provides tools for managing DNS settings and domain contact records, connecting to registries through the Extensible Provisioning Protocol (EPP).
+OrbitFour is a domain registrar. Customers use it to search for domain names, register them, set up DNS, move domains between registrars, and manage renewals and billing. There's a customer portal and an admin portal, both in the same codebase.
 
-## My contribution
-I worked on the frontend application, building interfaces and workflows for domain search and management. The platform brought domain registration and ongoing administration into one place, including the configuration of DNS and contact records.
+I worked on it from early 2022 to mid-2025. I built most of the frontend and a good part of the backend.
 
-My work involved translating domain management requirements into functional interfaces and integrating them with the platform's underlying services.
+<CaseStudyImage src="/work/orbit-four/home.webp" alt="OrbitFour homepage with a pixel-art space theme and a domain search bar" caption="Homepage and domain search" width={2000} height={1094} />
 
-## Technical stack
+## The brief
 
-Nuxt, Vue, TypeScript, and the supporting APIs used by the application.
+OrbitFour was a new product, so there was no old system to replace. The job was to build a registrar from scratch that covers the whole life of a domain, from search to renewal, plus the tools the team needs to run it.
+
+## What I built
+
+### The customer portal
+
+The customer portal covers everything from finding a domain to looking after it. You search for a name, add it to a cart and pay through a multi-step Stripe checkout. After that you manage DNS records, nameservers, DNSSEC, auto-renew and domain locking, and move domains in and out.
+
+<CaseStudyImage src="/work/orbit-four/domain-search.webp" alt="Register a Domain page showing search results for pixelprince with taken and available names, prices and Add to cart buttons" caption="Search results: taken names, available names and prices" width={2000} height={1108} />
+
+<CaseStudyImage src="/work/orbit-four/review-order.webp" alt="Review Your Order page with nameservers, the domain in the order, WHOIS privacy turned on and an order summary asking for a domain contact" caption="Checkout: review the order before paying" width={2000} height={1108} />
+
+<CaseStudyImage src="/work/orbit-four/billing.webp" alt="Billing and Transactions page with account balance, payment methods, upcoming renewals, recent transactions and invoices" caption="Billing: balance, payment methods, renewals and invoices" width={2000} height={1108} />
+
+### Domain transfers
+
+I built the transfer flow, which has its own set of screens: starting a transfer, the confirmation emails, tracking its status, and moving a domain between two accounts on the same platform.
+
+### The admin portal
+
+The admin portal gives the operations team a view of every domain, user, transaction, dispute and audit log. Admins manage products, TLD pricing, system messages, user permissions and the login settings for the registry connection.
+
+<CaseStudyImage src="/work/orbit-four/sign-in.webp" alt="OrbitFour sign-in page offering a magic link, a sign-in code or email and password, next to a pixel-art rocket launch" caption="Sign in with a magic link, a code or a password" width={2000} height={1108} />
+
+## How it's built
+
+Nuxt 2 (Vue 2) with Tailwind CSS on the frontend. The backend is Express, running inside the same Nuxt server, with Sequelize talking to PostgreSQL. Stripe handles payments and subscriptions, and emails go out through SendGrid and SES. It runs on AWS ECS, with S3 for files and short-lived download links for invoices.
+
+A few parts of the build worth calling out:
+
+- **One form pattern for everything.** I built the shared UI components: buttons, forms, tables, modals, cards, alerts and so on. Most data entry runs through one `Form` component. You give it a list of fields and a Yup validation schema, and it renders the right inputs and handles validation and submission. Each field type plugs in without the form needing to know about it.
+- **Moving from Bootstrap to Tailwind.** The project started on Bootstrap-Vue. I led the move to Tailwind, one screen at a time: login, dashboard, domain settings, wallet, user settings and the admin panels. I set up the Tailwind config with our own blue colour scale, and added a lint rule for class order so the whole team wrote Tailwind the same way.
+- **Permissions.** I built a small helper that checks a user's role against a permission like `view:export-csv` or `edit:product-pricing`. The admin portal uses it to show or hide controls, so each person only sees what they're allowed to change.
+- **Grace periods.** The store works out where each domain is after it expires: still renewable, restorable, or past recovery. The screens use that to show the right options.
+- **Talking to the registries.** Domain registries use a protocol called EPP. The portal talks to a separate EPP service through an authenticated API for DNS, transfers and DNSSEC. Some of those actions take a while, so the portal listens for a callback when each one finishes.
+
+## My role
+
+I was the main frontend developer, and I worked on the backend for domains, checkout, cart, DNS, sign-in and audit logs. I worked alongside several other developers. The EPP service was built by others on the team, though I contributed a fix to it. I also worked on the Craft CMS marketing site and the shared asset library.
+
+## Where it is now
+
+Live in production.

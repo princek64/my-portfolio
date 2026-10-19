@@ -102,10 +102,10 @@ export const workItems: WorkItem[] = [
     capabilities: ["Interaction Design", "Prototyping"],
   },
   {
-    title: "Orbit Four",
+    title: "OrbitFour",
     year: 2025,
-    description: "Built customer and admin portals for a domain registrar, including domain search, purchases, DNS, and contact management.",
-    summary: "Domain registrar platform. Built the user and admin portals in Vue and Nuxt.",
+    description: "Built most of the frontend and much of the backend for a domain registrar: search, checkout, DNS, transfers, billing and an admin portal.",
+    summary: "Domain registrar platform. Built the customer and admin portals in Vue and Nuxt.",
     url: "https://www.orbitfour.com/",
     slug: "orbit-four",
     role: "Full stack developer",
