@@ -1,19 +1,46 @@
 ---
-title: "Miller Johnson"
-year: "2024"
-description: "An internal workflow management tool built using Next.js and Material UI, designed to enhance operational efficiency."
-tech: "Next.js, React, TailwindCSS, Material UI, Microsoft SQL Server"
-role: "Full Stack Developer"
+title: Miller Johnson eDiscovery Case Tracker
+year: 2024
+description: I built the frontend for an internal case and invoice tracking tool used by a law firm's eDiscovery team.
+role: Frontend developer
+tags: [React, Next.js, TypeScript, Material UI, SQL Server]
 ---
 
-Miller Johnson is an **internal case and invoice management portal** built for a law firm's eDiscovery team. It helps staff track active legal matters, manage third-party vendor charges, and coordinate monthly invoice approvals.
+I built the frontend for an internal tool that helps a law firm's eDiscovery team track cases, manage vendor invoices and handle monthly invoice approvals. It runs on the firm's intranet, embedded inside SharePoint.
 
-## My contribution
+I built the React side: every screen, dialog, table and form the team uses. A colleague built the backend API, the database and the email notifications.
 
-I designed and built workflows for managing legal matters, tracking vendor expenses, and processing invoice approvals. Working across design and frontend development, I translated the team's operational requirements into a tool that brought case-related financial information and billing workflows into one place.
+## The problem
 
-The project involved understanding how eDiscovery staff, paralegals, and billing attorneys work together, then building interfaces to support their day-to-day tasks.
+The eDiscovery team was tracking vendor cases, invoices and approvals in spreadsheets. They needed one place to see every open case, enter invoices, approve them, and get a reminder when something needed their attention.
 
-## Impact
+## What I built
 
-The tool was designed to streamline invoice management and reduce manual coordination across the monthly approval process.
+**The main table.** Every case in one sortable, paginated table: vendor, client, matter number, attorneys, paralegals and running expense totals. Each row expands to show that case's invoices. There's a search bar, plus filters for client, matter number, attorney and billing attorney that narrow the list down together.
+
+**Adding and editing cases.** Each case links to a vendor, a client, a status and the staff working on it: attorneys, billing attorneys, paralegals and legal assistants. Staff are picked from dropdowns that pull from the firm's staff directory, and you can choose more than one.
+
+**Entering invoices.** A dialog for adding a monthly invoice to a case, with line items for each service: description, quantity and price. It checks required fields, makes sure invoice numbers aren't reused, and fills in the job number from the chosen project.
+
+**Approving invoices.** A full-page form where a billing attorney reviews an invoice, approves it or not, updates the case status and leaves a comment. A similar end-of-month screen covers the monthly reminders.
+
+**Vendor charges.** Click a vendor name in the main table to see every case and invoice for that vendor.
+
+## How it's built
+
+Next.js 14 with React, TypeScript and Material UI, plus Tailwind for layout. The backend uses Sequelize to talk to a SQL Server database. Everything runs in Docker, with a separate scheduled job that sends the email reminders.
+
+A few things worth calling out on the frontend:
+
+- **Dialogs that look after themselves.** Each dialog, such as adding a case or editing an invoice, loads its own dropdown options, keeps its own form state and tells the page when it's saved. The invoice table can open the edit dialog directly, without the page having to manage it.
+- **Tables built from a column list.** Every table is set up the same way: a list of columns (header, field, width and an optional click action), shared sorting and pagination.
+- **One way to validate forms.** A small validation module lets each form list its required fields and anything that must be unique, then returns errors per field. Those errors plug straight into Material UI's inputs, so every form shows mistakes in the same place and the same way.
+- **Signing in through SharePoint.** The app runs inside a SharePoint page, so it asks SharePoint who's logged in rather than having its own login. If SharePoint doesn't confirm a user, the app shows an access denied screen instead of loading.
+
+## My role
+
+I built the whole frontend: every page, component, dialog and table, the form validation and the SharePoint sign-in. A backend developer on the team set up the database, the API, the email reminders and the deployment.
+
+## Where it is now
+
+Live on the firm's intranet.
