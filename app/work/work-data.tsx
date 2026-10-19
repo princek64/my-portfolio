@@ -64,14 +64,14 @@ export const workItems: WorkItem[] = [
     },
   },
   {
-    title: "CCPower – Fleet Management System",
+    title: "CC Power Connect",
     year: 2026,
-    description: "Built inspection, repair, and billing modules for a fleet management platform.",
-    summary: "Fleet management platform. Built inspection, repair, and billing modules.",
+    description: "Built the fleet management module, pre-trip inspections and repair orders for an internal app used by an electrical contractor's field crews.",
+    summary: "Fleet and time tracking app. Built the fleet management module in Vue.",
     url: "https://www.ccpwr.com/",
     slug: "ccpower",
     role: "Frontend developer",
-    capabilities: ["Frontend"],
+    capabilities: ["Vue 3", "TypeScript", "Quasar"],
     linkLabel: "Company website",
     caseStudy: true,
     logo: {
