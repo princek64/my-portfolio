@@ -129,6 +129,11 @@ export const workItems: WorkItem[] = [
     capabilities: ["React", "Next.js", "Material UI"],
     linkLabel: "Company website",
     caseStudy: true,
+    logo: {
+      src: "/work/logos/miller-johnson.png",
+      background: "bg-white",
+      className: "object-contain p-12",
+    },
   },
   {
     title: "Andy J. Egan Co. – PurchasePointe",
