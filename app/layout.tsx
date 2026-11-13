@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 
 const ogImageUrl = `${metaData.ogImage}?title=${encodeURIComponent(
   metaData.seoTitle
-)}`;
+)}&v=2`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(metaData.baseUrl),

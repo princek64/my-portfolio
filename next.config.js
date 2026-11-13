@@ -2,6 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    outputFileTracingIncludes: {
+      "/og": ["./app/og/*.woff", "./app/og/*.jpg"],
+    },
+  },
   images: {
     remotePatterns: [
       {
