@@ -1,73 +1,42 @@
 ---
 title: Community Christmas Map
 year: 2026
-tags: [Product Design, Next.js, MapLibre]
+tags: [Product Design, Next.js, MapLibre, Motion]
 ---
 
 
-**Product Design · Next.js · MapLibre · 2026**
+<LiveSite src="https://www.communitychristmas.org.uk" title="Community Christmas, the live website" caption="The live site: search a postcode or town" />
 
-A website for Marmalade Trust, made with Scottish Tech Army, that helps people who'd otherwise be alone on Christmas Day find a local event. Visitors search a postcode or town and see what's near them. Hosts list their event through a short form. Marmalade Trust staff check every event before it goes live.
-
----
-
-## The Problem
-
-Community Christmas events happen all over the UK, but their details are scattered across council pages, church newsletters and local Facebook groups. Someone who is isolated, and doesn't know where to look, can easily miss them.
-
-Many of the people the site is for are older, and many arrive on a phone. So the site has to be easy to read, easy to tap, and work on a weak signal.
+A website for Marmalade Trust, made with Scottish Tech Army, that helps people who'd otherwise be alone on Christmas Day find a local event.
 
 ---
 
-## My Role
+## The problem
 
-I lead the design and build, and work directly with Marmalade Trust. The project runs through Scottish Tech Army, so the work had to fit the time a small volunteer team could give it.
+Community Christmas events are scattered across council pages, church newsletters and Facebook groups. The people who need them most are often older, on a phone, and on a weak signal.
 
----
+## My role
 
-## What changed as it grew
+I lead the design and build, working directly with Marmalade Trust.
 
-It started as a map of events. It's now three things in one site:
+## What it does
 
-- **For visitors:** search by postcode or town, see a list first (the client's choice) with a map one tap away, and filter by what matters: a meal, step-free access, free, no booking.
-- **For hosts:** a five-step form to list an event, and a private link to change or withdraw it later. No accounts and no passwords.
-- **For staff:** a portal with a to-do list (new events to approve, possible duplicates, events missing accessibility details), and an overview of what's live.
+- **Visitors** search a postcode or town and get a list, with the map one tap away.
+- **Hosts** list an event in five short steps, and change it later through a private link. No accounts.
+- **Staff** approve every event before it goes live, from a to-do list in their portal.
 
----
+## Key decisions
 
-## Design decisions
-
-- **Readable for older eyes.** Facts people act on, like the time, place and cost, are bold and navy. Grey is only for secondary lines, never small. Everything you can tap has a clear edge.
-- **Never guess.** If a host hasn't said whether an event is free or step-free, the site shows nothing rather than a wrong badge. Unknown booking reads "Ask the host".
-- **A map that works on a weak signal.** The map moved from picture tiles to a vector map. Pins that sit close together join into numbered bubbles, so every event can be reached. If part of the map fails to load, the pins still show.
-- **Built for desktop too.** Analytics showed many visitors were on a computer, where a Call button does nothing. Phone numbers can now be copied as well as called.
-- **Christmas Day itself.** On the day, the site greets people with "It's Christmas Day" and marks events as "Today" or "On now". The logo puts on a costume through December.
-- **When nothing is nearby.** Some towns have no events yet. Instead of a dead end, people can let the charity know where events are needed, try a wider search, or play a short Christmas game while they wait.
+- **Readable for older eyes:** the facts people act on are bold, and everything tappable has a clear edge.
+- **Never guess:** if a host hasn't said whether it's free or step-free, the site shows nothing rather than a wrong badge.
+- **A map that copes with a weak signal:** nearby pins join into numbered bubbles, and the pins still show if part of the map fails to load.
+- **A bit of Christmas:** on the day it greets people with "It's Christmas Day", and when nothing is nearby there's a short game while they wait.
 
 ---
-
-## Screens from the app
-
-<CaseStudyImage src="/work/community-christmas-map/web-list.png" alt="Community Christmas on desktop: a search for Manchester within 10 miles, with filters and a list of event cards" caption="Search a town: events nearest first" width={2880} height={1800} />
 
 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
-  <CaseStudyImage src="/work/community-christmas-map/mobile-list.png" alt="Community Christmas on a phone: Manchester search with an event card showing date, time and distance" caption="Phone list: the facts people need, in bold" width={802} height={1626} plain />
-  <CaseStudyImage src="/work/community-christmas-map/mobile-map.png" alt="Community Christmas map view on a phone, with event pins and numbered bubbles" caption="Phone map: nearby pins join into bubbles" width={802} height={1626} plain />
+  <CaseStudyImage src="/work/community-christmas-map/mobile-christmas-day.png" alt="The phone home page on Christmas Day, with lights, snow, a robin and the words It's Christmas Day" caption="On Christmas Day" width={802} height={1626} plain />
+  <CaseStudyImage src="/work/community-christmas-map/mobile-game.png" alt="Christmas pairs, a card-matching game, with two pairs found" caption="Nothing nearby? A game while you wait" width={802} height={1626} plain />
 </div>
 
-<CaseStudyImage src="/work/community-christmas-map/web-map.png" alt="Desktop vector map of the UK with numbered event bubbles" caption="Every event can be reached on the map" width={2880} height={1800} />
-
-<CaseStudyImage src="/work/community-christmas-map/web-event-details.png" alt="Desktop event details with host, time, access, cost, booking and a phone number that can be copied" caption="Event details: call or copy the number" width={2880} height={1800} />
-
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
-  <CaseStudyImage src="/work/community-christmas-map/mobile-christmas-day.png" alt="The phone home page on Christmas Day, with lights, snow, a robin and the words It's Christmas Day" caption="On Christmas Day, events read Today" width={802} height={1626} plain />
-  <CaseStudyImage src="/work/community-christmas-map/mobile-game.png" alt="Christmas pairs, a card-matching game, with two pairs found" caption="Nothing nearby? A Christmas game while you wait" width={802} height={1626} plain />
-</div>
-
-<CaseStudyImage src="/work/community-christmas-map/web-christmas-day.png" alt="The desktop home page on Christmas Day" caption="Christmas Day on desktop" width={2880} height={1800} />
-
-<PhoneFrame src="/work/community-christmas-map/mobile-host.png" alt="Step 1 of 5 of the host form: About the event" caption="Hosts list an event in five short steps" />
-
-<CaseStudyImage src="/work/community-christmas-map/web-staff-overview.png" alt="Staff overview with a to-do list of events to approve, possible duplicates and missing accessibility details, and counts of live events" caption="Staff portal: what needs doing first" width={2880} height={1800} />
-
-Screens show sample events, not real hosts.
+<CaseStudyImage src="/work/community-christmas-map/web-staff-overview.png" alt="Staff overview with a to-do list of events to approve, possible duplicates and missing accessibility details, and counts of live events" caption="Staff portal: what needs doing first (sample events)" width={2880} height={1800} />

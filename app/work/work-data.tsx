@@ -54,7 +54,7 @@ export const workItems: WorkItem[] = [
     url: "https://www.marmaladetrust.org/",
     slug: "community-christmas-map",
     role: "Design and build lead",
-    capabilities: ["Figma", "Next.js", "MapLibre"],
+    capabilities: ["Figma", "Next.js", "MapLibre", "Motion"],
     linkLabel: "Organisation website",
     caseStudy: true,
     logo: {
