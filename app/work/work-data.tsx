@@ -49,12 +49,12 @@ export const workItems: WorkItem[] = [
   {
     title: "Community Christmas Map",
     year: 2026,
-    description: "A map app for local Christmas events, created with Marmalade Trust and Scottish Tech Army.",
-    summary: "Map app for community Christmas events. Leading design.",
+    description: "A website that helps people find a local Christmas Day event, made with Marmalade Trust and Scottish Tech Army.",
+    summary: "Event finder, host form and staff portal. Leading design and build.",
     url: "https://www.marmaladetrust.org/",
     slug: "community-christmas-map",
-    role: "Design lead",
-    capabilities: ["Figma", "React", "Leaflet"],
+    role: "Design and build lead",
+    capabilities: ["Figma", "Next.js", "MapLibre"],
     linkLabel: "Organisation website",
     caseStudy: true,
     logo: {

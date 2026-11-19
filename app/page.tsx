@@ -32,9 +32,9 @@ const flagships = [
   },
   {
     title: "Community Christmas Map",
-    outcome: "A map app for local Christmas events, created with Marmalade Trust and Scottish Tech Army.",
-    role: "Design lead",
-    stack: ["Figma", "React", "Leaflet"],
+    outcome: "A website that helps people find a local Christmas Day event, made with Marmalade Trust and Scottish Tech Army.",
+    role: "Design and build lead",
+    stack: ["Figma", "Next.js", "MapLibre"],
     year: 2026,
     url: "https://www.marmaladetrust.org/",
     linkLabel: "Organisation website",
