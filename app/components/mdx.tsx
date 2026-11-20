@@ -10,6 +10,7 @@ import { ImageGrid } from "./image-grid";
 import { CaseStudyImage } from "./case-study-image";
 import { Comparison } from "./comparison";
 import { PhoneFrame } from "./phone-frame";
+import { LiveSite } from "./live-site";
 import { Finding } from "./finding";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
@@ -122,6 +123,7 @@ let components = {
   CaseStudyImage,
   Comparison,
   PhoneFrame,
+  LiveSite,
   Finding,
   a: CustomLink,
   StaticTweet: TweetComponent,
