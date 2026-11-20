@@ -37,7 +37,7 @@ export function CaseStudyImage({
         />
       </div>
       {caption && (
-        <figcaption className="mt-2.5 text-xs font-mono text-neutral-500 dark:text-neutral-500 text-center leading-relaxed">
+        <figcaption className="mt-2.5 text-xs font-mono text-neutral-500 dark:text-neutral-400 text-center leading-relaxed">
           {caption}
         </figcaption>
       )}

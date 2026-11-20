@@ -63,7 +63,7 @@ export function LiveSite({ src, title, caption }: LiveSiteProps) {
           />
         </div>
       </div>
-      <figcaption className="mt-3 text-center font-mono text-xs leading-relaxed text-neutral-500 dark:text-neutral-500">
+      <figcaption className="mt-3 text-center font-mono text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
         {caption ? `${caption} · ` : ""}
         <a href={src} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
           Open the live site ↗

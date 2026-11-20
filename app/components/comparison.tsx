@@ -17,7 +17,7 @@ interface ComparisonProps {
 function Side({ side, plain }: { side: ComparisonSide; plain?: boolean }) {
   return (
     <div className="flex-1">
-      <span className="block text-[11px] font-mono uppercase tracking-wide text-neutral-400 dark:text-neutral-500 mb-2">
+      <span className="block text-xs font-mono uppercase tracking-wide text-neutral-600 dark:text-neutral-300 mb-2">
         {side.label}
       </span>
       <div
@@ -37,7 +37,7 @@ function Side({ side, plain }: { side: ComparisonSide; plain?: boolean }) {
         />
       </div>
       {side.caption && (
-        <span className="block mt-2 text-xs font-mono text-neutral-500 dark:text-neutral-500 leading-relaxed">
+        <span className="block mt-2 text-xs font-mono text-neutral-500 dark:text-neutral-400 leading-relaxed">
           {side.caption}
         </span>
       )}
