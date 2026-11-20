@@ -151,7 +151,7 @@ export default function Page() {
                   <span className="text-xs leading-relaxed text-neutral-600 dark:text-neutral-400 line-clamp-2 mt-0.5">
                     {project.outcome}
                   </span>
-                  <span className="text-[11px] text-neutral-400 dark:text-neutral-500 mt-1">
+                  <span className="text-xs text-neutral-600 dark:text-neutral-300 mt-1">
                     {[project.role, ...project.stack].join(" · ")}
                   </span>
                 </div>
@@ -242,7 +242,7 @@ export default function Page() {
               className="object-cover transition-transform duration-500 hover:scale-[1.03]"
               sizes="(max-width: 768px) 50vw, 40vw"
             />
-            <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-2 text-[11px] font-medium text-white bg-gradient-to-t from-black/60 to-transparent">
+            <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-2 text-xs font-medium text-white bg-gradient-to-t from-black/60 to-transparent">
               React Advanced
             </figcaption>
           </figure>
@@ -254,7 +254,7 @@ export default function Page() {
               className="object-cover transition-transform duration-500 hover:scale-[1.03]"
               sizes="(max-width: 768px) 50vw, 40vw"
             />
-            <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-2 text-[11px] font-medium text-white bg-gradient-to-t from-black/60 to-transparent">
+            <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-2 text-xs font-medium text-white bg-gradient-to-t from-black/60 to-transparent">
               Field notes
             </figcaption>
           </figure>

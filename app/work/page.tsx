@@ -70,7 +70,7 @@ export default function Work() {
                 >
                   {project.title}
                 </Link>
-                <span className="text-neutral-400 dark:text-neutral-500 tabular-nums text-xs font-mono bg-neutral-200/50 dark:bg-neutral-800/50 px-2 py-1 rounded-md shrink-0">
+                <span className="text-neutral-600 dark:text-neutral-300 tabular-nums text-xs font-mono bg-neutral-200/50 dark:bg-neutral-800/50 px-2 py-1 rounded-md shrink-0">
                   {project.year}
                 </span>
               </div>
@@ -79,7 +79,7 @@ export default function Work() {
                 {project.description}
               </p>
 
-              <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-2">
+              <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-2">
                 {[project.role, ...project.capabilities].filter(Boolean).join(" · ")}
               </p>
 
@@ -114,7 +114,7 @@ export default function Work() {
             key={getWorkSlug(project)}
             className="py-4 grid grid-cols-[3rem_minmax(0,1fr)] sm:grid-cols-[3rem_minmax(0,1fr)_auto] gap-x-4 gap-y-1 items-baseline"
           >
-            <span className="text-xs font-mono tabular-nums text-neutral-400 dark:text-neutral-500">
+            <span className="text-xs font-mono tabular-nums text-neutral-600 dark:text-neutral-300">
               {project.year}
             </span>
             <div className="min-w-0">

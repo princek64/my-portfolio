@@ -87,7 +87,7 @@ export default function WorkDetail({
           <h1 className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 leading-snug">
             {metadata.title}
           </h1>
-          <span className="text-neutral-500 dark:text-neutral-500 tabular-nums text-sm shrink-0 mt-0.5">
+          <span className="text-neutral-500 dark:text-neutral-400 tabular-nums text-sm shrink-0 mt-0.5">
             {metadata.year}
           </span>
         </div>
@@ -117,7 +117,7 @@ export default function WorkDetail({
                   {metaParts.length > 0 && (
                     <span className="mx-2 text-neutral-300 dark:text-neutral-700">·</span>
                   )}
-                  <span className="text-neutral-400 dark:text-neutral-500">
+                  <span className="text-neutral-600 dark:text-neutral-300">
                     {metadata.status}
                   </span>
                 </>

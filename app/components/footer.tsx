@@ -79,7 +79,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg
                 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900
                 hover:opacity-85 transition-opacity duration-200"
-              aria-label="Send me an email"
+              aria-label="Say hello by email"
             >
               <TbMailFilled className="text-base" aria-hidden="true" />
               Say hello
