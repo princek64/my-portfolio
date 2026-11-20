@@ -1,0 +1,11 @@
+# CodeRabbit: no automatic reviews or summaries on pull requests (Prince, 20/11).
+# The free plan ran out most of the time anyway. Ask for one on a PR with
+# "@coderabbitai review" if ever wanted.
+reviews:
+  auto_review:
+    enabled: false
+  high_level_summary: false
+  poem: false
+  review_status: false
+chat:
+  auto_reply: false
