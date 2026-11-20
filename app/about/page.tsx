@@ -2,23 +2,25 @@ import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "About Me",
+  title: "About Prince Kukreja | Product Designer & Frontend Developer",
+  description:
+    "Meet Prince Kukreja, a London-based design engineer and product designer with six years of frontend development experience.",
+  alternates: { canonical: "/about" },
 };
 
 export default function About() {
   return (
     <section className="animate-page-enter">
       <h1 className="mb-6 text-xl font-medium tracking-tight gradient-text">
-        i build it and i design it.
+        Product designer and frontend developer, working in the middle.
       </h1>
 
       <div className="prose prose-neutral dark:prose-invert mb-8 text-[15px] leading-relaxed">
         <p>
-          i've spent six years building frontend interfaces, and over time, i found myself caring just as much about the design decisions behind them as the code.
+          I've spent six years building frontend interfaces. Over time, I found myself caring just as much about the product and UX decisions behind them as the code.
         </p>
         <p>
-          that's what led me to design engineering: working somewhere between the two, where a Figma frame can become a real interface, and where writing the code can expose problems the mockup didn't.
+          That led me to design engineering: working somewhere between product design and frontend development, where a Figma frame becomes a real interface and writing the code exposes problems the mockup did not.
         </p>
         <p>
           i completed an MA in Digital Media Design at Birkbeck, where i studied interaction, design systems, accessibility, and how AI changes the way people interact with interfaces.

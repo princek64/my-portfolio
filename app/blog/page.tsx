@@ -2,8 +2,10 @@ import Link from "next/link";
 import { formatDate, getBlogPosts } from "app/lib/posts";
 
 export const metadata = {
-  title: "Blog",
-  description: "My Blogs",
+  title: "Writing on Product Design & Frontend Development",
+  description:
+    "Notes by Prince Kukreja on product design, frontend development, web accessibility, and the craft of building interfaces.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPosts() {

@@ -6,6 +6,7 @@ import { CustomMDX } from "app/components/mdx";
 import { CaseStudyImage } from "app/components/case-study-image";
 import { getWorkCaseStudies } from "app/lib/case-studies";
 import { caseStudyItems, getWorkSlug } from "../work-data";
+import { metaData } from "app/config";
 
 function getCaseStudy(slug: string) {
   const item = caseStudyItems.find((p) => getWorkSlug(p) === slug);
@@ -28,8 +29,15 @@ export async function generateMetadata({
   const found = getCaseStudy(params.slug);
   if (found) {
     return {
-      title: found.study.metadata.title,
+      title: `${found.study.metadata.title} Case Study`,
       description: found.study.metadata.description,
+      alternates: { canonical: `/work/${params.slug}` },
+      openGraph: {
+        title: `${found.study.metadata.title} Case Study`,
+        description: found.study.metadata.description,
+        url: `${metaData.baseUrl}/work/${params.slug}`,
+        type: "article",
+      },
     };
   }
 }
@@ -64,6 +72,24 @@ export default function WorkDetail({
 
   return (
     <section className="animate-page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: `${metadata.title} case study`,
+            description: metadata.description,
+            url: `${metaData.baseUrl}/work/${params.slug}`,
+            author: {
+              "@type": "Person",
+              name: "Prince Kukreja",
+              url: metaData.baseUrl,
+            },
+            keywords: allTags,
+          }),
+        }}
+      />
       <Link
         href="/work"
         className="inline-flex items-center gap-1.5 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors mb-10 group"
@@ -87,7 +113,7 @@ export default function WorkDetail({
           <h1 className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 leading-snug">
             {metadata.title}
           </h1>
-          <span className="text-neutral-500 dark:text-neutral-500 tabular-nums text-sm shrink-0 mt-0.5">
+          <span className="text-neutral-500 dark:text-neutral-400 tabular-nums text-sm shrink-0 mt-0.5">
             {metadata.year}
           </span>
         </div>
@@ -117,7 +143,7 @@ export default function WorkDetail({
                   {metaParts.length > 0 && (
                     <span className="mx-2 text-neutral-300 dark:text-neutral-700">·</span>
                   )}
-                  <span className="text-neutral-400 dark:text-neutral-500">
+                  <span className="text-neutral-600 dark:text-neutral-300">
                     {metadata.status}
                   </span>
                 </>

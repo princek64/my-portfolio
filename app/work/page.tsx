@@ -7,8 +7,10 @@ import { AbstractArt } from "../components/AbstractArt";
 import { IchieMark } from "../components/ichie-mark";
 
 export const metadata: Metadata = {
-  title: "Work",
-  description: "My Work",
+  title: "Product Design, UX Research & Frontend Case Studies",
+  description:
+    "Case studies by Prince Kukreja spanning product design, UX research, design systems, interactive prototyping, and frontend development.",
+  alternates: { canonical: "/work" },
 };
 
 function ExternalLink({ href, label, title }: { href: string; label: string; title: string }) {
@@ -29,7 +31,10 @@ function ExternalLink({ href, label, title }: { href: string; label: string; tit
 export default function Work() {
   return (
     <section className="animate-page-enter">
-      <h1 className="mb-8 text-2xl font-medium tracking-tight gradient-text">work.</h1>
+      <h1 className="mb-3 text-2xl font-medium tracking-tight gradient-text">Product design and frontend work.</h1>
+      <p className="mb-8 max-w-[58ch] text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">
+        Case studies from product discovery through to the interfaces and systems that make the work real.
+      </p>
 
       <h2 className="text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-6 tracking-tight">
         case studies
@@ -70,7 +75,7 @@ export default function Work() {
                 >
                   {project.title}
                 </Link>
-                <span className="text-neutral-400 dark:text-neutral-500 tabular-nums text-xs font-mono bg-neutral-200/50 dark:bg-neutral-800/50 px-2 py-1 rounded-md shrink-0">
+                <span className="text-neutral-600 dark:text-neutral-300 tabular-nums text-xs font-mono bg-neutral-200/50 dark:bg-neutral-800/50 px-2 py-1 rounded-md shrink-0">
                   {project.year}
                 </span>
               </div>
@@ -79,7 +84,7 @@ export default function Work() {
                 {project.description}
               </p>
 
-              <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-2">
+              <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-2">
                 {[project.role, ...project.capabilities].filter(Boolean).join(" · ")}
               </p>
 
@@ -114,7 +119,7 @@ export default function Work() {
             key={getWorkSlug(project)}
             className="py-4 grid grid-cols-[3rem_minmax(0,1fr)] sm:grid-cols-[3rem_minmax(0,1fr)_auto] gap-x-4 gap-y-1 items-baseline"
           >
-            <span className="text-xs font-mono tabular-nums text-neutral-400 dark:text-neutral-500">
+            <span className="text-xs font-mono tabular-nums text-neutral-600 dark:text-neutral-300">
               {project.year}
             </span>
             <div className="min-w-0">

@@ -27,7 +27,7 @@ export function PhoneFrame({
         className="h-auto w-full max-w-[280px]"
       />
       {caption && (
-        <figcaption className="mt-2.5 text-center font-mono text-xs leading-relaxed text-neutral-500 dark:text-neutral-500">
+        <figcaption className="mt-2.5 text-center font-mono text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
           {caption}
         </figcaption>
       )}

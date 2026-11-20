@@ -29,6 +29,15 @@ export const metadata: Metadata = {
     template: `%s | ${metaData.title}`,
   },
   description: metaData.description,
+  keywords: [
+    "design engineer London",
+    "product designer London",
+    "frontend developer London",
+    "UX designer",
+    "UX researcher",
+    "product engineer",
+    "React developer",
+  ],
   openGraph: {
     images: ogImageUrl,
     title: metaData.seoTitle,
@@ -94,8 +103,10 @@ export default function RootLayout({
               "@type": "Person",
               name: "Prince Kukreja",
               jobTitle: "Design Engineer",
+              description: metaData.description,
               url: metaData.baseUrl,
               image: `${metaData.baseUrl}/profile.png`,
+              email: "contact@pixelprince.dev",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "London",
@@ -105,6 +116,16 @@ export default function RootLayout({
                 socialLinks.linkedin,
                 socialLinks.github,
                 socialLinks.dribbble,
+                socialLinks.devTo,
+              ],
+              knowsAbout: [
+                "Product design",
+                "UX research",
+                "Design systems",
+                "Frontend development",
+                "React",
+                "Vue.js",
+                "Web accessibility",
               ],
             }),
           }}

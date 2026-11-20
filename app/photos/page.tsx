@@ -7,6 +7,7 @@ import { getPexelsPhotos } from "app/lib/pexels";
 export const metadata: Metadata = {
   title: "Photos",
   description: "My Photos",
+  alternates: { canonical: "/photos" },
 };
 
 export default async function Photos() {

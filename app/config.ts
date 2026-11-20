@@ -1,12 +1,12 @@
 export const metaData = {
   baseUrl: "https://pixelprince.dev",
   title: "Prince",
-  seoTitle: "Prince | Design Engineer, London",
+  seoTitle: "Prince Kukreja | Design Engineer, Product Designer & Frontend Developer in London",
   titleShort: "Prince",
   name: "princekukreja",
   ogImage: "/og",
   description:
-    "Prince, design engineer in London. Frontend development, UI/UX, and design systems.",
+    "Prince Kukreja is a London-based design engineer combining product design, UX research, interactive prototyping, and frontend development with React, Next.js, and Vue.",
 };
 
 export const socialLinks = {

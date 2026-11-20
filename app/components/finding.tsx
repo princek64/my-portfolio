@@ -13,7 +13,7 @@ export function Finding({ children, from }: FindingProps) {
         {children}
       </div>
       {from && (
-        <span className="block mt-1.5 text-xs font-mono text-neutral-500 dark:text-neutral-500">
+        <span className="block mt-1.5 text-xs font-mono text-neutral-500 dark:text-neutral-400">
           {from}
         </span>
       )}

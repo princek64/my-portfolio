@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { socialLinks } from "./config";
 import { IchieMark } from "./components/ichie-mark";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const flagships = [
   {
@@ -86,16 +91,16 @@ export default function Page() {
             <span>open to design engineering and frontend roles in London</span>
           </div>
 
-          <h1 className="mb-6 text-xl font-medium tracking-tight gradient-text">
-            I design it.
-            I build it.
+          <h1 className="mb-5 text-2xl font-medium tracking-tight gradient-text">
+            Prince — Design Engineer in London
           </h1>
 
           <div className="prose prose-neutral dark:prose-invert mb-8 text-[15px] leading-relaxed">
             <p>
-              design engineer in London with six years of frontend
-              experience. I design interfaces, build interactive prototypes,
-              and ship products with React and Vue.
+              I combine product design, UX research, and frontend development
+              to take digital products from insight to production. With six
+              years of frontend experience, I design interfaces, build
+              interactive prototypes, and ship products with React and Vue.
             </p>
             <p>
               Currently working as a Design Engineer
@@ -118,6 +123,41 @@ export default function Page() {
           </div>
         </div>
       </div>
+
+      <section className="mb-14" aria-labelledby="expertise-heading">
+        <h2
+          id="expertise-heading"
+          className="text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-5 tracking-tight"
+        >
+          what I bring to a product team
+        </h2>
+        <dl className="grid gap-5 sm:grid-cols-3">
+          <div className="border-l border-neutral-200 dark:border-neutral-800 pl-4">
+            <dt className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
+              Understand
+            </dt>
+            <dd className="mt-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+              UX research, product audits, and turning findings into clear decisions.
+            </dd>
+          </div>
+          <div className="border-l border-neutral-200 dark:border-neutral-800 pl-4">
+            <dt className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
+              Shape
+            </dt>
+            <dd className="mt-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+              Product design, design systems, and prototypes that make interactions tangible.
+            </dd>
+          </div>
+          <div className="border-l border-neutral-200 dark:border-neutral-800 pl-4">
+            <dt className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
+              Ship
+            </dt>
+            <dd className="mt-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+              Accessible frontend engineering with React, Next.js, Vue, and TypeScript.
+            </dd>
+          </div>
+        </dl>
+      </section>
 
       {/* ── Flagship projects ────────────────────────────────────────── */}
       <div>
@@ -151,7 +191,7 @@ export default function Page() {
                   <span className="text-xs leading-relaxed text-neutral-600 dark:text-neutral-400 line-clamp-2 mt-0.5">
                     {project.outcome}
                   </span>
-                  <span className="text-[11px] text-neutral-400 dark:text-neutral-500 mt-1">
+                  <span className="text-xs text-neutral-600 dark:text-neutral-300 mt-1">
                     {[project.role, ...project.stack].join(" · ")}
                   </span>
                 </div>
@@ -242,7 +282,7 @@ export default function Page() {
               className="object-cover transition-transform duration-500 hover:scale-[1.03]"
               sizes="(max-width: 768px) 50vw, 40vw"
             />
-            <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-2 text-[11px] font-medium text-white bg-gradient-to-t from-black/60 to-transparent">
+            <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-2 text-xs font-medium text-white bg-gradient-to-t from-black/60 to-transparent">
               React Advanced
             </figcaption>
           </figure>
@@ -254,7 +294,7 @@ export default function Page() {
               className="object-cover transition-transform duration-500 hover:scale-[1.03]"
               sizes="(max-width: 768px) 50vw, 40vw"
             />
-            <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-2 text-[11px] font-medium text-white bg-gradient-to-t from-black/60 to-transparent">
+            <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-2 text-xs font-medium text-white bg-gradient-to-t from-black/60 to-transparent">
               Field notes
             </figcaption>
           </figure>
