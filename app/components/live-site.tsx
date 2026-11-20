@@ -14,11 +14,11 @@ interface LiveSiteProps {
 export function LiveSite({ src, title, caption }: LiveSiteProps) {
   return (
     <figure className="my-8 flex flex-col items-center">
-      <div className="w-full max-w-[390px] rounded-[3rem] bg-[#1b1d20] p-2.5 shadow-[inset_0_0_0_2px_#3a3d42]">
+      <div className="aspect-[9/19] w-full max-w-[340px] rounded-[2.75rem] bg-[#1b1d20] p-2 shadow-[inset_0_0_0_2px_#3a3d42]">
         <iframe
           src={src}
           title={title}
-          className="block h-[720px] max-h-[80vh] w-full rounded-[2.4rem] bg-white"
+          className="block h-full w-full rounded-[2.25rem] bg-white"
           sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
           allow="clipboard-write"
           referrerPolicy="strict-origin-when-cross-origin"
