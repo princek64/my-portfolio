@@ -1,42 +1,56 @@
 ---
 title: Community Christmas Map
 year: 2026
+description: Designed and built the website that helps people who'd otherwise be alone on Christmas Day find a local event, for Marmalade Trust.
+role: Design and build
 tags: [Product Design, Next.js, MapLibre, Motion]
+status: Live
+url: https://www.communitychristmas.org.uk
 ---
 
+<LiveSite src="https://www.communitychristmas.org.uk" title="Community Christmas, the live website" caption="The live site. Try searching a town" />
 
-<LiveSite src="https://www.communitychristmas.org.uk" title="Community Christmas, the live website" caption="The live site: search a postcode or town" />
-
-A website for Marmalade Trust, made with Scottish Tech Army, that helps people who'd otherwise be alone on Christmas Day find a local event.
-
----
+Community Christmas helps people who'd otherwise spend Christmas Day alone find a lunch, a carol service or just some company near them. I designed and built it for Marmalade Trust, the loneliness charity, as a volunteer with Scottish Tech Army. It went live in November 2026.
 
 ## The problem
 
-Community Christmas events are scattered across council pages, church newsletters and Facebook groups. The people who need them most are often older, on a phone, and on a weak signal.
+Every year, churches, councils, cafés and community groups put on Christmas Day events. They're listed on noticeboards, in parish newsletters and in Facebook groups, if they're listed at all. The people who'd most like to go are often older, often on a phone, and often the least likely to find them.
 
-## My role
+Marmalade Trust wanted one place to find them all, run by a small team who already keep their events in a Google Sheet.
 
-I lead the design and build, working directly with Marmalade Trust.
+## What I made
 
-## What it does
+For visitors, it's a search box. Type a postcode or a town, and you get the events nearby as a list, with a map one tap away.
 
-- **Visitors** search a postcode or town and get a list, with the map one tap away.
-- **Hosts** list an event in five short steps, and change it later through a private link. No accounts.
-- **Staff** approve every event before it goes live, from a to-do list in their portal.
+For hosts, it's a short form. Five steps, no account to create, and a private link to change or withdraw the event later.
 
-## Key decisions
+For the charity's staff, it's a portal. Nothing goes live until they approve it, and the first thing they see is what needs doing: new events, possible duplicates and events missing accessibility details.
 
-- **Readable for older eyes:** the facts people act on are bold, and everything tappable has a clear edge.
-- **Never guess:** if a host hasn't said whether it's free or step-free, the site shows nothing rather than a wrong badge.
-- **A map that copes with a weak signal:** nearby pins join into numbered bubbles, and the pins still show if part of the map fails to load.
-- **A bit of Christmas:** on the day it greets people with "It's Christmas Day", and when nothing is nearby there's a short game while they wait.
+<CaseStudyImage src="/work/community-christmas-map/web-staff-overview.png" alt="Staff overview with a to-do list of events to approve, possible duplicates and missing accessibility details, and counts of live events" caption="The staff portal opens on what needs doing (sample events)" width={2880} height={1800} plain />
 
----
+## Designing for older eyes
+
+The person reading might be 80, on an old phone, without their glasses. So the facts that decide whether someone goes, like when, where, cost and step-free access, are large, bold and dark. Grey is kept for things you can skip. Every button has a clear edge, so it looks like something you can press.
+
+The site also never guesses. If a host hasn't said whether an event is free or step-free, it shows nothing rather than a hopeful badge. Turning up to find steps you can't manage is worse than not knowing.
+
+## Things we learned after launch
+
+Analytics showed that many visitors were on computers, where a "Call" button does nothing. Phone numbers can now be copied as well as called.
+
+On a weak signal, part of the map could fail to load and take the pins with it. The map was rebuilt so the pins always show, and nearby pins join into numbered bubbles that open up as you zoom in.
+
+In testing, staff saw a plain text box where hosts had a set of tick boxes, because the two forms had drifted apart. Now the host form and the staff form share one set of questions.
+
+## A bit of Christmas
+
+The site is for one day of the year, so it should feel like it. On Christmas Day it says so, lights and snow come out, and events read "Today" or "On now". When a search finds nothing nearby, there's a short Christmas game to play while you wait, and a way to tell the charity where events are needed.
 
 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
   <CaseStudyImage src="/work/community-christmas-map/mobile-christmas-day.png" alt="The phone home page on Christmas Day, with lights, snow, a robin and the words It's Christmas Day" caption="On Christmas Day" width={802} height={1626} plain />
   <CaseStudyImage src="/work/community-christmas-map/mobile-game.png" alt="Christmas pairs, a card-matching game, with two pairs found" caption="Nothing nearby? A game while you wait" width={802} height={1626} plain />
 </div>
 
-<CaseStudyImage src="/work/community-christmas-map/web-staff-overview.png" alt="Staff overview with a to-do list of events to approve, possible duplicates and missing accessibility details, and counts of live events" caption="Staff portal: what needs doing first (sample events)" width={2880} height={1800} />
+## Where it is now
+
+Live at [communitychristmas.org.uk](https://www.communitychristmas.org.uk), with hosts adding events ahead of 25 December. The next step is moving the events from the Google Sheet into the charity's HubSpot, so staff can run everything from one place.
