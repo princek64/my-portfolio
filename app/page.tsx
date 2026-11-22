@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { socialLinks } from "./config";
 import { IchieMark } from "./components/ichie-mark";
 
@@ -108,13 +109,29 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="flex gap-4 mb-12">
+          <div className="flex flex-wrap gap-3 mb-12">
             <a
               href={socialLinks.email}
               className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-85 transition-opacity duration-200"
             >
               Get in touch
             </a>
+            {[
+              { href: socialLinks.linkedin, label: "LinkedIn", Icon: FaLinkedinIn },
+              { href: socialLinks.twitter, label: "X", Icon: FaXTwitter },
+            ].map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-200"
+              >
+                <Icon aria-hidden="true" className="size-4" />
+                {label}
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
