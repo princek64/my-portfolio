@@ -57,7 +57,7 @@ export function GET() {
       <a href="/work"><span aria-hidden="true">←&nbsp;</span> Back to work</a>
     </nav>
     <main aria-label="${title}">
-      <iframe title="${title}" src="${archive}" allow="fullscreen"></iframe>
+      <iframe title="${title}" src="${archive}" allow="autoplay; fullscreen"></iframe>
     </main>
   </body>
 </html>`, { headers: { "Content-Type": "text/html; charset=utf-8" } });
