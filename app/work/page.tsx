@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { caseStudyItems, getWorkSlug, otherItems } from "./work-data";
+import { caseStudyItems, getWorkSlug, otherItems, personalProjects } from "./work-data";
 import { AbstractArt } from "../components/AbstractArt";
 import { IchieMark } from "../components/ichie-mark";
 
@@ -105,22 +105,28 @@ export default function Work() {
         <h2 id="personal-projects" className="text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-6 tracking-tight">
           personal projects
         </h2>
-        <a href="/lanyard-archive" className="group block rounded-2xl">
-          <Image
-            src="/work/lanyard-archive/exhibition.jpg"
-            alt=""
-            width={1200}
-            height={630}
-            sizes="(max-width: 680px) 100vw, 640px"
-            className="w-full h-auto rounded-2xl border border-neutral-200/50 dark:border-neutral-800/50"
-          />
-          <h3 className="mt-4 font-semibold tracking-tight text-lg group-hover:underline">
-            The Lanyard Archive <span aria-hidden="true">→</span>
-          </h3>
-        </a>
-        <p className="mt-1 text-sm leading-relaxed text-[#333333] dark:text-[#D4D4D4]">
-          The passes I kept from events around London. Pick one up, turn it over, or try the buttons on the Solana badge.
-        </p>
+        <div className="space-y-10">
+          {personalProjects.map(({ title, href, preview, description }) => (
+            <article key={href}>
+              <a href={href} className="group block rounded-2xl">
+                <Image
+                  src={preview}
+                  alt=""
+                  width={1200}
+                  height={630}
+                  sizes="(max-width: 680px) 100vw, 640px"
+                  className="w-full h-auto rounded-2xl border border-neutral-200/50 dark:border-neutral-800/50"
+                />
+                <h3 className="mt-4 font-semibold tracking-tight text-lg group-hover:underline">
+                  {title} <span aria-hidden="true">{href.startsWith("/") ? "→" : "↗"}</span>
+                </h3>
+              </a>
+              <p className="mt-1 text-sm leading-relaxed text-[#333333] dark:text-[#D4D4D4]">
+                {description}
+              </p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <hr className="section-divider mt-14" />

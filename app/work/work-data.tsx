@@ -16,6 +16,21 @@ export interface WorkItem {
   };
 }
 
+export const personalProjects = [
+  {
+    title: "The Lanyard Archive",
+    href: "/lanyard-archive",
+    preview: "/work/lanyard-archive/exhibition.jpg",
+    description: "The passes I kept from events around London. Pick one up, turn it over, or try the buttons on the Solana badge.",
+  },
+  {
+    title: "London Design Guide",
+    href: "https://www.londondesignguide.co.uk/",
+    preview: "/work/london-design-guide/home.webp",
+    description: "An independent guide to London’s design scene. Find this week’s events, meet a local design community, or browse open roles.",
+  },
+];
+
 export const workItems: WorkItem[] = [
   {
     title: "GetSociable",
