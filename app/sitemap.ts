@@ -25,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: today,
   }));
 
-  let routes = ["", "about", "blog", "work", "photos"].map((route) => ({
+  let routes = ["", "about", "blog", "work", "photos", "lanyard-archive"].map((route) => ({
     url: `${BaseUrl}${route}`,
     lastModified: today,
   }));

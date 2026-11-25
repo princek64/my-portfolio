@@ -18,6 +18,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/lanyard',
+        destination: '/lanyard-archive',
+        permanent: true,
+      },
+      {
         source: '/projects',
         destination: '/work',
         permanent: true,
