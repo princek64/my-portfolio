@@ -41,7 +41,6 @@ export function GET() {
       nav {
         display: flex;
         align-items: center;
-        justify-content: space-between;
         background: #fffcf5;
         border-bottom: 1px solid #202020;
         padding-inline: clamp(12px, 3vw, 32px);
@@ -56,7 +55,6 @@ export function GET() {
   <body>
     <nav aria-label="Portfolio">
       <a href="/work"><span aria-hidden="true">←&nbsp;</span> Back to work</a>
-      <a href="${archive}">Open standalone <span aria-hidden="true">&nbsp;↗</span></a>
     </nav>
     <main aria-label="${title}">
       <iframe title="${title}" src="${archive}" allow="fullscreen"></iframe>
