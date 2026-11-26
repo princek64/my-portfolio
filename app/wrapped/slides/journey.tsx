@@ -132,7 +132,7 @@ export function Mix({ data, ...frame }: P) {
 }
 
 export function Gap({ data, ...frame }: P) {
-  const gap = data.gap!;
+  const gap = data.gap;
   const names = MONTHS.slice(0, 11);
   let a = names.indexOf(gap.from as (typeof names)[number]);
   let b = names.indexOf(gap.to as (typeof names)[number]);
