@@ -134,7 +134,7 @@ export function Viewer({ slides, name, theme, onTheme, onClose, fonts }: Props) 
           Download PDF
         </button>
         <p aria-live="polite" className="w-full text-center text-sm text-white/80">
-          {busy ?? "Images for X, a PDF for a LinkedIn carousel. Made on your device."}
+          {busy ?? "Images for X, a PDF for a LinkedIn carousel."}
         </p>
       </div>
 
