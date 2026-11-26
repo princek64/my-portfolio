@@ -1,6 +1,6 @@
 "use client";
 
-import { numberWord, traveller, type WrapData } from "../data";
+import { numberWord, type WrapData } from "../data";
 import { Arrow, Board, C, F, Frame, Kicker, LINE, body, delay, headline, mono, type SlideProps } from "./parts";
 
 type P = SlideProps & { data: WrapData };
@@ -68,7 +68,7 @@ export function Wildcard({ data, ...frame }: P) {
 }
 
 export function Ticket({ data, ...frame }: P) {
-  const t = traveller(data);
+  const t = data.traveller;
   return (
     <Frame {...frame} label={`Your traveller type: ${t.name}. ${t.line}`} stripe={LINE.district} chip="DISTRICT · ANY ROUTE" chipBg={LINE.district}>
       <Kicker color="var(--wrap-green-text, #7FD39B)">YOUR TRAVELLER TYPE</Kicker>
@@ -107,7 +107,7 @@ export function Ticket({ data, ...frame }: P) {
 }
 
 export function Built({ data, ...frame }: P) {
-  const names = (data.built ?? []).filter((n) => n.trim()).slice(0, 7);
+  const names = data.built.filter((n) => n.trim()).slice(0, 7);
   const row = 44;
   const span = Math.max(0, names.length - 1) * row;
   return (
@@ -156,7 +156,7 @@ export function End({ data: _data, ...frame }: P) {
   return (
     <Frame
       {...frame}
-      label="End of the line. Thanks for riding along. Make your own 2026 wrap at pixelprince.dev/wrapped. Find your next event at londondesignguide.co.uk."
+      label="End of the line. Thanks for riding along. See you in 2027. Find your next event at londondesignguide.co.uk."
       stripe={
         <div className="wrap-draw-x" aria-hidden="true" style={{ height: 10, display: "grid", gridTemplateColumns: `repeat(${ALL_LINES.length}, minmax(0, 1fr))` }}>
           {ALL_LINES.map((colour) => (
@@ -177,17 +177,17 @@ export function End({ data: _data, ...frame }: P) {
         <br />
         the line.
       </h2>
-      <p className="wrap-rise" style={body({ ...delay(650) })}>Thanks for riding along. See you on the platform.</p>
+      <p className="wrap-rise" style={body({ ...delay(650) })}>Thanks for riding along. See you in 2027.</p>
       <div className="wrap-rise" style={{ margin: "20px 30px 0", display: "flex", flexDirection: "column", gap: 10, ...delay(850) }}>
         <div style={{ background: "var(--wrap-cta-bg, #ffffff)", color: "var(--wrap-cta-ink, #121212)", borderRadius: 8, padding: "14px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 4, minWidth: 0 }}>
-            <span style={{ ...mono(11, { letterSpacing: "0.12em" }), color: "var(--wrap-cta-label, #4a4a4a)" }}>MAKE YOUR OWN 2026 WRAP</span>
-            <span style={{ fontSize: 22, fontWeight: 800 }}>pixelprince.dev/wrapped</span>
+            <span style={{ ...mono(11, { letterSpacing: "0.12em" }), color: "var(--wrap-cta-label, #4a4a4a)" }}>FIND YOUR NEXT EVENT</span>
+            <span style={{ fontSize: 22, fontWeight: 800 }}>londondesignguide.co.uk</span>
           </div>
           <Arrow size={26} />
         </div>
         <span style={{ fontSize: 15, fontWeight: 500, color: C.muted }}>
-          Find your next event at <span style={{ color: C.ink, fontWeight: 700 }}>londondesignguide.co.uk</span>
+          Collected along the way: <span style={{ color: C.ink, fontWeight: 700 }}>the-lanyard-archive.vercel.app</span>
         </span>
       </div>
     </Frame>

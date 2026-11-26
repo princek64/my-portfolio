@@ -1,5 +1,4 @@
-// Everything a wrap is made from. Nothing here is saved anywhere: the form
-// builds a WrapData in the browser and the slides read it.
+// Everything the wrap is made from. The slides read the PRINCE object below.
 
 export const MONTHS = [
   "January",
@@ -46,13 +45,13 @@ export type WrapData = {
   busiest: { month: Month; count: number; highlights: string[] };
   communities: Community[];
   wildcard: string;
-  /** Optional: only shown when filled in. */
-  gap?: { from: Month; to: Month; count: number };
-  /** Optional: only shown when filled in. */
-  built?: string[];
+  /** The ticket on the traveller slide, written by hand. */
+  traveller: { name: string; line: string; issued: string };
+  gap: { from: Month; to: Month; count: number };
+  built: string[];
 };
 
-/** Prince's own wrap. Busiest month, gap and communities still to confirm against the cleaned list. */
+/** Prince's wrap. Busiest month, gap and communities still to confirm against the cleaned list. */
 export const PRINCE: WrapData = {
   name: "Prince",
   total: 308,
@@ -72,6 +71,11 @@ export const PRINCE: WrapData = {
     { name: "Codex", count: 5 },
   ],
   wildcard: "100 people doing nothing for 3 hours.",
+  traveller: {
+    name: "The Night Tube Regular",
+    line: "Last one out. The after-party is where it happens.",
+    issued: "ISSUED FOR 115 SOCIALS + 60 MEETUPS",
+  },
   built: [
     "Ichie",
     "Champion Brew",
@@ -83,12 +87,6 @@ export const PRINCE: WrapData = {
 };
 
 export const TUBE_STATIONS = 272;
-
-export function possessive(name: string): string {
-  const clean = name.trim() || "Your";
-  if (clean.toLowerCase() === "your") return "YOUR";
-  return `${clean}${/s$/i.test(clean) ? "’" : "’s"}`.toUpperCase();
-}
 
 export function mixTotal(mix: Record<EventType, number>): number {
   return EVENT_TYPES.reduce((sum, type) => sum + (mix[type] || 0), 0);
@@ -115,33 +113,6 @@ const DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 export function daysIn(month: Month): number {
   return DAYS_IN_MONTH[MONTHS.indexOf(month)] ?? 30;
-}
-
-type Traveller = { name: string; line: string };
-
-const TRAVELLERS: Record<EventType | "all", Traveller> = {
-  all: { name: "The All-Lines Explorer", line: "A bit of everything, every week. Every line, no favourites." },
-  hackathons: { name: "The Hackathon Hopper", line: "Laptop charged, weekend booked. Ships something by Sunday." },
-  socials: { name: "The Night Tube Regular", line: "Last one out. The after-party is where it happens." },
-  meetups: { name: "The Season Ticket Holder", line: "Same communities, every month. They save you a seat." },
-  talks: { name: "The Front-Row Asker", line: "Front row, hand up first at every Q&A." },
-  conferences: { name: "The Peak-Hour Commuter", line: "Big days, long queues, a lanyard for every season." },
-  workshops: { name: "The Workshop Regular", line: "Came to make things, not just to listen." },
-};
-
-/** The traveller type is worked out from the event mix, never picked. */
-export function traveller(data: WrapData): Traveller & { issued: string } {
-  const mix = sortedMix(data);
-  const total = mixTotal(data.mix) || 1;
-  const top = mix[0];
-  const second = mix[1];
-  const hackShare = (data.mix.hackathons || 0) / total;
-  const key: EventType | "all" =
-    hackShare >= 0.25 ? "hackathons" : !top || top[1] / total < 0.3 ? "all" : top[0];
-  const issued = top
-    ? `ISSUED FOR ${top[1]} ${top[0].toUpperCase()}${second ? ` + ${second[1]} ${second[0].toUpperCase()}` : ""}`
-    : "ISSUED FOR 2026";
-  return { ...TRAVELLERS[key], issued };
 }
 
 export function numberWord(n: number): string {

@@ -3,8 +3,8 @@ import { wrapFonts } from "./fonts";
 import { Wrapped } from "./wrapped";
 
 export const metadata: Metadata = {
-  title: "2026 Wrap",
-  description: "Turn your year of London meetups, talks and hackathons into Tube-style slides for LinkedIn and X.",
+  title: "My 2026 in London events",
+  description: "A year of London talks, meetups and hackathons, told as a Tube journey.",
   alternates: { canonical: "/wrapped" },
 };
 
