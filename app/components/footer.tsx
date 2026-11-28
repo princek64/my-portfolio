@@ -91,12 +91,13 @@ export default function Footer() {
               Photography
             </a>
           </div>
-          <div className="flex items-center gap-3 text-lg text-neutral-400 dark:text-neutral-500">
+          <div className="flex items-center gap-4 text-xl text-neutral-600 dark:text-neutral-400">
             <a
-              href="https://x.com/pixelprincedev"
+              href={socialLinks.twitter}
               target="_blank"
               rel="noopener"
               aria-label="X"
+              title="X"
               className="transition-colors duration-200 hover:text-neutral-700 dark:hover:text-neutral-300"
             >
               <FaXTwitter aria-hidden="true" />
@@ -107,6 +108,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="LinkedIn"
+              title="LinkedIn"
               className="social-linkedin transition-colors duration-200 hover:text-[#0a66c2]"
             >
               <FaLinkedinIn aria-hidden="true" />
@@ -117,6 +119,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="GitHub"
+              title="GitHub"
               className="social-github transition-colors duration-200 hover:text-neutral-700 dark:hover:text-neutral-300"
             >
               <FaGithub aria-hidden="true" />
@@ -127,6 +130,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="Dribbble"
+              title="Dribbble"
               className="social-dribbble transition-colors duration-200 hover:text-[#ea4c89]"
             >
               <FaDribbble aria-hidden="true" />

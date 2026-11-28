@@ -10,7 +10,7 @@ export const metaData = {
 };
 
 export const socialLinks = {
-  twitter: "https://x.com/lildreamerrrrr",
+  twitter: "https://x.com/pixelprincedev",
   github: "https://github.com/princek64",
   instagram: "https://www.instagram.com/",
   linkedin: "https://www.linkedin.com/in/princekukreja/",
